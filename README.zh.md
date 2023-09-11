@@ -48,11 +48,7 @@ VisVrs，源于'Visual'（视觉）和'Verse'（故事），是一个专为具�
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
 
-1. 克隆(https://github.com/isooosi/VisVrs/fork) 仓库：
-
-```bash
-git@github.com:danielcgilibert/blog-template.git
-```
+1. 使用[仓库模板](https://github.com/isooosi/VisVrs)
 
 2. 安装依赖：
 
