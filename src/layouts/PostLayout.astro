@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title} description={frontmatter.description}>
+  <div class='max-w-2xl mx-auto'>
+    {frontmatter.cover && (
+      <Image 
+        src={frontmatter.cover} 
+        alt={frontmatter.coverAlt} 
+        width='768' 
+        height='432' 
+        loading='eager'
+      />
+    )}
+  </div>
+  <article class='max-w-2xl mx-auto'>
+    <slot />
+  </article>
+</BaseLayout>

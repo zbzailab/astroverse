@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../layouts/PostLayout.astro';
+import PostCard from '../components/PostCard.astro';
+
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+dayjs.extend(utc);
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('posts');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const allPosts = await getCollection('posts');
+const { Content, remarkPluginFrontmatter } = await entry.render();
+
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format('YYYY-MM-DD');
+
+const pubDateFormatted = dayjs(entry.data.pubDate)
+  .utc()
+  .format('YYYY-MM-DD');
+
+  const relatedPosts = allPosts
+  .filter(p => p.slug !== entry.slug && p.data.category.some(cat => entry.data.category.includes(cat)))
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  .slice(0, 3);
+---
+<PostLayout frontmatter={entry.data} remarkPluginFrontmatter={remarkPluginFrontmatter}>
+  <div>
+    <Content />
+  </div>
+  <div class='prose-a:no-underline'>
+    {entry.data.tags.map((tag) => (
+      <span class='inline-block bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-full px-3 py-1 text-sm mr-2 mb-2'>
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </span>
+    ))}
+  </div>
+  
+  <div class='text-neutral-500 dark:text-neutral-200 dark:bg-neutral-900 flex justify-between mt-2 mb-2'>
+    <small class='block'>Published on {pubDateFormatted}, last updated on {lastModified}</small>
+  </div>
+  <section>
+    <div class='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+      {relatedPosts.map((relatedPost) => (
+        <div class='col-span-1'>
+          <PostCard post={relatedPost} imgWidth={640} imgHeight={360} />
+        </div>
+      ))}
+    </div>
+  </section>
+</PostLayout>

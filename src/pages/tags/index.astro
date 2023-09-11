@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allPosts = await getCollection('posts');
+
+let tagCounts = {};
+allPosts.forEach(post => {
+  (post.data.tags || []).forEach(tag => {
+    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+  });
+});
+
+const tags = Object.keys(tagCounts);
+---
+<BaseLayout>
+  <div class='prose prose-lg mx-auto p-6 prose-a:no-underline'>
+    <div class='grid grid-cols-2 lg:grid-cols-4 gap-4'>
+      {tags.map((tag) => (
+        <a href={`/tags/${tag}`} class='bg-neutral-200 rounded-full text-center px-3 py-2 text-sm font-semibold hover:bg-neutral-300'>
+          {tag} <span>({tagCounts[tag]})</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

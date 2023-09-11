@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  layout?: string;
+  imgWidth?: number;
+  imgHeight?: number;
+  eagerLoad?: boolean; 
+}
+
+const { post, imgWidth = 992, imgHeight = 557.8, eagerLoad = false } = Astro.props;
+---
+
+<article class='relative'>
+  <a href={`/${post.slug}`} class='block'>
+    <Image
+      src={post.data.cover}
+      alt={post.data.coverAlt}
+      width={imgWidth}
+      height={imgHeight}
+      loading={eagerLoad ? 'eager' : 'lazy'}
+    />
+    <div class='absolute inset-x-0 bottom-0 rounded-xl rounded-t-none text-white p-2 w-full bg-neutral-900 bg-opacity-10'>
+      <div class='flex justify-between'>
+        <span>{new Date(post.data.pubDate).toLocaleDateString()}</span>
+        <span>{post.data.category[0]}</span>
+      </div>
+      <div class='m-0 text-xl font-bold'>
+        {post.data.title}
+      </div>
+    </div>
+  </a>
+</article>

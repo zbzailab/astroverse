@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://visvrs.vercel.app//sitemap-index.xml
