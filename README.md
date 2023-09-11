@@ -1,3 +1,10 @@
+<p align="center">
+    <img width="1024" alt="Visvis Screen" src="public/screen.webp">
+  <a>
+</p>
+
+
+
 ## 🚀 VisVrs: An Astro Theme for Visual Storytelling
 
 VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for impactful photo-text blogging, ideal for content creators.
@@ -11,7 +18,7 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 
 <p align="center">
   <a href="https://pagespeed.web.dev/analysis/https-visvrs-vercel-app/iv2xknok2a?form_factor=mobile">
-    <img width="510" alt="openblog Lighthouse Score" src="public/visvrs-lighthouse-score.svg">
+    <img width="510" alt="Visvrs Lighthouse Score" src="public/visvrs-lighthouse-score.svg">
   <a>
 </p>
 

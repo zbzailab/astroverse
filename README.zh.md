@@ -1,8 +1,13 @@
+<p align="center">
+    <img width="1024" alt="Visvrs Screen" src="public/screen.webp">
+  <a>
+</p>
+
+
 ## 🚀 VisVrs: 一个图文博客主题
 
 VisVrs，源于'Visual'（视觉）和'Verse'（故事），是一个专为具有影响力的图文博客量身定制的Astro主题，非常适合内容创作者使用。
 
-来源：非中文语料库，已翻译成中文。
 
 ## 🔤 README
 
@@ -13,7 +18,7 @@ VisVrs，源于'Visual'（视觉）和'Verse'（故事），是一个专为具�
 
 <p align="center">
   <a href="https://pagespeed.web.dev/analysis/https-visvrs-vercel-app/iv2xknok2a?form_factor=mobile">
-    <img width="510" alt="openblog Lighthouse 评分" src="public/visvrs-lighthouse-score.svg">
+    <img width="510" alt="Visvrs Lighthouse 评分" src="public/visvrs-lighthouse-score.svg">
   <a>
 </p>
 
