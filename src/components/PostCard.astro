@@ -36,7 +36,7 @@ const specialClasses = specialLayout ? 'md:w-1/3 pt-2' : 'absolute inset-x-0 bot
       <div class={`mt-2 text-xl font-bold ${specialLayout ? 'text-neutral-900' : 'text-white'}`}>
         {post.data.title}
       </div>
-      {specialLayout ? <div class='text-neutral-700 dark:text-neutral-300 font-normal hidden lg:block text-sm mt-2 text-justify'>{post.data.description}</div> : ''}
+      {specialLayout ? <div class='text-neutral-700 dark:text-neutral-300 font-normal hidden lg:block text-sm mt-2'>{post.data.description}</div> : ''}
     </div>
   </article>
 </a>
