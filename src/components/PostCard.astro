@@ -7,29 +7,37 @@ interface Props {
   layout?: string;
   imgWidth?: number;
   imgHeight?: number;
-  eagerLoad?: boolean; 
+  eagerLoad?: boolean;
+  specialLayout?: boolean;
 }
 
-const { post, imgWidth = 992, imgHeight = 557.8, eagerLoad = false } = Astro.props;
+const { post, imgWidth = 992, imgHeight = 557.8, eagerLoad = false, specialLayout = false } = Astro.props;
+const commonClasses = 'text-neutral-900 dark:text-white rounded-xl p-2 mb-0';
+const specialClasses = specialLayout ? 'md:w-1/3 pt-2' : 'absolute inset-x-0 bottom-0 rounded-xl text-white p-2 w-full bg-neutral-900 bg-opacity-10';
 ---
 
-<article class='relative'>
-  <a href={`/${post.slug}`} class='block'>
-    <Image
-      src={post.data.cover}
-      alt={post.data.coverAlt}
-      width={imgWidth}
-      height={imgHeight}
-      loading={eagerLoad ? 'eager' : 'lazy'}
-    />
-    <div class='absolute inset-x-0 bottom-0 rounded-xl rounded-t-none text-white p-2 w-full bg-neutral-900 bg-opacity-10'>
+<a href={`/${post.slug}`} class="rounded-xl block no-underline hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 dark:hover:bg-neutral-800">
+  <article class={`relative dark:prose-invert ${specialLayout ? 'md:flex' : ''}`}>
+    <div class={`${specialLayout ? 'md:w-2/3' : ''}`}>
+      <Image 
+        src={post.data.cover}
+        alt={post.data.coverAlt}
+        width={imgWidth}
+        height={imgHeight}
+        loading={eagerLoad ? 'eager' : 'lazy'}
+        class="mt-0 mb-0"
+      />
+    </div>
+    <div class={`${commonClasses} ${specialClasses} mb-0 ${specialLayout ? 'text-neutral-900' : 'text-white'}`}>
       <div class='flex justify-between'>
-        <span>{new Date(post.data.pubDate).toLocaleDateString()}</span>
-        <span>{post.data.category[0]}</span>
+        <span class={`${specialLayout ? 'text-neutral-900' : 'text-white'}`}>{new Date(post.data.pubDate).toLocaleDateString()}</span>
+        <span class={`${specialLayout ? 'text-neutral-900' : 'text-white'}`}>{post.data.category[0]}</span>
       </div>
-      <div class='m-0 text-xl font-bold'>
+      <div class={`mt-2 text-xl font-bold ${specialLayout ? 'text-neutral-900' : 'text-white'}`}>
         {post.data.title}
       </div>
+      {specialLayout ? <div class='text-neutral-700 dark:text-neutral-300 font-normal hidden lg:block text-sm mt-2 text-justify'>{post.data.description}</div> : ''}
     </div>
-  </a>
-</article>
+  </article>
+</a>
+
