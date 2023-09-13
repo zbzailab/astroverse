@@ -1,8 +1,3 @@
-<p align="center">
-    <img width="1024" alt="Visvrs Screen" src="public/screen.webp">
-  <a>
-</p>
-
 
 ## 🚀 VisVrs: 一个图文博客主题
 

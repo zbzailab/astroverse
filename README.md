@@ -1,9 +1,3 @@
-<p align="center">
-    <img width="1024" alt="Visvis Screen" src="public/screen.webp">
-  <a>
-</p>
-
-
 
 ## 🚀 VisVrs: An Astro Theme for Visual Storytelling
 
