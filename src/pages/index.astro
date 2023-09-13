@@ -16,9 +16,7 @@ allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pub
     <div class={`grid grid-cols-${cols} md:grid-cols-${mdCols} lg:grid-cols-${lgCols} gap-4 ${start === 1 ? 'mt-4 mb-4' : ''}`}>
       { allPosts.slice(start, end).map((post, index) => (
           <PostCard 
-            post={post} 
-            imgWidth={672} 
-            imgHeight={378} 
+            post={post}
             eagerLoad={start === 0 && index === 0}
             isSpecialCard={start === 0 && index === 0}
           />

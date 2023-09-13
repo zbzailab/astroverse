@@ -10,7 +10,7 @@ interface Props {
   isSpecialCard?: boolean;
 }
 
-const { post, imgWidth, imgHeight, isSpecialCard = false } = Astro.props;
+const { post, isSpecialCard = false } = Astro.props;
 ---
 <a href={`/${post.slug}`} class="postcard-link not-prose">
   <article class={`postcard-article ${isSpecialCard ? 'postcard-article-special' : ''}`}>
@@ -18,8 +18,9 @@ const { post, imgWidth, imgHeight, isSpecialCard = false } = Astro.props;
       <Image 
         src={post.data.cover}
         alt={post.data.coverAlt}
-        width={imgWidth}
-        height={imgHeight}
+        width={672}
+        height={378}
+        format='webp'
         loading={isSpecialCard ? 'eager' : 'lazy'}
       />
     </div>
