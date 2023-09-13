@@ -6,18 +6,21 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title} description={frontmatter.description}>
+  <head>
+    <link rel='stylesheet' href='https://unpkg.com/@waline/client@v2/dist/waline.css' />
+  </head>
   <div class='max-w-2xl mx-auto'>
     {frontmatter.cover && (
       <Image 
         src={frontmatter.cover} 
         alt={frontmatter.coverAlt} 
-        width='768' 
-        height='432' 
+        width='672' 
+        height='378' 
         loading='eager'
       />
     )}
   </div>
-  <article class='max-w-2xl mx-auto'>
+  <article class='max-w-2xl mx-auto text-justify'>
     <slot />
   </article>
 </BaseLayout>

@@ -4,40 +4,30 @@ import { Image } from 'astro:assets';
 
 interface Props {
   post: CollectionEntry<'posts'>;
-  layout?: string;
   imgWidth?: number;
   imgHeight?: number;
   eagerLoad?: boolean;
-  specialLayout?: boolean;
+  isSpecialCard?: boolean;
 }
 
-const { post, imgWidth = 992, imgHeight = 557.8, eagerLoad = false, specialLayout = false } = Astro.props;
-const commonClasses = 'text-neutral-900 dark:text-white rounded-xl p-2 mb-0';
-const specialClasses = specialLayout ? 'md:w-1/3 pt-2' : 'absolute inset-x-0 bottom-0 rounded-xl text-white p-2 w-full bg-neutral-900 bg-opacity-10';
+const { post, imgWidth, imgHeight, isSpecialCard = false } = Astro.props;
 ---
-
-<a href={`/${post.slug}`} class="rounded-xl block no-underline hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 dark:hover:bg-neutral-800">
-  <article class={`relative dark:prose-invert ${specialLayout ? 'md:flex' : ''}`}>
-    <div class={`${specialLayout ? 'md:w-2/3' : ''}`}>
+<a href={`/${post.slug}`} class="postcard-link not-prose">
+  <article class={`postcard-article ${isSpecialCard ? 'postcard-article-special' : ''}`}>
+    <div class={`postcard-image-container ${isSpecialCard ? 'postcard-image-container-special' : ''}`}>
       <Image 
         src={post.data.cover}
         alt={post.data.coverAlt}
         width={imgWidth}
         height={imgHeight}
-        loading={eagerLoad ? 'eager' : 'lazy'}
-        class="mt-0 mb-0"
+        loading={isSpecialCard ? 'eager' : 'lazy'}
       />
     </div>
-    <div class={`${commonClasses} ${specialClasses} mb-0 ${specialLayout ? 'text-neutral-900' : 'text-white'}`}>
-      <div class='flex justify-between'>
-        <span class={`${specialLayout ? 'text-neutral-900' : 'text-white'}`}>{new Date(post.data.pubDate).toLocaleDateString()}</span>
-        <span class={`${specialLayout ? 'text-neutral-900' : 'text-white'}`}>{post.data.category[0]}</span>
-      </div>
-      <div class={`mt-2 text-xl font-bold ${specialLayout ? 'text-neutral-900' : 'text-white'}`}>
-        {post.data.title}
-      </div>
-      {specialLayout ? <div class='text-neutral-700 dark:text-neutral-300 font-normal hidden lg:block text-sm mt-2'>{post.data.description}</div> : ''}
+    <div class={`postcard-content ${isSpecialCard ? 'postcard-content-special' : ''}`}>
+      <span class="postcard-date">{new Date(post.data.pubDate).toLocaleDateString()}</span>
+      <span class="postcard-category">{post.data.category[0]}</span>
+      <h2 class="postcard-title">{post.data.title}</h2>
+      {isSpecialCard ? <p class="postcard-description-special">{post.data.description}</p> : ''}
     </div>
   </article>
 </a>
-

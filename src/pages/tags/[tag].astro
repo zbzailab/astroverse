@@ -28,9 +28,11 @@ const { posts } = Astro.props;
 <BaseLayout pageTitle={tag}>
   <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
     {posts.map((post) => (
-      <div class='col-span-1'>
-        <PostCard post={post} imgWidth={640} imgHeight={320} />
-      </div>
+        <PostCard 
+        post={post} 
+        imgWidth={672} 
+        imgHeight={378} 
+        />
     ))}
   </div>
 </BaseLayout>
