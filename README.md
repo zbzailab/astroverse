@@ -44,7 +44,7 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
-1. Use this [template](https://github.com/isooosi/VisVrs)
+1. Fork or use this [template](https://github.com/isooosi/VisVrs)
 
 2. Install dependencies:
 
