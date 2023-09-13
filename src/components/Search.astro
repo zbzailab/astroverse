@@ -22,11 +22,11 @@ import '@pagefind/default-ui/css/ui.css'
 	</button>
 	<dialog
 		aria-label='search'
-		class='h-full max-h-full w-full max-w-full border border-zinc-400 bg-white dark:bg-[#0a0910ec] shadow backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] sm:rounded-md opacity-0'>
+		class='h-full max-h-full w-full max-w-full border border-neutral-50 bg-white dark:bg-neutral-300 shadow backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] sm:rounded-md opacity-0'>
 		<div class='dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6'>
 			<button
 				data-close-modal
-				class='ms-auto cursor-pointer rounded-full bg-black text-white px-4 py-2 dark:bg-white dark:text-black'
+				class='ms-auto cursor-pointer rounded-full bg-neutral-50 text-white px-4 py-2 dark:bg-white dark:text-neutral-800'
 				>Close</button
 			>
 			{
@@ -123,12 +123,3 @@ import '@pagefind/default-ui/css/ui.css'
 	customElements.define('site-search', SiteSearch)
 </script>
 
-<style is:global>
-	.dark {
-		--pagefind-ui-primary: #fafafa;
-		--pagefind-ui-text: #fff;
-		--pagefind-ui-background: #171717;
-		--pagefind-ui-border: #171717;
-		--pagefind-ui-tag: #171717;
-	}
-</style>
