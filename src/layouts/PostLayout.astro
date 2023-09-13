@@ -11,9 +11,9 @@ const { frontmatter } = Astro.props;
   </head>
   <div class='max-w-2xl mx-auto'>
     {frontmatter.cover && (
-      <Image 
-        src={frontmatter.cover} 
-        alt={frontmatter.coverAlt} 
+      <Image
+        src={frontmatter.cover}
+        alt={frontmatter.coverAlt}
         width={672}
         height={378}
         loading='eager'
