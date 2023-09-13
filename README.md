@@ -31,6 +31,7 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 - ✅ Last Modified Time
 - ✅ Image Optimization
 - ✅ Automatic Dark Mode
+- ✅ View Transitions
 
 ## 👬 Repositories using this theme
 
