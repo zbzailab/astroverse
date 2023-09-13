@@ -79,7 +79,7 @@
 
 @media (min-width: 1024px) {
   .postcard-description-special {
-      @apply block text-base text-neutral-700 text-justify;
+      @apply block text-base text-neutral-700;
   }
 }
 
