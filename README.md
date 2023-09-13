@@ -33,6 +33,10 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 - ✅ Automatic Dark Mode
 - ✅ View Transitions
 
+## 👬 Live demo
+
+[**VisVrs**](visvrs.vercel.app)
+
 ## 👬 Repositories using this theme
 
 - [**iSooSi**](https://isoosi.xyz)
