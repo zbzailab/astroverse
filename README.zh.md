@@ -4,7 +4,7 @@
 VisVrs，源于'Visual'（视觉）和'Verse'（故事），是一个专为具有影响力的图文博客量身定制的Astro主题，非常适合内容创作者使用。
 
 
-## 🔤 README
+## 🔤 Readme
 
 - [**英文**](https://github.com/isooosi/VisVrs/blob/main/README.md)
 - [**中文**](https://github.com/isooosi/VisVrs/blob/main/README.zh.md)

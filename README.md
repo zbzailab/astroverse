@@ -3,7 +3,7 @@
 
 VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for impactful photo-text blogging, ideal for content creators.
 
-## 🔤 README
+## 🔤 Readme
 
 - [**English**](https://github.com/isooosi/VisVrs/blob/main/README.md)
 - [**中文**](https://github.com/isooosi/VisVrs/blob/main/README.zh.md)
