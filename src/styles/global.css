@@ -3,11 +3,11 @@
 @import 'tailwindcss/utilities';
 
 .postcard-link {
-    @apply transition-all ease-in-out duration-500 hover:shadow-2xl rounded-lg overflow-hidden hover:-translate-y-1 hover:scale-105;
+    @apply transition-all ease-in-out duration-500 hover:shadow-2xl rounded overflow-hidden hover:-translate-y-1 hover:scale-105;
 }
 
 .postcard-article {
-    @apply relative flex flex-col justify-between items-start rounded-lg overflow-hidden;
+    @apply relative flex flex-col justify-between items-start rounded overflow-hidden;
 }
 
 .postcard-article-special {
