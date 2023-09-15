@@ -1,15 +1,31 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+
+// Utils and plugins
 import remarkModifiedTime from './src/utils/remark-modified-time.mjs';
+import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 
-import mdx from "@astrojs/mdx";
-
-// https://astro.build/config
+// Astro Configuration
 export default defineConfig({
+  // Site Information
   site: 'https://visvrs.vercel.app',
+
+  // Markdown Configuration
   markdown: {
+    // Using custom Remark plugin to get modified time
     remarkPlugins: [remarkModifiedTime]
   },
-  integrations: [tailwind(), sitemap(), mdx()]
+
+  // Third-party Integrations
+  integrations: [
+    // Tailwind CSS for styling
+    tailwind(),
+
+    // Sitemap generator
+    sitemap(),
+
+    // MDX support
+    mdx()
+  ]
 });
