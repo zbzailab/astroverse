@@ -21,8 +21,8 @@ dependencies:
     specifier: ^5.0.0
     version: 5.0.0(astro@3.0.12)(tailwindcss@3.3.3)
   '@pagefind/default-ui':
-    specifier: ^0.12.0
-    version: 0.12.0
+    specifier: ^1.0.3
+    version: 1.0.3
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.3)
@@ -39,8 +39,8 @@ dependencies:
     specifier: ^10.16.2
     version: 10.16.2
   pagefind:
-    specifier: ^0.12.0
-    version: 0.12.0
+    specifier: ^1.0.3
+    version: 1.0.3
   sharp:
     specifier: ^0.32.5
     version: 0.32.5
@@ -944,9 +944,49 @@ packages:
       fastq: 1.15.0
     dev: false
 
-  /@pagefind/default-ui@0.12.0:
-    resolution: {integrity: sha512-O+27oCGwIjHjcb3AMJ9J1KWwXqv+hm71jCfTyUf+BrJusNBpgX4BaqKRRx8rbElYew2aglqf9yl5wYJUt5w33Q==}
+  /@pagefind/darwin-arm64@1.0.3:
+    resolution: {integrity: sha512-vsHDtvao3W4iFCxVc4S0BVhpj3E2MAoIVM7RmuQfGp1Ng22nGLRaMP6FguLO8TMabRJdvp4SVr227hL4WGKOHA==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
     dev: false
+    optional: true
+
+  /@pagefind/darwin-x64@1.0.3:
+    resolution: {integrity: sha512-NhEXHHYmB/hT6lx5rCcmnVTxH+uIkMAd43bzEqMwHQosqTZEIQfwihmV39H+m8yo7jFvz3zRbJNzhAh7G4PiwA==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@pagefind/default-ui@1.0.3:
+    resolution: {integrity: sha512-WieFJXvezyvjZh49I8j7a7Kz3LsXYY2Uep3IWvG5NG05mmiurURXjXc+KyrpIp/iAycSnjrC1TDJ8CdES/ee3A==}
+    dev: false
+
+  /@pagefind/linux-arm64@1.0.3:
+    resolution: {integrity: sha512-RGsMt4AmGT8WxCSeP09arU7Za6Vf/We4TWHVSbY7vDMuwWql9Ngoib/q1cP9dIAIMdkXh9ePG/S3mGnJYsdzuQ==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@pagefind/linux-x64@1.0.3:
+    resolution: {integrity: sha512-o+VCKaqImL42scSH1n5gUfppYSNyu3BuGTvtKKgWHmycbL+A3fkFH+ZOFbaLeN7LVTvJqJIOYbk4j2yaq9784Q==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@pagefind/windows-x64@1.0.3:
+    resolution: {integrity: sha512-S+Yq4FyvXJm4F+iN/wRiLvEEF8Xs9lTKGtQGaRHXJslQyl65dytDDPIULXJXIadrDbnMrnTt4C2YHmEUIyUIHg==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /@tailwindcss/typography@0.5.10(tailwindcss@3.3.3):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
@@ -1085,15 +1125,6 @@ packages:
     resolution: {integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: false
-
-  /agent-base@6.0.2:
-    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
-    engines: {node: '>= 6.0.0'}
-    dependencies:
-      debug: 4.3.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /ansi-align@3.0.1:
@@ -2034,16 +2065,6 @@ packages:
 
   /http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
-    dev: false
-
-  /https-proxy-agent@5.0.1:
-    resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
-    engines: {node: '>= 6'}
-    dependencies:
-      agent-base: 6.0.2
-      debug: 4.3.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /human-signals@5.0.0:
@@ -3074,15 +3095,15 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /pagefind@0.12.0:
-    resolution: {integrity: sha512-LHUmlYYweBM6/rK1G+7z2q2WjYeycrB7g5Kuw0w6yMkYztzsEdO2Qj2pJ3z8gsWV8eJsYQyAGOAdqE3SZWlCqA==}
+  /pagefind@1.0.3:
+    resolution: {integrity: sha512-ws7kmMxW6OuxzsOjj3YAx6TYq/54MiE3wfyBM3J5CInbZyBBvM2Z8c8IYvnMkBcb5v2EoB9DewXEekOEiDRu5g==}
     hasBin: true
-    requiresBuild: true
-    dependencies:
-      https-proxy-agent: 5.0.1
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - supports-color
+    optionalDependencies:
+      '@pagefind/darwin-arm64': 1.0.3
+      '@pagefind/darwin-x64': 1.0.3
+      '@pagefind/linux-arm64': 1.0.3
+      '@pagefind/linux-x64': 1.0.3
+      '@pagefind/windows-x64': 1.0.3
     dev: false
 
   /parse-entities@4.0.1:
@@ -3299,10 +3320,6 @@ packages:
 
   /property-information@6.3.0:
     resolution: {integrity: sha512-gVNZ74nqhRMiIUYWGQdosYetaKc83x8oT41a0LlV3AAFCAZwCpg4vmGkq8t34+cUhp3cnM4XDiU/7xlgK7HGrg==}
-    dev: false
-
-  /proxy-from-env@1.1.0:
-    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: false
 
   /pump@3.0.0:
