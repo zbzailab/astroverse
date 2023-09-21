@@ -33,6 +33,10 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 - ✅ Automatic Dark Mode
 - ✅ View Transitions
 
+## Todo
+
+- [x] Pagination
+
 ## 🎡 Live demo
 
 [**VisVrs**](visvrs.vercel.app)
@@ -76,3 +80,4 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run dev`     | Starts local dev server at `localhost:4321`  |
 | `pnpm run build`   | Build your production site to `./dist/`      |
 | `pnpm run preview` | Preview your build locally, before deploying |
+
