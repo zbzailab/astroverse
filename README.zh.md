@@ -35,7 +35,7 @@ VisVrs，源于'Visual'（视觉）和'Verse'（故事），是一个专为具�
 
 ## Todo
 
-- [x] 分页
+- [ ] 分页
 
 欢迎为 VirVrs 的开发做贡献。
 

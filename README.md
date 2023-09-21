@@ -35,7 +35,7 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 
 ## Todo
 
-- [x] Pagination
+- [ ] Pagination
 
 We **really** welcome you to contribute to VisVrs!
 
