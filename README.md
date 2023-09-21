@@ -1,7 +1,7 @@
 
 ## 🚀 VisVrs: An Astro Theme for Visual Storytelling
 
-VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for impactful photo-text blogging, ideal for content creators.
+VisVrs, originating from 'Visual' and 'Verse', is an Astro theme tailored for impactful photo-text blogging, ideal for content creators.
 
 ## 🔤 Readme
 
