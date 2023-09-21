@@ -37,6 +37,8 @@ VisVrs, originating from 'Visual' and 'Verse,' is an Astro theme tailored for im
 
 - [x] Pagination
 
+We **really** welcome you to contribute to VisVrs!
+
 ## 🎡 Live demo
 
 [**VisVrs**](visvrs.vercel.app)
