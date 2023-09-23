@@ -9,7 +9,7 @@ const {
   frontmatter,
   pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', 
   description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.', 
-  cover = '/open-graph.webp' 
+  cover = 'open-graph.webp' 
 } = Astro.props;
 ---
 
@@ -30,8 +30,12 @@ const {
    <meta property="og:url" content={`https://visvrs.vercel.app/${entry?.slug || ''}`}>
    <meta property="og:type" content="article">
    <meta property="og:title" content={entry?.title || pageTitle}>
-   <meta property="og:description" content={entry?.description || description}>    
-   <meta property="og:image" content={`https://visvrs.vercel.app/_astro/${entry?.cover}`} />
+   <meta property="og:description" content={entry?.description || pageTitle}>
+<!-- 只有当 cover 是相对路径时才需要这样做 -->
+<!-- 在 BaseLayout.astro 中 -->
+<meta property="og:image" content={`https://visvrs.vercel.app/${cover.src || 'default-image.webp'}`}>
+
+  
 
     <!-- Sitemap -->
     <link rel='sitemap' href='/sitemap-index.xml' />
@@ -47,3 +51,7 @@ const {
     <Footer />
   </body>
 </html>
+
+<script>
+  console.log(JSON.stringify(cover));
+</script>
