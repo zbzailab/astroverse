@@ -30,7 +30,7 @@ const {
    <meta property="og:type" content="article">
    <meta property="og:title" content={entry?.title || pageTitle}>
    <meta property="og:description" content={entry?.description || description}>    
-   <meta property="og:image" content={entry?.cover || cover} />
+   <meta property="og:image" content={entry?.cover ? `https://visvrs.vercel.app/_astro/image?url=${encodeURIComponent(entry?.cover)}&w=672&q=100` : cover} />
 
     <!-- Sitemap -->
     <link rel='sitemap' href='/sitemap-index.xml' />
