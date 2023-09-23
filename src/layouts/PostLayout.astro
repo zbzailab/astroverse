@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout entry={frontmatter} pageTitle={frontmatter.title} description={frontmatter.description} >
+<BaseLayout pageTitle={frontmatter.title} description={frontmatter.description} cover={frontmatter.cover}>
   <head>
     <link rel='stylesheet' href='https://unpkg.com/@waline/client@v2/dist/waline.css' />
   </head>
