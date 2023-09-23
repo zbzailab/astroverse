@@ -33,7 +33,7 @@ const {
    <meta property="og:description" content={entry?.description || pageTitle}>
 <!-- 只有当 cover 是相对路径时才需要这样做 -->
 <!-- 在 BaseLayout.astro 中 -->
-<meta property="og:image" content={`https://visvrs.vercel.app/${cover.src || 'default-image.webp'}`}>
+<meta property="og:image" content={`https://visvrs.vercel.app${cover.src || 'default-image.webp'}`}>
 
   
 
