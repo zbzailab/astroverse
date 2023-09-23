@@ -4,9 +4,14 @@ import Footer from '../components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 
-
-const { pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.' } = Astro.props; 
+const { 
+  entry, 
+  pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', 
+  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.', 
+  cover = '/open-graph.webp' 
+} = Astro.props;
 ---
+
 <html lang='en'>
   <head>
     <!--Global Metadata -->
@@ -18,6 +23,14 @@ const { pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', descriptio
     <!-- Primary Meta Tags -->
     <title>{pageTitle}</title>
     <meta name='description' content={description} />
+
+   <!-- Open Graph -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta property="og:url" content={`https://visvrs.vercel.app/${entry?.slug || ''}`}>
+   <meta property="og:type" content="article">
+   <meta property="og:title" content={entry?.title || pageTitle}>
+   <meta property="og:description" content={entry?.description || description}>    
+   <meta property="og:image" content={entry?.cover || cover} />
 
     <!-- Sitemap -->
     <link rel='sitemap' href='/sitemap-index.xml' />
