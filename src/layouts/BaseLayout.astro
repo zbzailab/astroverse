@@ -6,7 +6,6 @@ import '../styles/global.css';
 
 const { 
   entry,
-  frontmatter,
   pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', 
   description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.', 
   cover = '/open-graph.webp' 
@@ -33,8 +32,6 @@ const {
    <meta property="og:description" content={entry?.description || pageTitle}>
    <meta property="og:image" content={`https://visvrs.vercel.app${cover.src || cover}`}>
 
-  
-
     <!-- Sitemap -->
     <link rel='sitemap' href='/sitemap-index.xml' />
 
@@ -49,7 +46,3 @@ const {
     <Footer />
   </body>
 </html>
-
-<script>
-  console.log(JSON.stringify(cover));
-</script>
