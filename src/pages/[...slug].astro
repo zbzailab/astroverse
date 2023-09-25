@@ -48,7 +48,7 @@ const pubDateFormatted = dayjs(entry.data.pubDate)
     <small class='block'>Published on {pubDateFormatted}, last updated on {lastModified}</small>
   </div>
   <section>
-    <div class='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+    <div class='grid grid-cols-1 mt-12 md:grid-cols-3 lg:grid-cols-3 gap-4'>
       {relatedPosts.map((relatedPost) => (
           <PostCard 
           post={relatedPost} 
