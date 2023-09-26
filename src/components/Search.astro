@@ -96,12 +96,6 @@ import '@pagefind/default-ui/css/ui.css'
 			openBtn.disabled = false
 			closeBtn.addEventListener('click', closeModal)
 
-			window.addEventListener('keydown', (e) => {
-				if (e.key === '/' && !dialog.open) {
-					openModal()
-					e.preventDefault()
-				}
-			})
 
 			window.addEventListener('DOMContentLoaded', () => {
 				if (import.meta.env.DEV) return
