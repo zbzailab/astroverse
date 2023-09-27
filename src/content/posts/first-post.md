@@ -3,7 +3,7 @@ title: First post
 slug: first-post
 description: Lorem ipsum dolor sit amet
 category:
-  - cat1
+  - One
 tags:
   - Tailwind
   - Astro

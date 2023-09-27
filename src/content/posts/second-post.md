@@ -3,7 +3,7 @@ title: Second post
 slug: second-post
 description: Lorem ipsum dolor sit amet.
 category:
-  - cat2
+  - Two
 tags:
   - Tailwind
   - Astro

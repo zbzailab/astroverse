@@ -3,7 +3,7 @@ title: Tailwind typography
 slug: tailwind-typography
 description: The @tailwindcss/typography plugin is our attempt to give you what you actually want, without any of the downsides of doing something stupid like disabling our base styles.
 category:
-  - cat1
+  - One
 tags:
   - Tailwind
   - Astro
