@@ -43,7 +43,7 @@ VisVrs，源于'Visual'（视觉）和'Verse'（故事），是一个专为具�
 
 [**VisVrs**](visvrs.vercel.app)
 
-## 👬 使用本主题的博客
+## 👬 展示
 
 - [**iSooSi**](https://isoosi.xyz)
 

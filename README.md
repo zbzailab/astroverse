@@ -43,7 +43,7 @@ We **really** welcome you to contribute to VisVrs!
 
 [**VisVrs**](visvrs.vercel.app)
 
-## 👬 Repositories using this theme
+## 👬 Showcase
 
 - [**iSooSi**](https://isoosi.xyz)
 
