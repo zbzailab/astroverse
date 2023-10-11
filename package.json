@@ -14,7 +14,7 @@
 		"@astrojs/mdx": "^1.1.0",
 		"@astrojs/partytown": "^2.0.0",
 		"@astrojs/rss": "^3.0.0",
-		"@astrojs/sitemap": "^3.0.0",
+		"@astrojs/sitemap": "^3.0.1",
 		"@astrojs/tailwind": "^5.0.0",
 		"@pagefind/default-ui": "^1.0.3",
 		"@tailwindcss/typography": "^0.5.10",
