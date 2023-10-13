@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 interface Props {
   post: CollectionEntry<'posts'>;
@@ -15,12 +15,12 @@ const { post, isSpecialCard = false } = Astro.props;
 <a href={`/${post.slug}`} class="postcard-link not-prose">
   <article class={`postcard-article ${isSpecialCard ? 'postcard-article-special' : ''}`}>
     <div class={`postcard-image-container ${isSpecialCard ? 'postcard-image-container-special' : ''}`}>
-      <Image 
+      <Picture
         src={post.data.cover}
         alt={post.data.coverAlt}
         width={672}
         height={378}
-        format='webp'
+        formats={['avif', 'webp']}
         loading={isSpecialCard ? 'eager' : 'lazy'}
       />
     </div>
