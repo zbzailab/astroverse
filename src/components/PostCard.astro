@@ -24,7 +24,7 @@ const { post, isSpecialCard = false } = Astro.props;
         loading={isSpecialCard ? 'eager' : 'lazy'}
       />
     </div>
-    <div class={`postcard-content ${isSpecialCard ? 'postcard-content-special' : ''}`}>
+    <div class={`postcard-content ${isSpecialCard ? 'postcard-content-special bg-neutral-0' : 'bg-gradient-to-t from-neutral-950 to-transparent'}`}>
       <span class="postcard-date">{new Date(post.data.pubDate).toLocaleDateString()}</span>
       <span class="postcard-category">{post.data.category[0]}</span>
       <h2 class="postcard-title">{post.data.title}</h2>
