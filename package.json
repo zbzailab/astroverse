@@ -15,7 +15,7 @@
 		"@astrojs/partytown": "^2.0.1",
 		"@astrojs/rss": "^3.0.0",
 		"@astrojs/sitemap": "^3.0.1",
-		"@astrojs/tailwind": "^5.0.0",
+		"@astrojs/tailwind": "^5.0.2",
 		"@pagefind/default-ui": "^1.0.3",
 		"@tailwindcss/typography": "^0.5.10",
 		"astro": "^3.3.0",
