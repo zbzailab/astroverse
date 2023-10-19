@@ -16,7 +16,7 @@ const { frontmatter } = Astro.props;
         alt={frontmatter.coverAlt}
         width={672}
         height={378}
-        format='webp'
+        formats={['avif', 'webp']}
         loading='eager'
       />
     )}
