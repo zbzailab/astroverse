@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 const { frontmatter } = Astro.props;
 ---
@@ -11,7 +11,7 @@ const { frontmatter } = Astro.props;
   </head>
   <div class='max-w-2xl mx-auto'>
     {frontmatter.cover && (
-      <Image
+      <Picture
         src={frontmatter.cover}
         alt={frontmatter.coverAlt}
         width={672}
