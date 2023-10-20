@@ -1,16 +1,22 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import { Picture } from 'astro:assets';
 
-const { frontmatter } = Astro.props;
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, cover, coverAlt } = post.data;
 ---
 
-<BaseLayout pageTitle={frontmatter.title} description={frontmatter.description} cover={frontmatter.cover}>
+<BaseLayout pageTitle={title} description={description} ogImage={cover}>
   <div class='max-w-2xl mx-auto'>
-    {frontmatter.cover && (
+    {cover && (  
       <Picture
-        src={frontmatter.cover}
-        alt={frontmatter.coverAlt}
+        src={cover}
+        alt={coverAlt}
         width={672}
         height={378}
         formats={['avif', 'webp']}
@@ -18,7 +24,7 @@ const { frontmatter } = Astro.props;
       />
     )}
   </div>
-  <article class='max-w-2xl mx-auto'>
+  <article class='max-w-2xl mx-auto text-justify'>
     <slot />
   </article>
 </BaseLayout>

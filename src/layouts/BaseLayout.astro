@@ -4,11 +4,13 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const { 
-  entry,
+  ogImage = '/open-graph.webp',
   pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', 
-  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.', 
-  cover = '/open-graph.webp' 
+  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.'
 } = Astro.props;
+
+const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.webp', Astro.url).href;
+
 ---
 
 <html lang='en'>
@@ -23,19 +25,18 @@ const {
     <title>{pageTitle}</title>
     <meta name='description' content={description} />
 
-   <!-- Open Graph -->
-   <meta property="og:type" content="article">
-   <meta property="og:url" content={`https://visvrs.vercel.app/${entry?.slug || ''}`}>
-   <meta property="og:title" content={entry?.title || pageTitle}>
-   <meta property="og:description" content={entry?.description || description}>
-   <meta property="og:image" content={`https://visvrs.vercel.app${cover.src || cover}`}>
+    <!-- Open Graph -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property='og:image' content={socialImageURL} />
+    <meta property="og:type" content="article" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content={`https://visvrs.vercel.app/${entry?.slug || ''}`}>
-    <meta property="twitter:title" content={entry?.title || pageTitle}>
-    <meta property="twitter:description" content={entry?.description || description}>
-    <meta property="twitter:image" content={`https://visvrs.vercel.app${cover.src || cover}`}>
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
     
     <!-- Sitemap -->
     <link rel='sitemap' href='/sitemap-index.xml' />
