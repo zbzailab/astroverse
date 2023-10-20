@@ -41,7 +41,7 @@ We **really** welcome you to contribute to VisVrs!
 
 ## 🎡 Live demo
 
-[**VisVrs**](visvrs.vercel.app)
+[**VisVrs**](https://visvrs.vercel.app)
 
 ## 👬 Showcase
 
