@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-09
-cover: src/images/arc.webp
+cover: src/images/visvrs15.webp
 coverAlt: VisVrs-Aliases
 author: VV
 ---

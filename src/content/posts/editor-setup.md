@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-04
-cover: src/images/astro5.webp
+cover: src/images/visvrs5.webp
 coverAlt: VisVrs-Editor Setup
 author: VV
 ---

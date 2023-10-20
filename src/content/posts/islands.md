@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-06
-cover: src/images/teal.webp
+cover: src/images/visvrs8.webp
 coverAlt: VisVrs-Astro Islands
 author: VV
 ---
