@@ -32,7 +32,7 @@ const pubDateFormatted = dayjs(entry.data.pubDate)
   .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
   .slice(0, 3);
 ---
-<PostLayout frontmatter={entry.data} remarkPluginFrontmatter={remarkPluginFrontmatter}>
+<PostLayout post={entry}>  
   <div>
     <Content />
   </div>

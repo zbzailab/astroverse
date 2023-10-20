@@ -8,9 +8,16 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, cover, coverAlt } = post.data;
----
 
+let title = '';
+let description = '';
+let cover = '';
+let coverAlt = '';
+
+if (post && post.data) {
+  ({ title, description, cover, coverAlt } = post.data);
+}
+---
 <BaseLayout pageTitle={title} description={description} ogImage={cover}>
   <div class='max-w-2xl mx-auto'>
     {cover && (  
@@ -24,7 +31,7 @@ const { title, description, cover, coverAlt } = post.data;
       />
     )}
   </div>
-  <article class='max-w-2xl mx-auto'>
+  <article class='max-w-2xl mx-auto text-justify'>
     <slot />
   </article>
 </BaseLayout>

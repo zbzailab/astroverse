@@ -9,6 +9,11 @@ interface Props {
 }
 
 const { post, isSpecialCard = false } = Astro.props;
+
+if (!post || !post.data) {
+  throw new Error("Post or post.data is undefined");
+}
+
 const { cover, coverAlt, pubDate, category, title, description } = post.data;
 ---
 
