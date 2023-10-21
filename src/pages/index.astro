@@ -12,12 +12,11 @@ allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pub
     { start: 0, end: 1, cols: '1', mdCols: '1', lgCols: '1', special: true },
     { start: 1, end: 3, cols: '1', mdCols: '2', lgCols: '2' },
     { start: 3, end: allPosts.length, cols: '1', mdCols: '2', lgCols: '3'}
-  ].map(({ start, end, cols, mdCols, lgCols, imgWidth, imgHeight, }) => (
+  ].map(({ start, end, cols, mdCols, lgCols}) => (
     <div class={`grid grid-cols-${cols} md:grid-cols-${mdCols} lg:grid-cols-${lgCols} gap-4 ${start === 1 ? 'mt-4 mb-4' : ''}`}>
       { allPosts.slice(start, end).map((post, index) => (
           <PostCard 
             post={post}
-            eagerLoad={start === 0 && index === 0}
             isSpecialCard={start === 0 && index === 0}
           />
       ))}
