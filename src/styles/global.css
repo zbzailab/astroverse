@@ -47,7 +47,7 @@
 }
 
 .postcard-title {
-    @apply text-xl font-medium my-2;
+    @apply text-lg font-medium my-2;
 }
 
 .postcard-description {
