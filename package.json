@@ -18,7 +18,7 @@
 		"@astrojs/tailwind": "^5.0.2",
 		"@pagefind/default-ui": "^1.0.3",
 		"@tailwindcss/typography": "^0.5.10",
-		"astro": "^3.3.0",
+		"astro": "^3.4.0",
 		"dayjs": "^1.11.10",
 		"mdast-util-to-string": "^4.0.0",
 		"motion": "^10.16.4",
