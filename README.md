@@ -43,10 +43,6 @@ We **really** welcome you to contribute to VisVrs!
 
 [**VisVrs**](https://visvrs.vercel.app)
 
-## 👬 Showcase
-
-- [**Don-Dev Blog**](https://donalcasey.io/)
-- [**iSooSi**](https://isoosi.xyz)
 
 
 ## 💻 Running Locally
