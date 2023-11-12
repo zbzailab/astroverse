@@ -6,7 +6,6 @@ VisVrs, originating from 'Visual' and 'Verse', is an Astro theme tailored for im
 ## 🔤 Readme
 
 - [**English**](https://github.com/isooosi/VisVrs/blob/main/README.md)
-- [**中文**](https://github.com/isooosi/VisVrs/blob/main/README.zh.md)
 
 ## 💯Lighthouse Score
 
@@ -33,17 +32,14 @@ VisVrs, originating from 'Visual' and 'Verse', is an Astro theme tailored for im
 - ✅ Automatic Dark Mode
 - ✅ View Transitions
 
-## Todo
-
-- [ ] Pagination
-
-We **really** welcome you to contribute to VisVrs!
 
 ## 🎡 Live demo
 
 [**VisVrs**](https://visvrs.vercel.app)
 
+## 🌆 Showcase
 
+[**iNote**](https://inote.xyz)
 
 ## 💻 Running Locally
 
