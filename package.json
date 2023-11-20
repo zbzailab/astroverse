@@ -15,7 +15,7 @@
 		"@astrojs/rss": "^3.0.0",
 		"@astrojs/sitemap": "^3.0.3",
 		"@astrojs/tailwind": "^5.0.2",
-		"@pagefind/default-ui": "^1.0.3",
+		"@pagefind/default-ui": "^1.0.4",
 		"@tailwindcss/typography": "^0.5.10",
 		"astro": "^3.5.3",
 		"dayjs": "^1.11.10",

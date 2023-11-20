@@ -18,8 +18,8 @@ dependencies:
     specifier: ^5.0.2
     version: 5.0.2(astro@3.5.3)(tailwindcss@3.3.5)
   '@pagefind/default-ui':
-    specifier: ^1.0.3
-    version: 1.0.3
+    specifier: ^1.0.4
+    version: 1.0.4
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.5)
@@ -968,8 +968,8 @@ packages:
     dev: false
     optional: true
 
-  /@pagefind/default-ui@1.0.3:
-    resolution: {integrity: sha512-WieFJXvezyvjZh49I8j7a7Kz3LsXYY2Uep3IWvG5NG05mmiurURXjXc+KyrpIp/iAycSnjrC1TDJ8CdES/ee3A==}
+  /@pagefind/default-ui@1.0.4:
+    resolution: {integrity: sha512-edkcaPSKq67C49Vehjo+LQCpT615v4d7JRhfGzFPccePvdklaL+VXrfghN/uIfsdoG+HoLI1PcYy2iFcB9CTkw==}
     dev: false
 
   /@pagefind/linux-arm64@1.0.3:
