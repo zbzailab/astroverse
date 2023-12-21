@@ -10,7 +10,7 @@ const allPosts = await getCollection('posts');
 allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
 // Set the number of posts per page
-const postsPerPage = 12;
+const postsPerPage = 15;
 // Retrieve posts for the first page
 const firstPagePosts = allPosts.slice(0, postsPerPage);
 // Calculate the total number of pages

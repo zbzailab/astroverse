@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }) {
   allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
   // Use the paginate method to handle pagination
-  return paginate(allPosts, { pageSize: 12 });
+  return paginate(allPosts, { pageSize: 15 });
 }
 
 // Retrieve the page data from Astro.props
