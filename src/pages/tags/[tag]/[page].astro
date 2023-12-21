@@ -1,0 +1,47 @@
+---
+// Importing necessary modules and components from Astro and the project
+import { getCollection, paginate } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+
+// Function to generate static paths for pagination for each tag
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('posts');
+  // Extract unique tags from all posts
+  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+
+  // Create paginated paths for each tag
+  return uniqueTags.flatMap((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    // Sort posts by publication date
+    filteredPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+
+    // Handle pagination using the paginate method
+    return paginate(filteredPosts, { pageSize: 12, params: { tag } });
+  });
+}
+
+// Retrieving tag and page data from Astro.props
+const { tag, page } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  {/* Grid layout for displaying posts */}
+  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+    {/* Map through the posts data for the current page */}
+    {page.data.map((post) => (
+      <PostCard post={post} />
+    ))}
+  </div>
+
+  {/* Pagination component for navigation between pages */}
+  <Pagination
+    currentPage={page.currentPage}
+    lastPage={page.lastPage}
+    urlPrev={page.url.prev}
+    urlNext={page.url.next}
+  />
+</BaseLayout>

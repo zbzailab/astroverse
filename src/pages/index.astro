@@ -1,25 +1,49 @@
 ---
+// Import necessary modules and components
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
+import Pagination from '../components/Pagination.astro';
 
-let allPosts = await getCollection('posts');
+// Fetch all posts from astro:content and sort them in descending order by publication date
+const allPosts = await getCollection('posts');
 allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+
+// Set the number of posts per page
+const postsPerPage = 12;
+// Retrieve posts for the first page
+const firstPagePosts = allPosts.slice(0, postsPerPage);
+// Calculate the total number of pages
+const totalPages = Math.ceil(allPosts.length / postsPerPage);
 ---
 
 <BaseLayout>
-  {[
-    { start: 0, end: 1, cols: '1', mdCols: '1', lgCols: '1', special: true },
-    { start: 1, end: 3, cols: '1', mdCols: '2', lgCols: '2' },
-    { start: 3, end: allPosts.length, cols: '1', mdCols: '2', lgCols: '3'}
-  ].map(({ start, end, cols, mdCols, lgCols}) => (
-    <div class={`grid grid-cols-${cols} md:grid-cols-${mdCols} lg:grid-cols-${lgCols} gap-4 ${start === 1 ? 'mt-4 mb-4' : ''}`}>
-      { allPosts.slice(start, end).map((post, index) => (
-          <PostCard 
-            post={post}
-            isSpecialCard={start === 0 && index === 0}
-          />
-      ))}
-    </div>
-  ))}
+  {/* Special layout for the first article */}
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+    {firstPagePosts.length > 0 && (
+      <PostCard post={firstPagePosts[0]} isSpecialCard={true} />
+    )}
+  </div>
+
+  {/* Second layout type for next two articles */}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 mb-4">
+    {firstPagePosts.slice(1, 3).map((post) => (
+      <PostCard post={post} />
+    ))}
+  </div>
+
+  {/* Standard layout for the remaining articles */}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {firstPagePosts.slice(3).map((post) => (
+      <PostCard post={post} />
+    ))}
+  </div>
+
+  {/* Pagination component */}
+  <Pagination
+    currentPage={1}
+    lastPage={totalPages}
+    urlPrev={null}
+    urlNext={`/page/2`}
+  />
 </BaseLayout>

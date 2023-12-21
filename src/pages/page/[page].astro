@@ -1,0 +1,37 @@
+---
+// Import necessary modules and components from Astro and the project
+import { getCollection, paginate } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+
+// Define the getStaticPaths function to support pagination
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('posts');
+  // Sort all posts in descending order by publication date
+  allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+
+  // Use the paginate method to handle pagination
+  return paginate(allPosts, { pageSize: 12 });
+}
+
+// Retrieve the page data from Astro.props
+const { page } = Astro.props;
+---
+
+<BaseLayout>
+  {/* Render the current page's list of posts using the standard layout */}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {page.data.map(post => (
+      <PostCard post={post} />
+    ))}
+  </div>
+
+  {/* Render pagination navigation using the Pagination component */}
+  <Pagination
+    currentPage={page.currentPage}
+    lastPage={page.lastPage}
+    urlPrev={page.url.prev}
+    urlNext={page.url.next}
+  />
+</BaseLayout>

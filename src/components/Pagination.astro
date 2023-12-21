@@ -1,0 +1,51 @@
+---
+// Define the types of properties received
+// currentPage: the current page number
+// lastPage: the total number of pages
+// urlPrev: the URL of the previous page, null if not applicable
+// urlNext: the URL of the next page, null if not applicable
+export interface Props {
+  currentPage: number;
+  lastPage: number;
+  urlPrev: string | null;
+  urlNext: string | null;
+}
+
+// Extract properties from Astro.props
+const { currentPage, lastPage, urlPrev, urlNext } = Astro.props;
+// Set the maximum number of pages to display
+const maxDisplayedPages = 5;
+// Calculate the start and end page numbers for display in the navigation
+const startPage = Math.max(1, currentPage - Math.floor(maxDisplayedPages / 2));
+const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1);
+---
+
+{/* Pagination navigation area */}
+<nav aria-label="Page navigation" class="pagination-container flex justify-center space-x-2 my-8">
+  {/* Link to the previous page */}
+  {urlPrev && (
+    <a
+      href={urlPrev}
+      class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
+      &larr; {/* Left arrow icon */}
+    </a>
+  )}
+
+  {/* Loop to display page numbers */}
+  {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(pageNumber => (
+    <a
+      href={`/page/${pageNumber}`}
+      class={`no-underline px-3 py-1 text-sm font-medium rounded-md ${pageNumber === currentPage ? 'bg-neutral-500 text-white' : 'text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500'}`}>
+      {pageNumber}
+    </a>
+  ))}
+
+  {/* Link to the next page */}
+  {urlNext && (
+    <a
+      href={urlNext}
+      class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
+      &rarr; {/* Right arrow icon */}
+    </a>
+  )}
+</nav>
