@@ -20,7 +20,7 @@ export async function getStaticPaths({ paginate }) {
     filteredPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
     // Handle pagination using the paginate method
-    return paginate(filteredPosts, { pageSize: 15, params: { tag } });
+    return paginate(filteredPosts, { pageSize: 12, params: { tag } });
   });
 }
 
