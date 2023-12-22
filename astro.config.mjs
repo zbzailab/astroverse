@@ -12,7 +12,9 @@ export default defineConfig({
   site: 'https://visvrs.vercel.app',
   
   // Site Information
-  prefetch: true,
+  prefetch: {
+    prefetchAll: true
+  },
 
   // Markdown Configuration
   markdown: {
