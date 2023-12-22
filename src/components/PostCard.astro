@@ -25,6 +25,7 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
         width={672}
         height={378}
         formats={['avif', 'webp']}
+        fallbackFormat=webp
         loading={isSpecialCard ? 'eager' : 'lazy'}
       />
     </div>
