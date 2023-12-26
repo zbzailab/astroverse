@@ -35,7 +35,7 @@ Experience [**VisVrs**](https://visvrs.vercel.app) in action.
 
 Share your project built with VisVrs! Open an issue titled "Showcase Submission" with your project's details to be featured in our Showcase.
 
-- [**iNote**](https://inote.xyz)
+- [**一不二**](https://yibuer.com)
 
 ## 💻 Running Locally
 
