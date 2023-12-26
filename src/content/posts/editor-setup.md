@@ -3,7 +3,7 @@ title: Editor Setup
 slug: editor-setup
 description: Set up your editor to build with Astro.
 category:
-  - Three
+  - One
 tags:
   - Tailwind
   - Astro

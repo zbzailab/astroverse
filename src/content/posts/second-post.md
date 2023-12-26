@@ -3,7 +3,7 @@ title: Second post
 slug: second-post
 description: Lorem ipsum dolor sit amet.
 category:
-  - Two
+  - One
 tags:
   - Tailwind
   - Astro

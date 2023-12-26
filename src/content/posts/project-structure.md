@@ -3,7 +3,7 @@ title: Project Structure
 slug: project-structure
 description: Learn how to structure a project with Astro.
 category:
-  - Two
+  - One
 tags:
   - Tailwind
   - Astro

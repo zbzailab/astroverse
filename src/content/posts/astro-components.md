@@ -3,7 +3,7 @@ title: Aliases
 slug: components
 description: the basic building blocks of any Astro project
 category:
-  - Two
+  - One
 tags:
   - Tailwind
   - Astro

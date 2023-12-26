@@ -3,7 +3,7 @@ title: Routing
 slug: routing
 description: An intro to routing with Astro.
 category:
-  - Two
+  - One
 tags:
   - Tailwind
   - Astro

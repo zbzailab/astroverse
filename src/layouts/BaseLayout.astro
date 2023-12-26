@@ -3,21 +3,23 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+// Define default properties with optional overrides from Astro.props
 const { 
-  ogImage = '/open-graph.webp',
-  pageTitle = 'VisVrs', 
-  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.'
+  ogImage = '/open-graph.webp',  // Default open graph image
+  pageTitle = 'VisVrs',        // Default page title
+  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.'  // Default description
 } = Astro.props;
 
+// Generate a full URL for the social sharing image
 const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.webp', Astro.url).href;
-
 ---
 
-<html lang='en'>
+<!-- HTML structure begins -->
+<html lang='zh-cn'>
   <head>
-    <!--Global Metadata -->
+    <!-- Global Metadata -->
     <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
 
@@ -25,26 +27,50 @@ const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.webp', Astro.url
     <title>{pageTitle}</title>
     <meta name='description' content={description} />
 
-    <!-- Open Graph -->
+    <!-- Sitemap -->
+    <link rel='sitemap' href='/sitemap-index.xml' />
+
+    <!-- Open Graph metadata for improved social media sharing -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={Astro.url} />
     <meta property='og:image' content={socialImageURL} />
     <meta property="og:type" content="article" />
+    <meta property="og:locale" content="zh_CN" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card metadata for Twitter sharing -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content={pageTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
-    
-    <!-- Sitemap -->
-    <link rel='sitemap' href='/sitemap-index.xml' />
+
+    <!-- Google Analytics setup with Partytown for performance optimization -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6FDHK2S3N6"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6FDHK2S3N6');
+    </script>
+
+    <!-- Clarity analytics script for user behavior insights -->
+    <script type="text/partytown">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "kb8ik7u7ze");
+    </script>
+
+    <!-- Cloudflare Web Analytics for site performance tracking -->
+    <script type="text/partytown" async src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "63388003327145ad9cdbdd1359319f9e"}'></script>
 
   </head>
-  <body class='mx-auto prose prose-neutral px-4 prose-img:rounded dark:prose-invert dark:bg-neutral-900 lg:max-w-screen-lg'>
+<body class='mx-auto prose prose-neutral px-4 prose-img:rounded dark:prose-invert dark:bg-neutral-900 lg:max-w-screen-lg'>
   <Header />
-    <slot />
-    <Footer />
-  </body>
+    <h1 class='text-center'>{pageTitle}</h1>
+  <slot />
+  <Footer />
+</body>
 </html>

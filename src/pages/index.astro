@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import Pagination from '../components/Pagination.astro';
 
-// Fetch all posts from astro:content and sort them in descending order by publication date
+// Fetch all posts from astro:content and sort them by publication date in descending order
 const allPosts = await getCollection('posts');
 allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
@@ -18,28 +18,28 @@ const totalPages = Math.ceil(allPosts.length / postsPerPage);
 ---
 
 <BaseLayout>
-  {/* Special layout for the first article */}
+  {/* Layout for special feature posts */}
   <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
     {firstPagePosts.length > 0 && (
       <PostCard post={firstPagePosts[0]} isSpecialCard={true} />
     )}
   </div>
 
-  {/* Second layout type for next two articles */}
+  {/* Layout for secondary feature posts */}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 mb-4">
     {firstPagePosts.slice(1, 3).map((post) => (
       <PostCard post={post} />
     ))}
   </div>
 
-  {/* Standard layout for the remaining articles */}
+  {/* Layout for regular posts */}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {firstPagePosts.slice(3).map((post) => (
       <PostCard post={post} />
     ))}
   </div>
 
-  {/* Pagination component */}
+  {/* Pagination navigation component */}
   <Pagination
     currentPage={1}
     lastPage={totalPages}
@@ -47,3 +47,4 @@ const totalPages = Math.ceil(allPosts.length / postsPerPage);
     urlNext={`/page/2`}
   />
 </BaseLayout>
+
