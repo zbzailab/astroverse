@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@astrojs/mdx':
-    specifier: ^2.0.0
-    version: 2.0.0(astro@4.0.7)
+    specifier: ^2.0.2
+    version: 2.0.2(astro@4.0.7)
   '@astrojs/rss':
     specifier: ^4.0.1
     version: 4.0.1
@@ -68,30 +68,6 @@ packages:
     resolution: {integrity: sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==}
     dev: false
 
-  /@astrojs/markdown-remark@4.0.0(astro@4.0.7):
-    resolution: {integrity: sha512-JSrn49fJGuH/0S2TTGxLK7bNDspOakJWZVFHeP+IDFjWdghT4HtsTShS2EiISNx3zfOFBAwy5Cj4xT4U5BWNeA==}
-    peerDependencies:
-      astro: ^4.0.0-beta.0
-    dependencies:
-      '@astrojs/prism': 3.0.0
-      astro: 4.0.7
-      github-slugger: 2.0.0
-      import-meta-resolve: 4.0.0
-      mdast-util-definitions: 6.0.0
-      rehype-raw: 7.0.0
-      rehype-stringify: 10.0.0
-      remark-gfm: 4.0.0
-      remark-parse: 11.0.0
-      remark-rehype: 11.0.0
-      remark-smartypants: 2.0.0
-      shikiji: 0.6.13
-      unified: 11.0.4
-      unist-util-visit: 5.0.0
-      vfile: 6.0.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@astrojs/markdown-remark@4.0.1:
     resolution: {integrity: sha512-RU4ESnqvyLpj8WZs0n5elS6idaDdtIIm7mIpMaRNPCebpxMjfcfdwcmBwz83ktAj5d2eO5bC3z92TcGdli+lRw==}
     dependencies:
@@ -113,13 +89,13 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@2.0.0(astro@4.0.7):
-    resolution: {integrity: sha512-VT5HnnOETk2gmdlheSlSBtYIsS0PQF/bEgZDjhc0VngdZstR90kt1NVns/Jj8q7G5lMZp8/9ZOHwwBbAhVk2zA==}
+  /@astrojs/mdx@2.0.2(astro@4.0.7):
+    resolution: {integrity: sha512-pTkUb0+aiVU8MZU6XQKA/FyXdNOKxHwq+3uCIuzWyqjZyRB9hN3G3iokmkXFJhwgxl6gilkYeAKmmciVwnpq6w==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
-      astro: ^4.0.0-beta.0
+      astro: ^4.0.0
     dependencies:
-      '@astrojs/markdown-remark': 4.0.0(astro@4.0.7)
+      '@astrojs/markdown-remark': 4.0.1
       '@mdx-js/mdx': 3.0.0
       acorn: 8.11.2
       astro: 4.0.7
