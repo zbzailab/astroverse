@@ -9,6 +9,8 @@ import Search from '@/components/Search'
       <a href='/category/Two/1' class='px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600'>Two</a>
       <a href='/category/Three/1' class='px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600'>Three</a>
     </div>
-    <Search />
+    <div transition:persist='search'>
+      <Search />
+    </div>
   </div>
 </header>

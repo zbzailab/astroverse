@@ -95,6 +95,7 @@ import '@pagefind/default-ui/css/ui.css'
 			openBtn.addEventListener('click', openModal)
 			openBtn.disabled = false
 			closeBtn.addEventListener('click', closeModal)
+			document.addEventListener('astro:after-swap', closeModal)
 
 
 			window.addEventListener('DOMContentLoaded', () => {
