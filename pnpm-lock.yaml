@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@astrojs/mdx':
-    specifier: ^2.0.2
-    version: 2.0.2(astro@4.0.8)
+    specifier: ^2.0.3
+    version: 2.0.3(astro@4.0.8)
   '@astrojs/rss':
     specifier: ^4.0.1
     version: 4.0.1
@@ -89,8 +89,8 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@2.0.2(astro@4.0.8):
-    resolution: {integrity: sha512-pTkUb0+aiVU8MZU6XQKA/FyXdNOKxHwq+3uCIuzWyqjZyRB9hN3G3iokmkXFJhwgxl6gilkYeAKmmciVwnpq6w==}
+  /@astrojs/mdx@2.0.3(astro@4.0.8):
+    resolution: {integrity: sha512-wFjQX5CihU5B4UAQNwc2R48ph0flpc6/yvDCFANE0agtgI2+BaVcAjuW0EhGOQCZ65dQDqnFKE0lvGs7EADYpg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       astro: ^4.0.0
