@@ -10,8 +10,9 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   // Site Information
   site: 'https://visvrs.vercel.app',
+
+  trailingSlash: 'never',
   
-  // Site Information
   prefetch: {
     prefetchAll: true
   },
