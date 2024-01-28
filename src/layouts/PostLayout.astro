@@ -24,10 +24,12 @@ if (post && post.data) {
       <Picture
         src={cover}
         alt={coverAlt}
-        width={672}
-        height={378}
-        formats={['avif', 'webp']}
-        fallbackFormat='webp'
+        width={1960}
+        height={1102}
+        widths={[320, 480, 640, 1280, 1960]}
+        sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 640px) 640px, (max-width: 1280px) 1280px, 1960px"
+        formats={['avif']}
+        fallbackFormat='avif'
         loading='eager'
       />
     )}
