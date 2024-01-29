@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^2.0.3",
-		"@astrojs/rss": "^4.0.1",
+		"@astrojs/rss": "^4.0.4",
 		"@astrojs/sitemap": "^3.0.4",
 		"@astrojs/tailwind": "^5.1.0",
 		"@pagefind/default-ui": "^1.0.4",
