@@ -50,8 +50,9 @@ const pubDateFormatted = dayjs(entry.data.pubDate)
   <section>
     <div class='grid grid-cols-1 mt-12 md:grid-cols-3 lg:grid-cols-3 gap-4'>
       {relatedPosts.map((relatedPost) => (
-          <PostCard 
-          post={relatedPost} 
+          <PostCard
+            post={relatedPost}
+            imageWidth={320}
           />
       ))}
     </div>

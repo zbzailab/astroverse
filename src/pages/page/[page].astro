@@ -8,9 +8,7 @@ export async function getStaticPaths() {
   const allPosts = await getCollection('posts');
   allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
-  // Manually set the first page
   const firstPagePosts = allPosts.slice(0, 15);
-  // Posts for the remaining pages
   const remainingPosts = allPosts.slice(15);
   const totalPages = Math.ceil(remainingPosts.length / 12);
 
@@ -35,34 +33,45 @@ const { page } = Astro.props;
 
 <BaseLayout>
   {page.currentPage === 1 ? (
-    // Special layout for the first page, displaying 15 posts
     <>
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
         {page.data.length > 0 && (
-          <PostCard post={page.data[0]} isSpecialCard={true} />
+          <PostCard 
+            post={page.data[0]} 
+            isSpecialCard={true} 
+            imageWidth={672} 
+          />
         )}
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 mb-4">
         {page.data.slice(1, 3).map((post) => (
-          <PostCard post={post} />
+          <PostCard 
+            post={post} 
+            imageWidth={488} 
+          />
         ))}
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {page.data.slice(3).map((post) => (
-          <PostCard post={post} />
+          <PostCard 
+            post={post} 
+            imageWidth={488} 
+            />
         ))}
       </div>
     </>
   ) : (
-    // Regular layout for pages other than the first, displaying 12 posts
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {page.data.map(post => (
-        <PostCard post={post} />
+        <PostCard 
+          post={post}
+          imageWidth={320} 
+        />
       ))}
     </div>
   )}
 
-  {/* Pagination navigation */}
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}

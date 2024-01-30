@@ -1,45 +1,46 @@
 ---
-// Import necessary modules and components
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import Pagination from '../components/Pagination.astro';
 
-// Fetch all posts from astro:content and sort them by publication date in descending order
 const allPosts = await getCollection('posts');
 allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
-// Set the number of posts per page
 const postsPerPage = 15;
-// Retrieve posts for the first page
 const firstPagePosts = allPosts.slice(0, postsPerPage);
-// Calculate the total number of pages
 const totalPages = Math.ceil(allPosts.length / postsPerPage);
 ---
 
 <BaseLayout>
-  {/* Layout for special feature posts */}
   <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
     {firstPagePosts.length > 0 && (
-      <PostCard post={firstPagePosts[0]} isSpecialCard={true} />
+      <PostCard 
+        post={firstPagePosts[0]} 
+        isSpecialCard={true} 
+        imageWidth={672} 
+      />
     )}
   </div>
 
-  {/* Layout for secondary feature posts */}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 mb-4">
     {firstPagePosts.slice(1, 3).map((post) => (
-      <PostCard post={post} />
+      <PostCard 
+        post={post} 
+        imageWidth={488} 
+      />
     ))}
   </div>
 
-  {/* Layout for regular posts */}
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {firstPagePosts.slice(3).map((post) => (
-      <PostCard post={post} />
+      <PostCard 
+        post={post} 
+        imageWidth={320} 
+      />
     ))}
   </div>
 
-  {/* Pagination navigation component */}
   <Pagination
     currentPage={1}
     lastPage={totalPages}

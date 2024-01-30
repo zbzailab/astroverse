@@ -5,9 +5,10 @@ import { Picture } from 'astro:assets';
 interface Props {
   post: CollectionEntry<'posts'>;
   isSpecialCard?: boolean;
+  imageWidth?: number;
 }
 
-const { post, isSpecialCard = false } = Astro.props;
+const { post, isSpecialCard = false, imageWidth = 672 } = Astro.props;
 
 if (!post || !post.data) {
   throw new Error("Post or post.data is undefined");
@@ -22,10 +23,10 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
       <Picture
         src={cover}
         alt={coverAlt}
-        width={672}
+        width={imageWidth}
         height={378}
-        widths={[320, 576, 672]}
-        sizes="(max-width: 320px) 320px, (max-width: 576px) 576px, 672px"
+        widths={[320, 488, 672]}
+        sizes="(max-width: 320px) 320px, (max-width: 576px) 488px, 672px"
         formats={['avif']}
         fallbackFormat='avif'
         loading={isSpecialCard ? 'eager' : 'lazy'}
@@ -34,7 +35,7 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
     <div class={`postcard-content ${isSpecialCard ? 'postcard-content-special bg-neutral-0' : 'bg-gradient-to-t from-neutral-950 to-transparent'}`}>
       <span class="postcard-date">{new Date(pubDate).toLocaleDateString()}</span>
       <span class="postcard-category">{category[0]}</span>
-      <h2 class="postcard-title">{title}</h2>
+      <h1 class="postcard-title">{title}</h1>
       {isSpecialCard ? <p class="postcard-description-special">{description}</p> : ''}
     </div>
   </article>
