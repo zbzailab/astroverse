@@ -5,10 +5,9 @@ import { Picture } from 'astro:assets';
 interface Props {
   post: CollectionEntry<'posts'>;
   isSpecialCard?: boolean;
-  imageWidth?: number;
 }
 
-const { post, isSpecialCard = false, imageWidth = 672 } = Astro.props;
+const { post, isSpecialCard = false } = Astro.props;
 
 if (!post || !post.data) {
   throw new Error("Post or post.data is undefined");
@@ -23,10 +22,10 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
       <Picture
         src={cover}
         alt={coverAlt}
-        width={imageWidth}
+        width={672}
         height={378}
-        widths={[320, 488, 672]}
-        sizes="(max-width: 320px) 320px, (max-width: 576px) 488px, 672px"
+        widths={[488, 672]}
+        sizes="(max-width: 488px) 488px, 672px"
         formats={['avif']}
         fallbackFormat='avif'
         loading={isSpecialCard ? 'eager' : 'lazy'}
@@ -40,3 +39,5 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
     </div>
   </article>
 </a>
+
+

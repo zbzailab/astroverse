@@ -18,7 +18,6 @@ const totalPages = Math.ceil(allPosts.length / postsPerPage);
       <PostCard 
         post={firstPagePosts[0]} 
         isSpecialCard={true} 
-        imageWidth={672} 
       />
     )}
   </div>
@@ -27,7 +26,6 @@ const totalPages = Math.ceil(allPosts.length / postsPerPage);
     {firstPagePosts.slice(1, 3).map((post) => (
       <PostCard 
         post={post} 
-        imageWidth={488} 
       />
     ))}
   </div>
@@ -36,7 +34,6 @@ const totalPages = Math.ceil(allPosts.length / postsPerPage);
     {firstPagePosts.slice(3).map((post) => (
       <PostCard 
         post={post} 
-        imageWidth={320} 
       />
     ))}
   </div>
