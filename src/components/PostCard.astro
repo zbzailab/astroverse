@@ -22,8 +22,7 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
       <Picture
         src={cover}
         alt={coverAlt}
-        width={672}
-        height={378}
+        inferSize
         widths={[488, 672]}
         sizes="(max-width: 488px) 488px, 672px"
         formats={['avif']}
