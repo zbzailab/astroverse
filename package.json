@@ -11,18 +11,18 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^2.1.1",
+		"@astrojs/mdx": "^2.2.4",
 		"@astrojs/rss": "^4.0.5",
-		"@astrojs/sitemap": "^3.1.1",
+		"@astrojs/sitemap": "^3.1.2",
 		"@astrojs/tailwind": "^5.1.0",
-		"@pagefind/default-ui": "^1.0.4",
-		"@tailwindcss/typography": "^0.5.10",
-		"astro": "^4.4.8",
+		"@pagefind/default-ui": "^1.1.0",
+		"@tailwindcss/typography": "^0.5.12",
+		"astro": "^4.5.16",
 		"dayjs": "^1.11.10",
 		"mdast-util-to-string": "^4.0.0",
 		"motion": "^10.17.0",
-		"pagefind": "^1.0.4",
-		"sharp": "^0.33.2",
-		"tailwindcss": "^3.4.1"
+		"pagefind": "^1.1.0",
+		"sharp": "^0.33.3",
+		"tailwindcss": "^3.4.3"
 	}
 }
