@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 // Astro Configuration
 export default defineConfig({
   // Site Information
-  site: 'https://visvrs.vercel.app',
+  site: 'https://inote.box',
 
   trailingSlash: 'never',
   
