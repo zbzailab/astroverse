@@ -19,7 +19,6 @@
 		"@tailwindcss/typography": "^0.5.12",
 		"astro": "^4.5.16",
 		"dayjs": "^1.11.10",
-		"mdast-util-to-string": "^4.0.0",
 		"motion": "^10.17.0",
 		"pagefind": "^1.1.0",
 		"sharp": "^0.33.3",

@@ -29,9 +29,6 @@ dependencies:
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
-  mdast-util-to-string:
-    specifier: ^4.0.0
-    version: 4.0.0
   motion:
     specifier: ^10.17.0
     version: 10.17.0
