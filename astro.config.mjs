@@ -10,9 +10,6 @@ import pagefind from 'astro-pagefind';
 
 // Astro Configuration
 export default defineConfig({
-  build: {
-    format: "file",
-  },
   
   // Site Information
   site: 'https://inote.box',

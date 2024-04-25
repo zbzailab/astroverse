@@ -6,7 +6,6 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
-		"postbuild": "pagefind --site dist",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
