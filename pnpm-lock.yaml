@@ -41,6 +41,9 @@ importers:
       dayjs:
         specifier: ^1.11.10
         version: 1.11.10
+      pagefind:
+        specifier: ^1.1.0
+        version: 1.1.0
       sharp:
         specifier: ^0.33.3
         version: 0.33.3
