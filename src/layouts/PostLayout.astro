@@ -21,16 +21,16 @@ if (post && post.data) {
 <BaseLayout pageTitle={title} description={description} ogImage={cover}>
   <div class='max-w-2xl mx-auto'>
     {cover && (  
-      <Picture
+    <Picture
         src={cover}
         alt={coverAlt}
-        inferSize
-        widths={[488, 672]}
-        sizes="(max-width: 488px) 488px, 672px"
+        width="980"
+        height="551"
         formats={['avif']}
         fallbackFormat='avif'
-        loading='eager'
-      />
+        loading="eager"
+        class="w-full h-auto"
+    />
     )}
   </div>
   <article class='max-w-2xl mx-auto'>

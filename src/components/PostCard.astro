@@ -22,13 +22,13 @@ const { cover, coverAlt, pubDate, category, title, description } = post.data;
       <Picture
         src={cover}
         alt={coverAlt}
-        inferSize
-        widths={[488, 672]}
-        sizes="(max-width: 488px) 488px, 672px"
+        width="980"
+        height="551"
         formats={['avif']}
         fallbackFormat='avif'
-        loading={isSpecialCard ? 'eager' : 'lazy'}
-      />
+        loading="lazy"
+        class="w-full h-auto"
+    />
     </div>
     <div class={`postcard-content ${isSpecialCard ? 'postcard-content-special bg-neutral-0' : 'bg-gradient-to-t from-neutral-950 to-transparent'}`}>
       <span class="postcard-date">{new Date(pubDate).toLocaleDateString()}</span>
