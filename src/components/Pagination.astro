@@ -1,11 +1,10 @@
 ---
-// Interface definition for Props
 export interface Props {
-  currentPage: number;      // Current page number
-  lastPage: number;         // Last page number in the pagination
-  urlPrev: string | null;   // URL for the previous page, null if not applicable
-  urlNext: string | null;   // URL for the next page, null if not applicable
-  basePath: string;         // Base path used to construct pagination links
+  currentPage: number;
+  lastPage: number;
+  urlPrev: string | null;
+  urlNext: string | null;
+  basePath: string;
 }
 
 const { currentPage, lastPage, urlPrev, urlNext, basePath } = Astro.props;
@@ -13,30 +12,28 @@ const maxDisplayedPages = 5;
 const startPage = Math.max(1, currentPage - Math.floor(maxDisplayedPages / 2));
 const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1);
 
-// Ensure basePath is not undefined. Use a default path if undefined
-const computedBasePath = basePath || '/page';
+// Ensure basePath ends with a slash
+const computedBasePath = basePath ? `${basePath.replace(/\/?$/, '/')}` : '/page/';
 ---
+
 <nav aria-label="Page navigation" class="pagination-container flex justify-center space-x-2 my-8">
-  {/* Render the previous page link if available */}
   {urlPrev && (
-    <a href={urlPrev} class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
+    <a href={`${urlPrev.replace(/\/?$/, '/')}`} class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
       &larr;
     </a>
   )}
 
-  {/* Render pagination links */}
   {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(pageNumber => (
     <a
-      href={`${computedBasePath}/${pageNumber}`}
+      href={`${computedBasePath}${pageNumber}/`}  // Ensure each page link ends with a slash
       class={`no-underline px-3 py-1 text-sm font-medium rounded-md ${pageNumber === currentPage ? 'bg-neutral-500 text-white' : 'text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500'}`}>
       {pageNumber}
     </a>
   ))}
 
-  {/* Render the next page link if available */}
   {urlNext && (
     <a
-      href={urlNext}
+      href={`${urlNext.replace(/\/?$/, '/')}`}  // Ensure the next URL ends with a slash
       class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
       &rarr;
     </a>

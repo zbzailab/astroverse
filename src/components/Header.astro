@@ -1,16 +1,30 @@
 ---
-import Search from '@/components/Search'
+import { Icon } from 'astro-icon/components';
 ---
 <header class='p-4 prose-a:no-underline'>
   <div class='flex justify-between items-center p-2'>
-    <div class='flex'>
-      <a href='/' class='px-4  rounded py-2 hover:bg-neutral-200 dark:hover:bg-neutral-600'>Home</a>
-      <a href='/category/One/1' class='px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600'>One</a>
-      <a href='/category/Two/1' class='px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600'>Two</a>
-      <a href='/category/Three/1' class='px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600'>Three</a>
+    <div class='flex items-center'>
+      <a href='/' class='px-0 py-0 mr-4'>
+        <img src='/logo.svg' alt='首页' width='220' height='60' class="w-16 sm:w-10 sm:h-6 md:w-14 md:h-6 lg:w-22 lg:h-6" />
+      </a>
+      <a href='/category/One/1/' class='category-link'>One</a>
+      <a href='/category/Two/1/' class='category-link'>Two</a>
+      <a href='/category/Three/1/' class='category-link'>Two</a>
     </div>
-    <div transition:persist='search'>
-      <Search />
+
+    <div>
+      <a href='/search/' class='icon-link'>
+        <span class='sr-only'>Search</span>
+        <Icon name="tabler:search" class="icon-base"/>
+      </a>
     </div>
+    
   </div>
 </header>
+
+<style>
+  .category-link {
+    @apply px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600;
+  }
+</style>
+  

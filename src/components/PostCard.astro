@@ -16,7 +16,7 @@ if (!post || !post.data) {
 const { cover, coverAlt, pubDate, category, title, description } = post.data;
 ---
 
-<a href={`/${post.slug}`} class="postcard-link not-prose">
+<a href={`/${post.slug}/`} class="postcard-link not-prose">
   <article class={`postcard-article ${isSpecialCard ? 'postcard-article-special' : ''}`}>
     <div class={`postcard-image-container ${isSpecialCard ? 'postcard-image-container-special' : ''}`}>
       <Picture

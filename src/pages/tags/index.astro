@@ -17,7 +17,7 @@ const tags = Object.keys(tagCounts);
   <div class='prose prose-lg mx-auto p-6 prose-a:no-underline'>
     <div class='grid grid-cols-2 lg:grid-cols-4 gap-4'>
       {tags.map((tag) => (
-        <a href={`/tags/${tag}/1`} class='bg-neutral-200 rounded-full text-center px-3 py-2 text-sm font-semibold hover:bg-neutral-300'>
+        <a href={`/tags/${tag}/1/`} class='bg-neutral-200 rounded-full text-center px-3 py-2 text-sm font-semibold hover:bg-neutral-300'>
           {tag} <span>({tagCounts[tag]})</span>
         </a>
       ))}
