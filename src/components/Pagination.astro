@@ -21,7 +21,7 @@ const computedBasePath = basePath ? ensureTrailingSlash(basePath) : '/page/';
 <nav aria-label="Page navigation" class="pagination-container flex justify-center space-x-2 my-8">
   {urlPrev && (
     <a href={ensureTrailingSlash(urlPrev)} class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
-      &larr; Previous
+      &larr;
     </a>
   )}
 
@@ -37,7 +37,7 @@ const computedBasePath = basePath ? ensureTrailingSlash(basePath) : '/page/';
     <a
       href={ensureTrailingSlash(urlNext)}
       class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
-      Next &rarr;
+      &rarr;
     </a>
   )}
 </nav>
