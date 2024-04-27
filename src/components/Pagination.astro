@@ -7,25 +7,27 @@ export interface Props {
   basePath: string;
 }
 
+function ensureTrailingSlash(path: string) {
+  return path.replace(/\/?$/, '/');
+}
+
 const { currentPage, lastPage, urlPrev, urlNext, basePath } = Astro.props;
 const maxDisplayedPages = 5;
 const startPage = Math.max(1, currentPage - Math.floor(maxDisplayedPages / 2));
 const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1);
-
-// Ensure basePath ends with a slash
-const computedBasePath = basePath ? `${basePath.replace(/\/?$/, '/')}` : '/page/';
+const computedBasePath = basePath ? ensureTrailingSlash(basePath) : '/page/';
 ---
 
 <nav aria-label="Page navigation" class="pagination-container flex justify-center space-x-2 my-8">
   {urlPrev && (
-    <a href={`${urlPrev.replace(/\/?$/, '/')}`} class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
-      &larr;
+    <a href={ensureTrailingSlash(urlPrev)} class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
+      &larr; Previous
     </a>
   )}
 
   {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(pageNumber => (
     <a
-      href={`${computedBasePath}${pageNumber}/`}  // Ensure each page link ends with a slash
+      href={`${computedBasePath}${pageNumber}/`}
       class={`no-underline px-3 py-1 text-sm font-medium rounded-md ${pageNumber === currentPage ? 'bg-neutral-500 text-white' : 'text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500'}`}>
       {pageNumber}
     </a>
@@ -33,9 +35,9 @@ const computedBasePath = basePath ? `${basePath.replace(/\/?$/, '/')}` : '/page/
 
   {urlNext && (
     <a
-      href={`${urlNext.replace(/\/?$/, '/')}`}  // Ensure the next URL ends with a slash
+      href={ensureTrailingSlash(urlNext)}
       class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
-      &rarr;
+      Next &rarr;
     </a>
   )}
 </nav>
