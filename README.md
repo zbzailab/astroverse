@@ -29,7 +29,7 @@ VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelli
 
 ## 🎡 Live demo
 
-Experience [**VisVrs**](https://inote.box) in action.
+Experience [**VisVrs**](https://visvrs.on-fleek.app/) in action.
 
 ## 🌆 Showcase
 
