@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts");
 const uniqueCategory = [
   ...new Set(allPosts.map((post) => post.data.category).flat()),
-];
+].sort();
 ---
 <header class='p-4 prose-a:no-underline'>
   <div class='flex justify-between items-center p-2'>
