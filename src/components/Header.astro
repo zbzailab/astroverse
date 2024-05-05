@@ -1,5 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("posts");
+const uniqueCategory = [
+  ...new Set(allPosts.map((post) => post.data.category).flat()),
+];
 ---
 <header class='p-4 prose-a:no-underline'>
   <div class='flex justify-between items-center p-2'>
@@ -7,9 +13,13 @@ import { Icon } from 'astro-icon/components';
       <a href='/' class='px-0 py-0 mr-4'>
         <img src='/logo.svg' alt='首页' width='220' height='60' class="w-16 sm:w-10 sm:h-6 md:w-14 md:h-6 lg:w-22 lg:h-6" />
       </a>
-      <a href='/category/One/1/' class='category-link'>One</a>
-      <a href='/category/Two/1/' class='category-link'>Two</a>
-      <a href='/category/Three/1/' class='category-link'>Two</a>
+      {
+        uniqueCategory.map((post) => (
+          <a href={`/category/${post}/1/`} class="category-link">
+            {post}
+          </a>
+        ))
+      }
     </div>
 
     <div>
