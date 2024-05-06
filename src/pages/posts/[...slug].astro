@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Waline from "@components/Waline.astro";
 import RelatedPostsCard from "@components/RelatedPostsCard.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import OptimizedCover from "@components/OptimizedPicture.astro";
@@ -46,19 +45,13 @@ const { Content } = await post.render();
         </div>
         <div class="flex justify-between">
           <small
-            >发表于<FormattedDate
+            >Publish on<FormattedDate
               date={post.data.pubDate}
-            />，更新于<FormattedDate date={new Date().toISOString()} /></small
-          >
-          <small class="block"
-            >阅读量: <span class="waline-pageview-count"></span></small
+            />，Update on<FormattedDate date={new Date().toISOString()} /></small
           >
         </div>
       </div>
     </article>
-    <div class="prose mx-auto">
-      <Waline />
-    </div>
     <div class="mt-4">
       <RelatedPostsCard
         currentCategory={post.data.category[0]}
