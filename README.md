@@ -27,8 +27,8 @@ VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelli
 - ✅ Optimized Image Handling
 - ✅ Automatic Dark Mode Switching
 - ✅ Pagination for Easy Navigation
-- 使用partytown设置的谷歌分析，不影响速度
-- 使用prettier一键格式化代码
+- ✅ Google Analytics configured using Partytown without compromising speed
+- ✅ Code formatted with Prettier in one click
 - 
 
 ## 🎡 Live demo
