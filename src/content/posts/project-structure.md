@@ -7,9 +7,9 @@ category:
 tags:
   - Tailwind
   - Astro
-  - Jamstack
+  - File
 pubDate: 2023-09-01
-cover: src/images/visvrs26.webp
+cover: https://images.unsplash.com/photo-1501471984908-815b996862f4?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: VisVrs-Aliases
 author: VV
 ---

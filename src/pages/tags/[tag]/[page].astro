@@ -1,47 +1,61 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PostCard from '../../../components/PostCard.astro';
-import Pagination from '../../../components/Pagination.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PostCard from "@components/CommonCard.astro";
+import Pagination from "@components/Pagination.astro";
+import { getTagMetadata } from "@consts";
 
-export async function getStaticPaths({ paginate }) {
-  // Fetch all posts and extract unique tags
-  const allPosts = await getCollection('posts');
-  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
 
-  // Create paths for each pagination of every tag
   return uniqueTags.flatMap((tag) => {
-    // Filter posts by tag and sort them by publication date in descending order
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      post.data.tags.includes(tag),
     );
-    filteredPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+    filteredPosts.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+    );
 
-    // Handle pagination using the paginate method
-    return paginate(filteredPosts, { pageSize: 12, params: { tag } });
+    const pageSize = 12;
+    const totalPages = Math.ceil(filteredPosts.length / pageSize);
+
+    return Array.from({ length: totalPages }, (_, index) => ({
+      params: { tag, page: (index + 1).toString() },
+      props: {
+        page: {
+          data: filteredPosts.slice(index * pageSize, (index + 1) * pageSize),
+          currentPage: index + 1,
+          lastPage: totalPages,
+        },
+      },
+    }));
   });
 }
 
 const params = Astro.params;
 const { page } = Astro.props;
+const { title, description } = getTagMetadata(params.tag);
 ---
 
-<BaseLayout pageTitle={params.tag}>
-  {/* Grid layout for displaying posts associated with a tag */}
-  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-    {page.data.map((post) => (
-      <PostCard 
-        post={post} 
-      />
-    ))}
+<BaseLayout title={title} description={description}>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {page.data.map((post) => <PostCard post={post} />)}
   </div>
 
-  {/* Pagination component, dynamically adjusting the base path based on the tag */}
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}
-    urlPrev={page.url.prev}
-    urlNext={page.url.next}
+    urlPrev={page.currentPage > 1
+      ? `/tags/${params.tag}/${page.currentPage - 1}`
+      : null}
+    urlNext={page.currentPage < page.lastPage
+      ? `/tags/${params.tag}/${page.currentPage + 1}`
+      : null}
     basePath={`/tags/${params.tag}`}
+    maxDisplayedPages={5}
   />
 </BaseLayout>

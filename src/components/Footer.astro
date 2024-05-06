@@ -1,50 +1,66 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
+import Link from "@components/Links.astro";
+import { BRAND_NAME, FooterLinks } from "@consts";
+const today = new Date();
 ---
-<footer class='p-4 mt-4'>
-  <div class='flex flex-col rounded-lg md:flex-row md:items-center md:justify-between'>
-    <!-- Navigation Links -->
-    <div class='flex justify-center md:order-1 md:items-center space-x-2'>
-      <a href='/why-astro/' class='nav-link'>Astro</a>
-      <a href='/tailwind-typography/' class='nav-link'>Tailwind</a>
-      <a href='/tags/' class='nav-link'>Tags</a>
-    </div>
 
-    <!-- Social Icons -->
-    <div class='flex justify-center mt-4 md:mt-0 md:order-2 md:items-center space-x-2'>
-      <a href='https://inote.xyz/rss.xml' class='icon-link'>
-        <span class='sr-only'>RSS Feed</span>
-        <Icon name="tabler:rss" class="icon-base"/>
-      </a>
-      <a href='https://twitter.com/yisibuer' class='icon-link'>
-        <span class='sr-only'>X</span>
-        <Icon name="tabler:brand-x" class="icon-base"/>
-      </a>
-      <a href='https://github.com/isooosi/VisVrs' class='icon-link'>
-        <span class='sr-only'>Github</span>
-        <Icon name="tabler:brand-github" class="icon-base"/>
-      </a>
-    </div>
-  
-    <!-- Logo Image -->
-    <div class='nav-link flex justify-center mt-4 md:mt-0 md:order-3 md:items-center'>
-      <p>VisVrs © {new Date().getFullYear()}</p>
+<footer class="w-full bg-white text-sm py-4 dark:bg-neutral-900">
+  <nav class="max-w-[85rem] w-full mx-auto px-4" aria-label="Global">
+    <div class="flex flex-col sm:flex-row sm:justify-between items-center">
+      <div id="navbar-alignment" class="internal-links sm:order-2">
+        <div
+          class="flex flex-row sm:flex-row gap-5 mt-2 sm:items-center sm:mt-0 sm:ps-5"
+        >
+          {
+            FooterLinks.map((link) => (
+              <Link
+                href={link.href}
+                class="font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+              >
+                {link.title}
+              </Link>
+            ))
+          }
+        </div>
       </div>
-  </div>
+
+      <div class="sm:order-3 flex flex-wrap gap-2 mt-2 sm:gap-0 sm:mb-0">
+        <button
+          type="button"
+          class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-00 relative"
+        >
+          <a href="/rss.xml/" class="absolute inset-0 z-10" aria-label="RSS"
+          ></a>
+          <Icon name="tabler:rss" class="icon-base" />
+        </button>
+        <button
+          type="button"
+          class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative"
+        >
+          <a
+            href="https://twitter.com/astrodotbuild"
+            class="absolute inset-0 z-10"
+            aria-label="X"></a>
+          <Icon name="tabler:brand-x" class="icon-base" />
+        </button>
+        <button
+          type="button"
+          class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative"
+        >
+          <a
+            href="https://twitter.com/astrodotbuild"
+            class="absolute inset-0 z-10"
+            aria-label="Github"></a>
+          <Icon name="tabler:brand-github" class="icon-base" />
+        </button>
+      </div>
+
+      <div class="sm:order-1 mt-2 sm:mb-0">
+        <a class="flex-none dark:text-neutral-400" href="/"
+          >{BRAND_NAME} &copy; {today.getFullYear()}</a
+        >
+      </div>
+    </div>
+  </nav>
 </footer>
-
-<style>
-
-    /* Tailwind utility classes applied for hover states and color changes */
-    .nav-link {
-      @apply px-2 rounded no-underline text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-gray-300;
-    }
-
-    .icon-link {
-      @apply mx-2;
-    }
-
-    .icon-base {
-      @apply w-6 h-6 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-gray-300;
-    }
-</style>

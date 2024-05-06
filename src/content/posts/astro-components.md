@@ -1,6 +1,6 @@
 ---
-title: Aliases
-slug: components
+title: You can use components inside of other components
+slug: components15
 description: the basic building blocks of any Astro project
 category:
   - One
@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-01
-cover: src/images/visvrs20.webp
+cover: https://images.unsplash.com/photo-1511140973288-19bf21d7e771?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: VisVrs-Aliases
 author: VV
 ---

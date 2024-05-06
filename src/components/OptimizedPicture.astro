@@ -1,0 +1,34 @@
+---
+import { Picture } from "astro:assets";
+
+interface Props {
+  src: string;
+  alt: string;
+  widths?: number[];
+  sizes?: string;
+  formats?: string[];
+  fallbackFormat?: string;
+}
+
+const {
+  src,
+  alt,
+  widths = [392, 700, 980, 1960],
+  sizes = `(max-width: 360px) 392x, 
+           (max-width: 720px) 700px, 
+           (max-width: 1600px) 980px, 
+           1960px`,
+  formats = ["avif"],
+  fallbackFormat = "avif",
+} = Astro.props;
+---
+
+<Picture
+  src={src}
+  alt={alt}
+  widths={widths}
+  sizes={sizes}
+  formats={formats}
+  fallbackFormat={fallbackFormat}
+  inferSize
+/>

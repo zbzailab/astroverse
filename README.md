@@ -6,15 +6,17 @@ VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelli
 ## 💯Lighthouse Score
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/analysis/https-visvrs-on-fleek-app/02onlc8azc?form_factor=mobile">
+  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fvisvrs.inote.xyz%2F">
     <img width="510" alt="Visvrs Lighthouse Score" src="public/visvrs-lighthouse-score.svg">
   <a>
 </p>
 
 
+
 ## 🎉 Features
 
-- ✅ Integration with Astro and Tailwind CSS
+- ✅  Powered by Astro
+- ✅   Development with Tailwind CSS and Preline UI
 - ✅ Fully Responsive Design
 - ✅ Perfect 100/100 Lighthouse Performance Score
 - ✅ SEO Optimized
@@ -24,12 +26,14 @@ VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelli
 - ✅ Tag Statistics and Last Modified Time Display
 - ✅ Optimized Image Handling
 - ✅ Automatic Dark Mode Switching
-- ✅ Smooth View Transitions
 - ✅ Pagination for Easy Navigation
+- 使用partytown设置的谷歌分析，不影响速度
+- 使用prettier一键格式化代码
+- 
 
 ## 🎡 Live demo
 
-Experience [**VisVrs**](https://visvrs.on-fleek.app/) in action.
+Experience [**VisVrs**](https://visvrs.inote.xyz) in action.
 
 ## 🌆 Showcase
 
@@ -72,6 +76,72 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run dev`     | Starts local dev server at `localhost:4321`  |
 | `pnpm run build`   | Build your production site to `./dist/`      |
 | `pnpm run preview` | Preview your build locally, before deploying |
+| `npm run format`   | Code formatter using prettier                |
+
+### 🔧Configuration
+
+Basic configuration file: `./src/config.yaml`
+
+```ts
+// Place any global data in this file.
+// You can import this data from anywhere in your site by using the `import` keyword.
+
+// Base Page Metadata, src/layouts/BaseLayout.astro
+export const BRAND_NAME = "VisVrs";
+export const SITE_TITLE = "VisVrs";
+export const SITE_DESCRIPTION =
+  "An Astro Theme for Visual Storytelling";
+
+// Tags Page Metadata, src/pages/tags/index.astro
+export const Tags_TITLE = "VisVrs - All Tags";
+export const Tags_DESCRIPTION = "VisVrs - All tags and the count of articles related to each tag";
+
+// Tags Page Metadata, src/pages/tags/[tag]/[page].astro
+export function getTagMetadata(tag: string) {
+  return {
+    title: `All articles on '${tag}' tag in VisVrs`,
+    description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
+  };
+}
+
+// Category Page Metadata, src/pages/category/[category]/[page].astro
+export function getCategoryMetadata(category: string) {
+  return {
+    title: `All articles in '${category}' category in VisVrs`,
+    description: `Browse all articles under the ${category} category in VisVrs`,
+  };
+}
+
+// Header Links, src/components/Header.astro
+export const HeaderLinks = [
+  { href: "/category/One/1/", title: "One" },
+  { href: "/category/Two/1/", title: "Two" },
+  { href: "/category/Three/1/", title: "Three" },
+];
+
+// Footer Links, src/components/Footer.astro
+export const FooterLinks = [
+  { href: "/posts/why-astro/", title: "Astro" },
+  { href: "/posts/tailwind-typography/", title: "Tailwind" },
+  { href: "/tags/", title: "Tags" },
+];
+
+// Search Page Metadata, src/pages/search.astro
+export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
+export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
+
+
+// Google Analytics, src/components/Analytics.astro
+export const GA_TRACKING_ID = "G-XXXXXXXXXX";
+
+```
+
+## Deployment
+
+Click the button below to start deploying your project on Vercel:
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/isooosi/visvrs)
 
 ## ✨ Join and Contribute
+
 Your contributions make VisVrs better! Whether it's through code, design, bug reports, or feature ideas, we value your input. Check our Issues or submit a Pull Request to get started. Together, let's enhance VisVrs!

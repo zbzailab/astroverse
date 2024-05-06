@@ -1,47 +1,61 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PostCard from '../../../components/PostCard.astro';
-import Pagination from '../../../components/Pagination.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PostCard from "@components/CommonCard.astro";
+import Pagination from "@components/Pagination.astro";
+import { getCategoryMetadata } from "@consts";
 
-export async function getStaticPaths({ paginate }) {
-  // Fetch all posts and extract unique categories
-  const allPosts = await getCollection('posts');
-  const uniqueCategory = [...new Set(allPosts.map((post) => post.data.category).flat())];
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueCategory = [
+    ...new Set(allPosts.map((post) => post.data.category).flat()),
+  ];
 
-  // Generate static paths for each category
   return uniqueCategory.flatMap((category) => {
-    // Filter posts by category and sort by publication date in descending order
     const filteredPosts = allPosts.filter((post) =>
-      post.data.category.includes(category)
+      post.data.category.includes(category),
     );
-    filteredPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
+    filteredPosts.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+    );
 
-    // Paginate the filtered posts
-    return paginate(filteredPosts, { pageSize: 12, params: { category } });
+    const pageSize = 12;
+    const totalPages = Math.ceil(filteredPosts.length / pageSize);
+
+    return Array.from({ length: totalPages }, (_, index) => ({
+      params: { category, page: (index + 1).toString() },
+      props: {
+        page: {
+          data: filteredPosts.slice(index * pageSize, (index + 1) * pageSize),
+          currentPage: index + 1,
+          lastPage: totalPages,
+        },
+      },
+    }));
   });
 }
 
 const params = Astro.params;
 const { page } = Astro.props;
+const { title, description } = getCategoryMetadata(params.category);
 ---
 
-<BaseLayout pageTitle={params.category}>
-  {/* Grid layout for displaying posts */}
-  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-    {page.data.map((post) => (
-      <PostCard 
-        post={post}
-      />
-    ))}
+<BaseLayout title={title} description={description}>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {page.data.map((post) => <PostCard post={post} />)}
   </div>
 
-  {/* Pagination component with dynamic base path based on category */}
   <Pagination
     currentPage={page.currentPage}
     lastPage={page.lastPage}
-    urlPrev={page.url.prev}
-    urlNext={page.url.next}
+    urlPrev={page.currentPage > 1
+      ? `/category/${params.category}/${page.currentPage - 1}`
+      : null}
+    urlNext={page.currentPage < page.lastPage
+      ? `/category/${params.category}/${page.currentPage + 1}`
+      : null}
     basePath={`/category/${params.category}`}
+    maxDisplayedPages={5}
   />
 </BaseLayout>

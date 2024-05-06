@@ -1,61 +1,65 @@
-import { defineConfig } from 'astro/config';
-
-// Utils and plugins
-import remarkModifiedTime from './src/utils/remark-modified-time.mjs';
-import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
-import mdx from '@astrojs/mdx';
+import { defineConfig } from "astro/config";
+import { remarkModifiedTime } from "./src/utils/remark-modified-time.mjs";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import partytown from "@astrojs/partytown";
+import pagefind from "astro-pagefind";
 import icon from "astro-icon";
-import pagefind from 'astro-pagefind';
+import tailwind from "@astrojs/tailwind";
+import playformCompress from "@playform/compress";
 
-// Astro Configuration
+// https://astro.build/config
 export default defineConfig({
-  
-  // Site Information
-  site: 'https://inote.box',
-
-  trailingSlash: 'always',
-  
+  site: "https://visvrs.inote.xyz/",
+  trailingSlash: "always",
+  output: "static",
   prefetch: {
-    prefetchAll: true
+    prefetchAll: true,
+    defaultStrategy: "viewport",
   },
-
-  // Markdown Configuration
+  experimental: {
+    contentCollectionCache: true,
+  },
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "unsplash.com",
+      },
+    ],
+  },
   markdown: {
-    // Using custom Remark plugin to get modified time
-    remarkPlugins: [remarkModifiedTime]
+    remarkPlugins: [remarkModifiedTime],
   },
-
-  // Third-party Integrations
   integrations: [
-    // Tailwind CSS for styling
-    tailwind(),
-
-    // Sitemap generator
+    mdx(),
     sitemap(),
-
-    // Pagefind for search
     pagefind(),
-
-    // Icon support
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+        debug: false,
+      },
+    }),
     icon({
       include: {
-        tabler: ['*'],
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
+        tabler: ["*"],
+        "flat-color-icons": [
+          "template",
+          "gallery",
+          "approval",
+          "document",
+          "advertising",
+          "currency-exchange",
+          "voice-presentation",
+          "business-contact",
+          "database",
         ],
       },
     }),
-
-    // MDX support
-    mdx()
-  ]
+    tailwind(),
+    playformCompress({
+      Image: false,
+    }),
+  ],
 });

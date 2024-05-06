@@ -1,0 +1,9 @@
+---
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
+
+const { date, format = "YYYY-MM-DD" } = Astro.props;
+---
+
+<span>{dayjs(date).format(format)}</span>

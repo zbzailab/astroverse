@@ -1,56 +1,23 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
-// Define default properties with optional overrides from Astro.props
-const { 
-  ogImage = '/open-graph.webp',  // Default open graph image
-  pageTitle = 'VisVrs',        // Default page title
-  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.'  // Default description
-} = Astro.props;
-
-// Generate a full URL for the social sharing image
-const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.webp', Astro.url).href;
+const { title, description } = Astro.props;
 ---
 
-<!-- HTML structure begins -->
 <!doctype html>
 <html lang="en">
   <head>
-
-    <!-- Global Metadata -->
-    <meta charset='UTF-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-
-    <!-- Primary Meta Tags -->
-    <title>{pageTitle}</title>
-    <meta name='description' content={description} />
-
-    <!-- Sitemap -->
-    <link rel='sitemap' href='/sitemap-index.xml' />
-
-    <!-- Open Graph metadata for improved social media sharing -->
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={Astro.url} />
-    <meta property='og:image' content={socialImageURL} />
-    <meta property="og:type" content="article" />
-    <meta property="og:locale" content="zh_CN" />
-
-    <!-- Twitter Card metadata for Twitter sharing -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content={pageTitle} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={socialImageURL} />
-
+    <BaseHead title={title} description={description} />
   </head>
-<body class='mx-auto prose prose-neutral px-4 prose-img:rounded dark:prose-invert dark:bg-neutral-900 lg:max-w-screen-lg'>
-  <Header />
-    <h1 class='text-center'>{pageTitle}</h1>
-  <slot />
-  <Footer />
-</body>
+  <body
+    class="dark:bg-neutral-900 dark:prose-invert max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+    <Header />
+    <div>
+      <slot />
+    </div>
+    <Footer />
+  </body>
 </html>

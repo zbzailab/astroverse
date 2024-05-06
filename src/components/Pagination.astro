@@ -1,43 +1,88 @@
 ---
+import { Icon } from "astro-icon/components";
+
 export interface Props {
   currentPage: number;
   lastPage: number;
   urlPrev: string | null;
   urlNext: string | null;
   basePath: string;
+  maxDisplayedPages: number;
 }
+
+const {
+  currentPage,
+  lastPage,
+  urlPrev,
+  urlNext,
+  basePath,
+  maxDisplayedPages = 5,
+} = Astro.props;
+
+const startPage = Math.max(
+  1,
+  Math.min(
+    currentPage - Math.floor(maxDisplayedPages / 2),
+    lastPage - maxDisplayedPages + 1,
+  ),
+);
+const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1);
 
 function ensureTrailingSlash(path: string) {
-  return path.replace(/\/?$/, '/');
+  return path.endsWith("/") ? path : `${path}/`;
 }
 
-const { currentPage, lastPage, urlPrev, urlNext, basePath } = Astro.props;
-const maxDisplayedPages = 5;
-const startPage = Math.max(1, currentPage - Math.floor(maxDisplayedPages / 2));
-const endPage = Math.min(lastPage, startPage + maxDisplayedPages - 1);
-const computedBasePath = basePath ? ensureTrailingSlash(basePath) : '/page/';
+const computedBasePath = basePath ? ensureTrailingSlash(basePath) : "/page/";
 ---
 
-<nav aria-label="Page navigation" class="pagination-container flex justify-center space-x-2 my-8">
-  {urlPrev && (
-    <a href={ensureTrailingSlash(urlPrev)} class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
-      &larr;
-    </a>
-  )}
-
-  {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(pageNumber => (
-    <a
-      href={`${computedBasePath}${pageNumber}/`}
-      class={`no-underline px-3 py-1 text-sm font-medium rounded-md ${pageNumber === currentPage ? 'bg-neutral-500 text-white' : 'text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500'}`}>
-      {pageNumber}
-    </a>
-  ))}
-
-  {urlNext && (
-    <a
-      href={ensureTrailingSlash(urlNext)}
-      class="no-underline px-3 py-1 text-sm font-medium text-neutral-600 dark:text-white bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-md">
-      &rarr;
-    </a>
-  )}
+<nav
+  class="mt-8 flex justify-center items-center gap-x-1"
+  aria-label="Pagination"
+>
+  {
+    urlPrev ? (
+      <a
+        href={ensureTrailingSlash(urlPrev)}
+        aria-label="Previous page"
+        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+      >
+        <Icon name="tabler:chevron-left" class="icon-base" />
+      </a>
+    ) : (
+      ""
+    )
+  }
+  <ul class="flex items-center gap-x-1">
+    {
+      Array.from({ length: endPage - startPage + 1 }, (_, i) => {
+        const pageNumber = startPage + i;
+        const isActive = currentPage === pageNumber;
+        const pageClass = `min-h-[38px] min-w-[38px] flex justify-center items-center py-2 px-3 text-sm rounded-lg ${isActive ? "bg-neutral-200 focus:bg-neutral-300 dark:bg-neutral-600 dark:focus:bg-neutral-500 dark:text-white" : "text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"}`;
+        return (
+          <li>
+            <a
+              href={`${computedBasePath}${pageNumber}/`}
+              class={pageClass}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {pageNumber}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+  {
+    urlNext ? (
+      <a
+        href={ensureTrailingSlash(urlNext)}
+        aria-label="Next page"
+        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+      >
+        <Icon name="tabler:chevron-right" class="icon-base" />
+      </a>
+    ) : (
+      ""
+    )
+  }
 </nav>

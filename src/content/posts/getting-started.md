@@ -5,11 +5,11 @@ description: A basic intro to Astro.
 category:
   - One
 tags:
-  - Tailwind
+  - Integer
   - Astro
   - Jamstack
 pubDate: 2023-09-06
-cover: src/images/visvrs7.webp
+cover: https://images.unsplash.com/photo-1500206329404-5057e0aefa48?q=80&w=2746&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 coverAlt: VisVrs-Getting Started
 author: VV
 ---

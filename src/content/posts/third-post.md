@@ -7,9 +7,9 @@ category:
 tags:
   - Tailwind
   - Astro
-  - Jamstack
+  - Morbi
 pubDate: 2023-09-05
-cover: src/images/visvrs13.webp
+cover: https://images.unsplash.com/photo-1447600514716-ca6f3974c346?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODV8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: VisVrs-Third post
 author: VV
 ---

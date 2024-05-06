@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Waline from "@components/Waline.astro";
+import RelatedPostsCard from "@components/RelatedPostsCard.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import OptimizedCover from "@components/OptimizedPicture.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <main>
+    <article class="prose dark:prose-invert mx-auto">
+      <div>
+        <div class="prose-h1 text-center">
+          <h1>{post.data.title}</h1>
+        </div>
+        <div class="prose-img:rounded-lg">
+          {
+            post.data.cover && (
+              <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
+            )
+          }
+        </div>
+        <div class="text-justify">
+          <Content />
+        </div>
+        <div class="prose-a:no-underline">
+          {
+            post.data.tags.map((tag) => (
+              <span class="inline-block bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-full px-3 py-1 text-sm mr-2 mb-2">
+                <a href={`/tags/${tag}/1/`}>{tag}</a>
+              </span>
+            ))
+          }
+        </div>
+        <div class="flex justify-between">
+          <small
+            >发表于<FormattedDate
+              date={post.data.pubDate}
+            />，更新于<FormattedDate date={new Date().toISOString()} /></small
+          >
+          <small class="block"
+            >阅读量: <span class="waline-pageview-count"></span></small
+          >
+        </div>
+      </div>
+    </article>
+    <div class="prose mx-auto">
+      <Waline />
+    </div>
+    <div class="mt-4">
+      <RelatedPostsCard
+        currentCategory={post.data.category[0]}
+        currentSlug={post.slug}
+      />
+    </div>
+  </main>
+</BaseLayout>

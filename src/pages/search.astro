@@ -1,12 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SearchComponent from "../components/Search.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { SEARCH_PAGE_TITLE, SEARCH_PAGE_DESCRIPTION } from "@consts";
+import Pagefind from "astro-pagefind/components/Search";
 ---
 
-<BaseLayout>
-  <section class="mx-auto w-full max-w-screen-2xl px-4 md:px-6">
-    <div class="min-h-[700px]">
-      <SearchComponent />
-    </div>
-  </section>
+<BaseLayout title={SEARCH_PAGE_TITLE} description={SEARCH_PAGE_DESCRIPTION}>
+  <main>
+    <section class="mx-auto w-full max-w-screen-2xl px-4 md:px-6">
+      <div class="min-h-[700px]">
+        <Pagefind
+          id="search"
+          className="pagefind-ui"
+          uiOptions={{ showImages: false }}
+        />
+      </div>
+    </section>
+  </main>
 </BaseLayout>

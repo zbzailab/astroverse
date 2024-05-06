@@ -1,30 +1,59 @@
 ---
-import { Icon } from 'astro-icon/components';
+import Link from "@components/Links.astro";
+import { Icon } from "astro-icon/components";
+import { SITE_TITLE, HeaderLinks } from "@consts";
 ---
-<header class='p-4 prose-a:no-underline'>
-  <div class='flex justify-between items-center p-2'>
-    <div class='flex items-center'>
-      <a href='/' class='px-0 py-0 mr-4'>
-        <img src='/logo.svg' alt='首页' width='220' height='60' class="w-16 sm:w-10 sm:h-6 md:w-14 md:h-6 lg:w-22 lg:h-6" />
-      </a>
-      <a href='/category/One/1/' class='category-link'>One</a>
-      <a href='/category/Two/1/' class='category-link'>Two</a>
-      <a href='/category/Three/1/' class='category-link'>Two</a>
+
+<header
+  class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-900"
+>
+  <nav
+    class="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
+    aria-label="Global"
+  >
+    <a
+      class="sm:order-1 flex-none text-xl font-semibold dark:text-white"
+      href="/">{SITE_TITLE}</a
+    >
+
+    <div class="sm:order-3 flex items-center gap-x-2">
+      <button
+        type="button"
+        class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-900 relative"
+      >
+        <a href="/search/" class="absolute inset-0 z-10" aria-label="Search"
+        ></a>
+        <Icon name="tabler:search" class="icon-base" />
+      </button>
+      <button
+        type="button"
+        class="sm:hidden hs-collapse-toggle p-2.5 inline-flex justify-center items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:text-white dark:hover:bg-white/10"
+        data-hs-collapse="#navbar-alignment"
+        aria-controls="navbar-alignment"
+        aria-label="Toggle navigation"
+        id="menu-toggle"
+      >
+        <Icon name="tabler:menu-2" class="icon-base" />
+      </button>
     </div>
 
-    <div>
-      <a href='/search/' class='icon-link'>
-        <span class='sr-only'>Search</span>
-        <Icon name="tabler:search" class="icon-base"/>
-      </a>
+    <div
+      id="navbar-alignment"
+      class="internal-links hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2"
+      aria-expanded="false"
+    >
+      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0">
+        {
+          HeaderLinks.map((link) => (
+            <Link
+              href={link.href}
+              class="font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+            >
+              {link.title}
+            </Link>
+          ))
+        }
+      </div>
     </div>
-    
-  </div>
+  </nav>
 </header>
-
-<style>
-  .category-link {
-    @apply px-4 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-600;
-  }
-</style>
-  
