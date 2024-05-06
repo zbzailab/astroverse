@@ -17,16 +17,17 @@ author: VV
 **Layouts** are [Astro components](/en/core-concepts/astro-components/) used to provide a reusable UI structure, such as a page template.
 
 We conventionally use the term "layout" for Astro components that provide common UI elements shared across pages such as headers, navigation bars, and footers. A typical Astro layout component provides [Astro, Markdown or MDX pages](/en/core-concepts/astro-pages/) with:
+
 - a **page shell** (`<html>`, `<head>` and `<body>` tags)
 - a [**`<slot />`**](/en/core-concepts/astro-components/#slots) to specify where individual page content should be injected.
 
- But, there is nothing special about a layout component! They can [accept props](/en/core-concepts/astro-components/#component-props) and [import and use other components](/en/core-concepts/astro-components/#component-structure) like any other Astro component. They can include [UI frameworks components](/en/core-concepts/framework-components/) and [client-side scripts](/en/guides/client-side-scripts/). They do not even have to provide a full page shell, and can instead be used as partial UI templates.
+But, there is nothing special about a layout component! They can [accept props](/en/core-concepts/astro-components/#component-props) and [import and use other components](/en/core-concepts/astro-components/#component-structure) like any other Astro component. They can include [UI frameworks components](/en/core-concepts/framework-components/) and [client-side scripts](/en/guides/client-side-scripts/). They do not even have to provide a full page shell, and can instead be used as partial UI templates.
 
 Layout components are commonly placed in a `src/layouts` directory in your project for organization, but this is not a requirement; you can choose to place them anywhere in your project. You can even colocate layout components alongside your pages by [prefixing the layout names with `_`](/en/core-concepts/routing/#excluding-pages).
 
 ## Sample Layout
 
-```astro "<slot />" 
+```astro "<slot />"
 ---
 // src/layouts/MySiteLayout.astro
 import BaseHead from '../components/BaseHead.astro';
@@ -63,36 +64,35 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 </MySiteLayout>
 ```
 
-
 📚 Learn more about [slots](/en/core-concepts/astro-components/#slots).
 
 ## Markdown/MDX Layouts
 
-Page layouts are especially useful for [Markdown and MDX pages](/en/guides/markdown-content/#markdown-and-mdx-pages) which otherwise would not have any page formatting. 
+Page layouts are especially useful for [Markdown and MDX pages](/en/guides/markdown-content/#markdown-and-mdx-pages) which otherwise would not have any page formatting.
 
 Astro provides a special `layout` frontmatter property to specify which `.astro` component to use as the page layout.
 
-```markdown title="src/pages/page.md" {2} 
+```markdown title="src/pages/page.md" {2}
 ---
 layout: ../layouts/BaseLayout.astro
 title: "Hello, World!"
 author: "Matthew Phillips"
 date: "09 Aug 2022"
 ---
+
 All frontmatter properties are available as props to an Astro layout component.
 
 The `layout` property is the only special one provided by Astro.
 
 You can use it in both Markdown and MDX files located within `src/pages/`.
-
 ```
 
 A typical layout for Markdown or MDX pages includes:
 
-1. The `frontmatter` prop to access the Markdown or MDX page's frontmatter and other data. 
+1. The `frontmatter` prop to access the Markdown or MDX page's frontmatter and other data.
 2. A default [`<slot />`](/en/core-concepts/astro-components/#slots) to indicate where the page's Markdown/MDX content should be rendered.
 
-```astro /(?<!//.*){?frontmatter(?:\\.\w+)?}?/ "<slot />"
+```astro /(?<!//.*){?frontmatter(?:\.\w+)?}?/ "<slot />"
 ---
 // src/layouts/BaseLayout.astro
 // 1. The frontmatter prop gives access to frontmatter and other data
@@ -170,37 +170,39 @@ Astro.props = {
     description: "Astro 0.18 is our biggest release since Astro launch.",
     /** Generated values */
     file: "/home/user/projects/.../file.md",
-    url: "/en/guides/markdown-content/"
+    url: "/en/guides/markdown-content/",
   },
   headings: [
     {
-      "depth": 1,
-      "text": "Astro 0.18 Release",
-      "slug": "astro-018-release"
+      depth: 1,
+      text: "Astro 0.18 Release",
+      slug: "astro-018-release",
     },
     {
-      "depth": 2,
-      "text": "Responsive partial hydration",
-      "slug": "responsive-partial-hydration"
-    }
+      depth: 2,
+      text: "Responsive partial hydration",
+      slug: "responsive-partial-hydration",
+    },
     /* ... */
   ],
 
   /** Available in Markdown only */
-  rawContent: () => "# Astro 0.18 Release\nA little over a month ago, the first public beta [...]",
-  compiledContent: () => "<h1>Astro 0.18 Release</h1>\n<p>A little over a month ago, the first public beta [...]</p>",
-}
+  rawContent: () =>
+    "# Astro 0.18 Release\nA little over a month ago, the first public beta [...]",
+  compiledContent: () =>
+    "<h1>Astro 0.18 Release</h1>\n<p>A little over a month ago, the first public beta [...]</p>",
+};
 ```
 
 :::note
 A Markdown/MDX layout will have access to all its file's [exported properties](/en/guides/markdown-content/#exported-properties) from `Astro.props` **with some key differences:**
 
-*   Heading information (i.e. `h1 -> h6` elements) is available via the `headings` array, rather than a `getHeadings()` function.
+- Heading information (i.e. `h1 -> h6` elements) is available via the `headings` array, rather than a `getHeadings()` function.
 
-*   `file` and `url` are *also* available as nested `frontmatter` properties (i.e. `frontmatter.url` and `frontmatter.file`).
+- `file` and `url` are _also_ available as nested `frontmatter` properties (i.e. `frontmatter.url` and `frontmatter.file`).
 
-*   Values defined outside of frontmatter (e.g. `export` statements in MDX) are not available. Consider [importing a layout](#importing-layouts-manually-mdx) instead.
-:::
+- Values defined outside of frontmatter (e.g. `export` statements in MDX) are not available. Consider [importing a layout](#importing-layouts-manually-mdx) instead.
+  :::
 
 ### Importing Layouts Manually (MDX)
 
@@ -209,13 +211,14 @@ You may need to pass information to your MDX layout that does not (or cannot) ex
 ```mdx title="src/pages/posts/first-post.mdx" ins={6} del={2} /</?BaseLayout>/ /</?BaseLayout title={frontmatter.title} fancyJsHelper={fancyJsHelper}>/
 ---
 layout: ../../layouts/BaseLayout.astro
-title: 'My first MDX post'
-publishDate: '21 September 2022'
+title: "My first MDX post"
+publishDate: "21 September 2022"
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 function fancyJsHelper() {
-  return "Try doing that with YAML!";
+return "Try doing that with YAML!";
 }
 
 <BaseLayout title={frontmatter.title} fancyJsHelper={fancyJsHelper}>

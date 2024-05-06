@@ -20,13 +20,15 @@ Astro helps you author and present your content. You can write a blog post direc
 
 ## Writing Content
 
-In Astro, you can author your content in a variety of ways: 
+In Astro, you can author your content in a variety of ways:
+
 - In Markdown files (`.md` or [alternative extensions](/en/guides/markdown-content/)), designed to make it easy to write rich text content.
 - In MDX (`.mdx`) files, which let you include components and dynamic expressions in your document.
 - Using a third-party content management system (CMS), then pulling that content into a `.astro` page.
 - Other options (less commonly used for content-heavy pages) include [`.astro` files](/en/core-concepts/astro-pages/#astro-pages) and [`.html` files](/en/core-concepts/astro-pages/#html-pages).
 
 ### Markdown Authoring
+
 Markdown is a convenient syntax for writing rich text with basic formatting and common elements like headers, lists, and images. Astro has built-in support for Markdown files in your project.
 
 Create and write a new `.md` file in your code editor or bring in an existing file written in your favorite Markdown editor. Some online Markdown editors like [StackEdit](https://stackedit.io/) and [Dillinger](https://dillinger.io) will even allow you to edit and sync your work with your Astro repository stored on GitHub.
@@ -34,6 +36,7 @@ Create and write a new `.md` file in your code editor or bring in an existing fi
 📚 Learn more about [writing Markdown content in Astro](/en/guides/markdown-content/).
 
 ### MDX Authoring
+
 If you add the MDX integration to your project, you can also write content using `.mdx` files, which let you include JavaScript expressions and custom components within your Markdown. This includes both static [Astro components](/en/core-concepts/astro-components/) and interactive [framework components](/en/core-concepts/framework-components/). Add UI elements such as a banner or an interactive carousel right in your text to turn your content into full-fledged web pages.
 
 Write and edit `.mdx` files directly in your code editor, alongside your project files.
@@ -46,7 +49,7 @@ Write blog posts in your existing Content Management System (CMS) such as Storyb
 
 ## Managing content pages
 
-Markdown and MDX files that live in your `src/pages` directory will automatically generate pages on your site using Astro's [file-based routing](/en/core-concepts/routing/), built at a URL corresponding to the post's file path. 
+Markdown and MDX files that live in your `src/pages` directory will automatically generate pages on your site using Astro's [file-based routing](/en/core-concepts/routing/), built at a URL corresponding to the post's file path.
 
 You can also choose to keep your Markdown and MDX files outside of the `src/pages` directory, and instead [import their content](/en/guides/markdown-content/#importing-markdown) into `.astro` pages.
 
@@ -55,7 +58,6 @@ If you're writing your content in a CMS, you can fetch your posts and use [dynam
 ## Showcasing your content
 
 To build common features to organize and display your content, such as a blog archive or a page for each blog tag, Astro allows you to [fetch filenames and metadata](/en/reference/api-reference/#astroglob) from your Markdown and MDX frontmatter and use these to generate page content and routes.
-
 
 ## Community Integrations
 

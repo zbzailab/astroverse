@@ -13,6 +13,7 @@ cover: https://images.unsplash.com/photo-1494178270175-e96de2971df9?q=80&w=2048&
 coverAlt: VisVrs-Aliases
 author: VV
 ---
+
 **Astro components** are the basic building blocks of any Astro project. They are HTML-only templating components with no client-side runtime. You can spot an Astro component by its file extension: `.astro`.
 
 Astro components are extremely flexible. Often, an Astro component will contain some **reusable UI on the page**, like a header or a profile card. At other times, an Astro component may contain a smaller snippet of HTML, like a collection of common `<meta>` tags that make SEO easy to work with. Astro components can even contain an entire page layout.
@@ -20,7 +21,6 @@ Astro components are extremely flexible. Often, an Astro component will contain 
 The most important thing to know about Astro components is that they **don't render on the client**. They render to HTML either at build-time or on-demand using [server-side rendering (SSR)](/en/guides/server-side-rendering/). You can include JavaScript code inside of your component frontmatter, and all of it will be stripped from the final page sent to your users' browsers. The result is a faster site, with zero JavaScript footprint added by default.
 
 When your Astro component does need client-side interactivity, you can add [standard HTML `<script>` tags](/en/guides/client-side-scripts/) or [UI Framework components](/en/core-concepts/framework-components/#hydrating-interactive-components).
-
 
 ## Component Structure
 
@@ -35,7 +35,7 @@ An Astro component is made up of two main parts: the **Component Script** and th
 
 ### The Component Script
 
-Astro uses a code fence (`---`) to identify the component script in your Astro component. If you've ever written Markdown before, you may already be familiar with a similar concept called *frontmatter.* Astro's idea of a component script was directly inspired by this concept.
+Astro uses a code fence (`---`) to identify the component script in your Astro component. If you've ever written Markdown before, you may already be familiar with a similar concept called _frontmatter._ Astro's idea of a component script was directly inspired by this concept.
 
 You can use the component script to write any JavaScript code that you need to render your template. This can include:
 
@@ -44,7 +44,6 @@ You can use the component script to write any JavaScript code that you need to r
 - importing data, like a JSON file
 - fetching content from an API or database
 - creating variables that you will reference in your template
-
 
 ```astro title="src/components/MyComponent.astro"
 ---
@@ -118,7 +117,6 @@ import Button from './Button.astro';
 </div>
 ```
 
-
 ## Component Props
 
 An Astro component can define and accept props. These props then become available to the component template for rendering HTML. Props are available on the `Astro.props` global in your frontmatter script.
@@ -164,7 +162,7 @@ const { greeting = "Hello", name } = Astro.props;
 
 Component props can be given default values to use when none are provided.
 
-```astro ins="= \"Hello\"" ins="= \"Astronaut\""
+```astro ins="= "Hello"" ins="= "Astronaut""
 ---
 // src/components/GreetingHeadline.astro
 const { greeting = "Hello", name = "Astronaut" } = Astro.props;
@@ -213,8 +211,6 @@ import Wrapper from '../components/Wrapper.astro';
 
 This pattern is the basis of an [Astro layout component](/en/core-concepts/layouts/): an entire page of HTML content can be “wrapped” with `<SomeLayoutComponent></SomeLayoutComponent>` tags and sent to the component to render inside of common page elements defined there.
 
-
-
 ### Named Slots
 
 An Astro component can also have named slots. This allows you to pass only HTML elements with the corresponding slot name into a slot's location.
@@ -243,7 +239,6 @@ const { title } = Astro.props;
 
 To inject HTML content into a particular slot, use the `slot` attribute on any child element to specify the name of the slot. All other child elements of the component will be injected into the default (unnamed) `<slot />`.
 
-
 ```astro /slot=".*?"/
 ---
 // src/pages/fred.astro
@@ -257,7 +252,6 @@ import Wrapper from '../components/Wrapper.astro';
 </Wrapper>
 ```
 
-
 Use a `slot="my-slot"` attribute on the child element that you want to pass through to a matching `<slot name="my-slot" />` placeholder in your component.
 
 Note that named slots must be an immediate child of the component. You cannot pass named slots through nested elements.
@@ -266,13 +260,12 @@ Note that named slots must be an immediate child of the component. You cannot pa
 Named slots can also be passed to [UI framework components](/en/core-concepts/framework-components/)!
 :::
 
-
 :::note
 An astro slot name can not be dynamically generated, such as within a map function. If this feature is needed within UI framework components, it might be best to generate these dynamic slots within the framework itself.
 :::
 
-
 ### Fallback Content for Slots
+
 Slots can also render **fallback content**. When there are no matching children passed to a slot, a `<slot />` element will render its own placeholder children.
 
 ```astro {14}
@@ -344,14 +337,14 @@ import HomeLayout from '../layouts/HomeLayout.astro';
 </HomeLayout>
 ```
 
-
 ## HTML Components
 
 Astro supports importing and using `.html` files as components or placing these files within the `src/pages/` subdirectory as pages. You may want to use HTML components if you're reusing code from an existing site built without a framework, or if you want to ensure that your component has no dynamic features.
 
 HTML components must contain only valid HTML, and therefore lack key Astro component features:
+
 - They don't support frontmatter, server-side imports, or dynamic expressions.
-- Any `<script>` tags are left unbundled, treated as if they had `is:inline`. 
+- Any `<script>` tags are left unbundled, treated as if they had `is:inline`.
 - They can only [reference assets that are in the `public/` folder](/en/core-concepts/project-structure/#public).
 
 :::note

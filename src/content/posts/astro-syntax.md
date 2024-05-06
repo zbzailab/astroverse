@@ -18,7 +18,6 @@ author: VV
 
 Astro component syntax is a superset of HTML. The syntax was [designed to feel familiar to anyone with experience writing HTML or JSX](#differences-between-astro-and-jsx), and adds support for including components and JavaScript expressions.
 
-
 ## JSX-like Expressions
 
 You can define local JavaScript variables inside of the frontmatter component script between the two code fences (`---`) of an Astro component. You can then inject these variables into the component's HTML template using JSX-like expressions!
@@ -82,6 +81,7 @@ Instead, use a client-side script to add the event handler, like you would in va
   document.getElementById("button").addEventListener("click", handleClick);
 </script>
 ```
+
 :::
 
 ### Dynamic HTML
@@ -182,5 +182,3 @@ In Astro, you can use standard HTML comments or JavaScript-style comments.
 :::caution
 HTML-style comments will be included in browser DOM, while JS ones will be skipped. To leave TODO messages or other development-only explanations, you may wish to use JavaScript-style comments instead.
 :::
-
-

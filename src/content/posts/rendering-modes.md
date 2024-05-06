@@ -13,10 +13,11 @@ cover: https://images.unsplash.com/photo-1486492440844-ebc195542a40?w=1400&auto=
 coverAlt: VisVrs-Aliases
 author: VV
 ---
+
 import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro';
 import RecipeLinks from '~/components/RecipeLinks.astro';
 
-Your Astro project code must be **rendered** to HTML in order to be displayed on the web. 
+Your Astro project code must be **rendered** to HTML in order to be displayed on the web.
 
 Astro pages, routes, and API endpoints can be either [pre-rendered at build time](#pre-rendered) or [rendered on demand by a server](#on-demand-rendered) when a route is requested. With [Astro islands](/en/concepts/islands/), you can also include some client-side rendering when necessary.
 
@@ -28,9 +29,9 @@ You can configure how your pages are rendered in your [`output` configuration](/
 
 ### Pre-rendered
 
-The **default rendering mode is __`output: 'static'`__**, which creates the HTML for all your page routes at build time.
+The **default rendering mode is **`output: 'static'`****, which creates the HTML for all your page routes at build time.
 
-In this mode, **your entire site will be pre-rendered** and the server will have all pages built ahead of time and ready to send to the browser. The same HTML document is sent to the browser for every visitor, and a full-site rebuild is required to update the contents of the page. This method is also known as **static site generation (SSG)**. 
+In this mode, **your entire site will be pre-rendered** and the server will have all pages built ahead of time and ready to send to the browser. The same HTML document is sent to the browser for every visitor, and a full-site rebuild is required to update the contents of the page. This method is also known as **static site generation (SSG)**.
 
 By default, all Astro projects are configured to be pre-rendered at build time (statically-generated) to provide the most lightweight browser experience. The browser does not need to wait for any HTML to build because the server does not need to generate any pages on demand. Your site is not dependent on the performance of a backend data source, and once built, will remain available to visitors as a static site as long as your server is functioning.
 
@@ -45,9 +46,10 @@ Astro's default `static` mode is a powerful, modern-feeling choice for content-h
 ### On-demand rendered
 
 Astro's other two output modes can be configured to enable **on-demand rendering of some or all of your pages, routes or API endpoints**:
-  - __`output: 'server'`__ for highly dynamic sites with most or all on-demand routes.
-  - __`output: 'hybrid'`__ for mostly static sites with some on-demand routes. 
-  
+
+- **`output: 'server'`** for highly dynamic sites with most or all on-demand routes.
+- **`output: 'hybrid'`** for mostly static sites with some on-demand routes.
+
 Since they are generated per visit, these routes can be customized for each viewer. For example, a page rendered on demand can show a logged-in user their account information or display freshly updated data without requiring a full-site rebuild. On-demand rendering on the server at request time is also known as **server-side rendering (SSR)**.
 
 [Consider enabling `server` or `hybrid` mode](/en/guides/server-side-rendering/#enable-on-demand-server-rendering) in your Astro project if you need the following:

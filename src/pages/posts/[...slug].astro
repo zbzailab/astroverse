@@ -44,13 +44,8 @@ const { Content } = await post.render();
           }
         </div>
         <div class="flex justify-between">
-          <small
-            >Publish on<FormattedDate
-              date={post.data.pubDate}
-            />，Update on<FormattedDate date={new Date().toISOString()} /></small
-          >
-        </div>
-      </div>
+          <small>Publish on<FormattedDate date={post.data.pubDate} />，Update on<FormattedDate date={new Date().toISOString()} /></small>
+        </div>        
     </article>
     <div class="mt-4">
       <RelatedPostsCard

@@ -16,15 +16,15 @@ author: VV
 
 Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
 
-By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you *really are* just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
+By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
 
 We get lots of complaints about it actually, with people regularly asking us things like:
 
 > Why is Tailwind removing the default styles on my `h1` elements? How do I disable this? What do you mean I lose all the other base styles too?
 
-We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a `p` element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look *awesome*, not awful.
+We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a `p` element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look _awesome_, not awful.
 
-The `@tailwindcss/typography` plugin is our attempt to give you what you *actually* want, without any of the downsides of doing something stupid like disabling our base styles.
+The `@tailwindcss/typography` plugin is our attempt to give you what you _actually_ want, without any of the downsides of doing something stupid like disabling our base styles.
 
 It adds a new `prose` class that you can slap on any block of vanilla HTML content and turn it into a beautiful, well-formatted document:
 
@@ -32,13 +32,14 @@ It adds a new `prose` class that you can slap on any block of vanilla HTML conte
 <article class="prose">
   <h1>Garlic bread with cheese: What the science tells us</h1>
   <p>
-    For years parents have espoused the health benefits of eating garlic bread with cheese to their
-    children, with the food earning such an iconic status in our culture that kids will often dress
-    up as warm, cheesy loaf for Halloween.
+    For years parents have espoused the health benefits of eating garlic bread
+    with cheese to their children, with the food earning such an iconic status
+    in our culture that kids will often dress up as warm, cheesy loaf for
+    Halloween.
   </p>
   <p>
-    But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-    springing up around the country.
+    But a recent study shows that the celebrated appetizer may be linked to a
+    series of rabies cases springing up around the country.
   </p>
   <!-- ... -->
 </article>
@@ -46,11 +47,11 @@ It adds a new `prose` class that you can slap on any block of vanilla HTML conte
 
 For more information about how to use the plugin and the features it includes, [read the documentation](https://github.com/tailwindcss/typography/blob/master/README.md).
 
-------
+---
 
 ## What to expect from here on out
 
-What follows from here is just a bunch of absolute nonsense I've written to dogfood the plugin itself. It includes every sensible typographic element I could think of, like **bold text**, unordered lists, ordered lists, code blocks, block quotes, *and even italics*.
+What follows from here is just a bunch of absolute nonsense I've written to dogfood the plugin itself. It includes every sensible typographic element I could think of, like **bold text**, unordered lists, ordered lists, code blocks, block quotes, _and even italics_.
 
 It's important to cover all of these use cases for a few reasons:
 
@@ -108,7 +109,7 @@ After this sort of list I usually have a closing statement or paragraph, because
 
 ## Code should look okay by default.
 
-I think most people are going to use [highlight.js](https://highlightjs.org/) or [Prism](https://prismjs.com/) or something if they want to style their code blocks but it wouldn't hurt to make them look *okay* out of the box, even with no syntax highlighting.
+I think most people are going to use [highlight.js](https://highlightjs.org/) or [Prism](https://prismjs.com/) or something if they want to style their code blocks but it wouldn't hurt to make them look _okay_ out of the box, even with no syntax highlighting.
 
 Here's what a default `tailwind.config.js` file looks like at the time of writing:
 
@@ -120,7 +121,7 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-}
+};
 ```
 
 Hopefully that looks good enough to you.
@@ -183,7 +184,7 @@ We also need to make sure inline code looks good, like if I wanted to talk about
 
 ### Sometimes I even use `code` in headings
 
-Even though it's probably a bad idea, and historically I've had a hard time making it look good. This *"wrap the code blocks in backticks"* trick works pretty well though really.
+Even though it's probably a bad idea, and historically I've had a hard time making it look good. This _"wrap the code blocks in backticks"_ trick works pretty well though really.
 
 Another thing I've done in the past is put a `code` tag inside of a link, like if I wanted to tell you about the [`tailwindcss/docs`](https://github.com/tailwindcss/docs) repository. I don't love that there is an underline below the backticks but it is absolutely not worth the madness it would require to avoid it.
 
@@ -191,7 +192,7 @@ Another thing I've done in the past is put a `code` tag inside of a link, like i
 
 But now we have. Please don't use `h5` or `h6` in your content, Medium only supports two heading levels for a reason, you animals. I honestly considered using a `before` pseudo-element to scream at you if you use an `h5` or `h6`.
 
-We don't style them at all out of the box because `h4` elements are already so small that they are the same size as the body copy. What are we supposed to do with an `h5`, make it *smaller* than the body copy? No thanks.
+We don't style them at all out of the box because `h4` elements are already so small that they are the same size as the body copy. What are we supposed to do with an `h5`, make it _smaller_ than the body copy? No thanks.
 
 ### We still need to think about stacked headings though.
 

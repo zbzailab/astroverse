@@ -30,10 +30,12 @@ Astro recommends a different solution for shared client-side storage: [**Nano St
 ## Why Nano Stores?
 
 The [Nano Stores](https://github.com/nanostores/nanostores) library allows you to author stores that any component can interact with. We recommend Nano Stores because:
+
 - **They're lightweight.** Nano Stores ship the bare minimum JS you'll need (less than 1 KB) with zero dependencies.
 - **They're framework-agnostic.** This means sharing state between frameworks will be seamless! Astro is built on flexibility, so we love solutions that offer a similar developer experience no matter your preference.
 
 Still, there are a number of alternatives you can explore. These include:
+
 - [Svelte's built-in stores](https://svelte.dev/tutorial/writable-stores)
 - [Solid signals](https://www.solidjs.com/docs/latest) outside of a component context
 - [Vue's reactivity API](https://vuejs.org/guide/scaling-up/state-management.html#simple-state-management-with-reactivity-api)
@@ -45,6 +47,7 @@ Still, there are a number of alternatives you can explore. These include:
 <summary>**🙋 Can I use Nano Stores in `.astro` files or other server-side components?**</summary>
 
 Nano Stores _can_ be imported, written to, and read from in server-side components, **but we don't recommend it!** This is due to a few restrictions:
+
 - Writing to a store from a `.astro` file or [non-hydrated component](/en/core-concepts/framework-components/#hydrating-interactive-components) will _not_ affect the value received by [client-side components](/en/reference/directives-reference/#client-directives).
 - You cannot pass a Nano Store as a "prop" to client-side components.
 - You cannot subscribe to store changes from a `.astro` file, since Astro components do not re-render.
@@ -59,6 +62,7 @@ If you understand these restrictions and still find a use case, you can give Nan
 **Nano Stores and [Svelte stores](https://svelte.dev/tutorial/writable-stores) are very similar!** In fact, [nanostores allow you to use the same `$` shortcut](https://github.com/nanostores/nanostores#svelte) for subscriptions that you might use with Svelte stores.
 
 If you want to avoid third-party libraries, [Svelte stores](https://svelte.dev/tutorial/writable-stores) are a great cross-island communication tool on their own. Still, you might prefer Nano Stores if a) you like their add-ons for ["objects"](https://github.com/nanostores/nanostores#maps) and [async state](https://github.com/nanostores/nanostores#lazy-stores), or b) you want to communicate between Svelte and other UI frameworks like Preact or Vue.
+
 </details>
 
 <details>
@@ -68,11 +72,13 @@ If you've used Solid for a while, you may have tried moving [signals](https://ww
 
 ```js
 // sharedStore.js
-import { createSignal } from 'solid-js';
+import { createSignal } from "solid-js";
 
 export const sharedCount = createSignal(0);
 ```
+
 ...and all components importing `sharedCount` will share the same state. Though this works well, you might prefer Nano Stores if a) you like their add-ons for ["objects"](https://github.com/nanostores/nanostores#maps) and [async state](https://github.com/nanostores/nanostores#lazy-stores), or b) you want to communicate between Solid and other UI frameworks like Preact or Vue.
+
 </details>
 :::
 
@@ -121,6 +127,7 @@ You can jump into the [Nano Stores usage guide](https://github.com/nanostores/na
 ## Usage example - ecommerce cart flyout
 
 Let's say we're building a simple ecommerce interface with three interactive elements:
+
 - An "add to cart" submission form
 - A cart flyout to display those added items
 - A cart flyout toggle
@@ -161,13 +168,13 @@ import AddToCartForm from '../components/AddToCartForm';
 
 ### Using "atoms"
 
-Let's start by opening our `CartFlyout` whenever `CartFlyoutToggle` is clicked. 
+Let's start by opening our `CartFlyout` whenever `CartFlyoutToggle` is clicked.
 
-First, create a new JS  or TS file to contain our store. We'll use an ["atom"](https://github.com/nanostores/nanostores#atoms) for this:
+First, create a new JS or TS file to contain our store. We'll use an ["atom"](https://github.com/nanostores/nanostores#atoms) for this:
 
 ```js
 // src/cartStore.js
-import { atom } from 'nanostores';
+import { atom } from "nanostores";
 
 export const isCartOpen = atom(false);
 ```
@@ -182,14 +189,15 @@ import { useStore } from '@nanostores/preact';
 import { isCartOpen } from '../cartStore';
 
 export default function CartButton() {
-  // read the store value with the `useStore` hook
-  const $isCartOpen = useStore(isCartOpen);
+// read the store value with the `useStore` hook
+const $isCartOpen = useStore(isCartOpen);
   // write to the imported store using `.set`
   return (
     <button onClick={() => isCartOpen.set(!$isCartOpen)}>Cart</button>
-  )
+)
 }
-```
+
+````
 </Fragment>
 <Fragment slot="react">
 ```jsx
@@ -205,7 +213,8 @@ export default function CartButton() {
     <button onClick={() => isCartOpen.set(!$isCartOpen)}>Cart</button>
   )
 }
-```
+````
+
 </Fragment>
 <Fragment slot="solid">
 ```jsx
@@ -214,14 +223,15 @@ import { useStore } from '@nanostores/solid';
 import { isCartOpen } from '../cartStore';
 
 export default function CartButton() {
-  // read the store value with the `useStore` hook
-  const $isCartOpen = useStore(isCartOpen);
+// read the store value with the `useStore` hook
+const $isCartOpen = useStore(isCartOpen);
   // write to the imported store using `.set`
   return (
     <button onClick={() => isCartOpen.set(!$isCartOpen())}>Cart</button>
-  )
+)
 }
-```
+
+````
 </Fragment>
 <Fragment slot="svelte">
 ```svelte
@@ -232,7 +242,8 @@ export default function CartButton() {
 
 <!--use "$" to read the store value-->
 <button on:click={() => isCartOpen.set(!$isCartOpen)}>Cart</button>
-```
+````
+
 </Fragment>
 <Fragment slot="vue">
 ```vue
@@ -249,7 +260,8 @@ export default function CartButton() {
   // read the store value with the `useStore` hook
   const $isCartOpen = useStore(isCartOpen);
 </script>
-```
+
+````
 </Fragment>
 <Fragment slot="lit">
 ```ts
@@ -270,7 +282,8 @@ export class CartFlyoutToggle extends LitElement {
 }
 
 customElements.define('cart-flyout-toggle', CartFlyoutToggle);
-```
+````
+
 </Fragment>
 </UIFrameworkTabs>
 
@@ -284,11 +297,12 @@ import { useStore } from '@nanostores/preact';
 import { isCartOpen } from '../cartStore';
 
 export default function CartFlyout() {
-  const $isCartOpen = useStore(isCartOpen);
+const $isCartOpen = useStore(isCartOpen);
 
-  return $isCartOpen ? <aside>...</aside> : null;
+return $isCartOpen ? <aside>...</aside> : null;
 }
-```
+
+````
 </Fragment>
 <Fragment slot="react">
 ```jsx
@@ -301,7 +315,8 @@ export default function CartFlyout() {
 
   return $isCartOpen ? <aside>...</aside> : null;
 }
-```
+````
+
 </Fragment>
 <Fragment slot="solid">
 ```jsx
@@ -310,11 +325,12 @@ import { useStore } from '@nanostores/solid';
 import { isCartOpen } from '../cartStore';
 
 export default function CartFlyout() {
-  const $isCartOpen = useStore(isCartOpen);
+const $isCartOpen = useStore(isCartOpen);
 
-  return $isCartOpen() ? <aside>...</aside> : null;
+return $isCartOpen() ? <aside>...</aside> : null;
 }
-```
+
+````
 </Fragment>
 <Fragment slot="svelte">
 ```svelte
@@ -326,7 +342,8 @@ export default function CartFlyout() {
 {#if $isCartOpen}
 <aside>...</aside>
 {/if}
-```
+````
+
 </Fragment>
 <Fragment slot="vue">
 ```vue
@@ -341,7 +358,8 @@ export default function CartFlyout() {
 
   const $isCartOpen = useStore(isCartOpen);
 </script>
-```
+
+````
 </Fragment>
 <Fragment slot="lit">
 ```ts
@@ -360,7 +378,8 @@ export class CartFlyout extends LitElement {
 
 customElements.define('cart-flyout', CartFlyout);
 
-```
+````
+
 </Fragment>
 </UIFrameworkTabs>
 
@@ -380,41 +399,44 @@ Let's add a `cartItem` store to our `cartStore.js` from earlier. You can also sw
   // src/cartStore.js
   import { atom, map } from 'nanostores';
 
-  export const isCartOpen = atom(false);
+export const isCartOpen = atom(false);
 
-  /**
-   * @typedef {Object} CartItem
-   * @property {string} id
-   * @property {string} name
-   * @property {string} imageSrc
-   * @property {number} quantity
-   */
+/\*\*
 
-  /** @type {import('nanostores').MapStore<Record<string, CartItem>>} */
-  export const cartItems = map({});
+- @typedef {Object} CartItem
+- @property {string} id
+- @property {string} name
+- @property {string} imageSrc
+- @property {number} quantity
+  \*/
 
-  ```
-  </Fragment>
-  <Fragment slot="ts">
-  ```ts
-  // src/cartStore.ts
-  import { atom, map } from 'nanostores';
+/\*_ @type {import('nanostores').MapStore<Record<string, CartItem>>} _/
+export const cartItems = map({});
 
-  export const isCartOpen = atom(false);
+````
+</Fragment>
+<Fragment slot="ts">
+```ts
+// src/cartStore.ts
+import { atom, map } from 'nanostores';
 
-  export type CartItem = {
-    id: string;
-    name: string;
-    imageSrc: string;
-    quantity: number;
-  }
+export const isCartOpen = atom(false);
 
-  export const cartItems = map<Record<string, CartItem>>({});
-  ```
+export type CartItem = {
+  id: string;
+  name: string;
+  imageSrc: string;
+  quantity: number;
+}
+
+export const cartItems = map<Record<string, CartItem>>({});
+````
+
   </Fragment>
 </JavascriptFlavorTabs>
 
 Now, let's export an `addCartItem` helper for our components to use.
+
 - **If that item doesn't exist in your cart**, add the item with a starting quantity of 1.
 - **If that item _does_ already exist**, bump the quantity by 1.
 
@@ -463,11 +485,13 @@ Now, let's export an `addCartItem` helper for our components to use.
 </JavascriptFlavorTabs>
 
 :::note
+
 <details>
 
 <summary>**🙋 Why use `.get()` here instead of a `useStore` helper?**</summary>
 
 You may have noticed we're calling `cartItems.get()` here, instead of grabbing that `useStore` helper from our React / Preact / Solid / Vue examples. This is because **useStore is meant to trigger component re-renders.** In other words, `useStore` should be used whenever the store value is being rendered to the UI. Since we're reading the value when an **event** is triggered (`addToCart` in this case), and we aren't trying to render that value, we don't need `useStore` here.
+
 </details>
 :::
 
@@ -480,26 +504,27 @@ With our store in place, we can call this function inside our `AddToCartForm` wh
 import { addCartItem, isCartOpen } from '../cartStore';
 
 export default function AddToCartForm({ children }) {
-  // we'll hardcode the item info for simplicity!
-  const hardcodedItemInfo = {
-    id: 'astronaut-figurine',
-    name: 'Astronaut Figurine',
-    imageSrc: '/images/astronaut-figurine.png',
-  }
-
-  function addToCart(e) {
-    e.preventDefault();
-    isCartOpen.set(true);
-    addCartItem(hardcodedItemInfo);
-  }
-
-  return (
-    <form onSubmit={addToCart}>
-      {children}
-    </form>
-  )
+// we'll hardcode the item info for simplicity!
+const hardcodedItemInfo = {
+id: 'astronaut-figurine',
+name: 'Astronaut Figurine',
+imageSrc: '/images/astronaut-figurine.png',
 }
-```
+
+function addToCart(e) {
+e.preventDefault();
+isCartOpen.set(true);
+addCartItem(hardcodedItemInfo);
+}
+
+return (
+<form onSubmit={addToCart}>
+{children}
+</form>
+)
+}
+
+````
 </Fragment>
 <Fragment slot="react">
 ```jsx
@@ -526,7 +551,8 @@ export default function AddToCartForm({ children }) {
     </form>
   )
 }
-```
+````
+
 </Fragment>
 <Fragment slot="solid">
 ```jsx
@@ -534,26 +560,27 @@ export default function AddToCartForm({ children }) {
 import { addCartItem, isCartOpen } from '../cartStore';
 
 export default function AddToCartForm({ children }) {
-  // we'll hardcode the item info for simplicity!
-  const hardcodedItemInfo = {
-    id: 'astronaut-figurine',
-    name: 'Astronaut Figurine',
-    imageSrc: '/images/astronaut-figurine.png',
-  }
-
-  function addToCart(e) {
-    e.preventDefault();
-    isCartOpen.set(true);
-    addCartItem(hardcodedItemInfo);
-  }
-
-  return (
-    <form onSubmit={addToCart}>
-      {children}
-    </form>
-  )
+// we'll hardcode the item info for simplicity!
+const hardcodedItemInfo = {
+id: 'astronaut-figurine',
+name: 'Astronaut Figurine',
+imageSrc: '/images/astronaut-figurine.png',
 }
-```
+
+function addToCart(e) {
+e.preventDefault();
+isCartOpen.set(true);
+addCartItem(hardcodedItemInfo);
+}
+
+return (
+<form onSubmit={addToCart}>
+{children}
+</form>
+)
+}
+
+````
 </Fragment>
 <Fragment slot="svelte">
 ```svelte
@@ -577,7 +604,8 @@ export default function AddToCartForm({ children }) {
     addCartItem(hardcodedItemInfo);
   }
 </script>
-```
+````
+
 </Fragment>
 <Fragment slot="vue">
 ```vue
@@ -604,7 +632,8 @@ export default function AddToCartForm({ children }) {
     addCartItem(hardcodedItemInfo);
   }
 </script>
-```
+
+````
 </Fragment>
 <Fragment slot="lit">
 ```ts
@@ -639,7 +668,8 @@ export class AddToCartForm extends LitElement {
   }
 }
 customElements.define('add-to-cart-form', AddToCartForm);
-```
+````
+
 </Fragment>
 </UIFrameworkTabs>
 
@@ -653,26 +683,27 @@ import { useStore } from '@nanostores/preact';
 import { isCartOpen, cartItems } from '../cartStore';
 
 export default function CartFlyout() {
-  const $isCartOpen = useStore(isCartOpen);
-  const $cartItems = useStore(cartItems);
+const $isCartOpen = useStore(isCartOpen);
+const $cartItems = useStore(cartItems);
 
-  return $isCartOpen ? (
+return $isCartOpen ? (
     <aside>
       {Object.values($cartItems).length ? (
-        <ul>
-          {Object.values($cartItems).map(cartItem => (
-            <li>
-              <img src={cartItem.imageSrc} alt={cartItem.name} />
-              <h3>{cartItem.name}</h3>
-              <p>Quantity: {cartItem.quantity}</p>
-            </li>
-          ))}
-        </ul>
-      ) : <p>Your cart is empty!</p>}
-    </aside>
-  ) : null;
+<ul>
+{Object.values($cartItems).map(cartItem => (
+<li>
+<img src={cartItem.imageSrc} alt={cartItem.name} />
+<h3>{cartItem.name}</h3>
+<p>Quantity: {cartItem.quantity}</p>
+</li>
+))}
+</ul>
+) : <p>Your cart is empty!</p>}
+</aside>
+) : null;
 }
-```
+
+````
 </Fragment>
 <Fragment slot="react">
 ```jsx
@@ -700,7 +731,8 @@ export default function CartFlyout() {
     </aside>
   ) : null;
 }
-```
+````
+
 </Fragment>
 <Fragment slot="solid">
 ```jsx
@@ -709,26 +741,27 @@ import { useStore } from '@nanostores/solid';
 import { isCartOpen, cartItems } from '../cartStore';
 
 export default function CartFlyout() {
-  const $isCartOpen = useStore(isCartOpen);
-  const $cartItems = useStore(cartItems);
+const $isCartOpen = useStore(isCartOpen);
+const $cartItems = useStore(cartItems);
 
-  return $isCartOpen() ? (
+return $isCartOpen() ? (
     <aside>
       {Object.values($cartItems()).length ? (
-        <ul>
-          {Object.values($cartItems()).map(cartItem => (
-            <li>
-              <img src={cartItem.imageSrc} alt={cartItem.name} />
-              <h3>{cartItem.name}</h3>
-              <p>Quantity: {cartItem.quantity}</p>
-            </li>
-          ))}
-        </ul>
-      ) : <p>Your cart is empty!</p>}
-    </aside>
-  ) : null;
+<ul>
+{Object.values($cartItems()).map(cartItem => (
+<li>
+<img src={cartItem.imageSrc} alt={cartItem.name} />
+<h3>{cartItem.name}</h3>
+<p>Quantity: {cartItem.quantity}</p>
+</li>
+))}
+</ul>
+) : <p>Your cart is empty!</p>}
+</aside>
+) : null;
 }
-```
+
+````
 </Fragment>
 <Fragment slot="svelte">
 ```svelte
@@ -752,7 +785,8 @@ export default function CartFlyout() {
     <p>Your cart is empty!</p>
   {/if}
 {/if}
-```
+````
+
 </Fragment>
 <Fragment slot="vue">
 ```vue
@@ -777,7 +811,8 @@ export default function CartFlyout() {
   const $isCartOpen = useStore(isCartOpen);
   const $cartItems = useStore(cartItems);
 </script>
-```
+
+````
 </Fragment>
 <Fragment slot="lit">
 ```ts
@@ -822,7 +857,8 @@ export class CartFlyoutLit extends LitElement {
 }
 
 customElements.define('cart-flyout', CartFlyoutLit);
-```
+````
+
 </Fragment>
 </UIFrameworkTabs>
 

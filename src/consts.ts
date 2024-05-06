@@ -4,12 +4,12 @@
 // Base Page Metadata, src/layouts/BaseLayout.astro
 export const BRAND_NAME = "VisVrs";
 export const SITE_TITLE = "VisVrs";
-export const SITE_DESCRIPTION =
-  "An Astro Theme for Visual Storytelling";
+export const SITE_DESCRIPTION = "An Astro Theme for Visual Storytelling";
 
 // Tags Page Metadata, src/pages/tags/index.astro
 export const Tags_TITLE = "VisVrs - All Tags";
-export const Tags_DESCRIPTION = "VisVrs - All tags and the count of articles related to each tag";
+export const Tags_DESCRIPTION =
+  "VisVrs - All tags and the count of articles related to each tag";
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
@@ -44,7 +44,6 @@ export const FooterLinks = [
 // Search Page Metadata, src/pages/search.astro
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
-
 
 // Google Analytics, src/components/Analytics.astro
 export const GA_TRACKING_ID = "G-B2LGWKB4FJ";

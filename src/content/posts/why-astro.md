@@ -30,14 +30,13 @@ Why choose Astro over another web framework? Here are five core design principle
 
 **Astro was designed for building content-rich websites.** This includes most marketing sites, publishing sites, documentation sites, blogs, portfolios, and some ecommerce sites.
 
-By contrast, most modern web frameworks are designed for building *web applications*. These frameworks work best for building more complex, application-like experiences in the browser: logged-in admin dashboards, inboxes, social networks, todo lists, and even native-like applications like [Figma](https://figma.com/) and [Ping](https://ping.gg/).
+By contrast, most modern web frameworks are designed for building _web applications_. These frameworks work best for building more complex, application-like experiences in the browser: logged-in admin dashboards, inboxes, social networks, todo lists, and even native-like applications like [Figma](https://figma.com/) and [Ping](https://ping.gg/).
 
 This is one of the most important differences to understand about Astro. Astro's unique focus on content lets Astro make tradeoffs and deliver unmatched performance features that wouldn't make sense for more application-focused web frameworks to implement.
 
 :::tip
 If your project falls into the second "application" camp, Astro might not be the right choice for your project... **and that's okay!** Check out [Next.js](https://nextjs.org/) for a more application-focused alternative to Astro.
 :::
-
 
 ## Server-first
 
@@ -49,7 +48,7 @@ The SPA model has its benefits. However, these come at the expense of additional
 
 ## Fast by default
 
-Good performance is always important, but it is *especially* critical for content-focused websites. It has been well-proven that poor performance loses you engagement, conversions, and money. For example:
+Good performance is always important, but it is _especially_ critical for content-focused websites. It has been well-proven that poor performance loses you engagement, conversions, and money. For example:
 
 - Every 100ms faster → 1% more conversions ([Mobify](https://web.dev/why-speed-matters/), earning +$380,000/yr)
 - 50% faster → 12% more sales ([AutoAnything](https://www.digitalcommerce360.com/2010/08/19/web-accelerator-revs-conversion-and-sales-autoanything/))
@@ -60,10 +59,9 @@ Good performance is always important, but it is *especially* critical for conten
 
 In many web frameworks, it is easy to build a website that looks great during development only to load painfully slow once deployed. JavaScript is often the culprit, since users’ phones and lower-powered devices rarely match the speed of a developer's laptop.
 
-Astro's magic is in how it combines the two values explained above -- a content focus with a server-first MPA architecture -- to make tradeoffs and deliver features that other frameworks cannot. The result is amazing web performance for every website, out of the box. Our goal: **It should be nearly impossible to build a slow website with Astro.** 
+Astro's magic is in how it combines the two values explained above -- a content focus with a server-first MPA architecture -- to make tradeoffs and deliver features that other frameworks cannot. The result is amazing web performance for every website, out of the box. Our goal: **It should be nearly impossible to build a slow website with Astro.**
 
 An Astro website can [load 40% faster with 90% less JavaScript](https://twitter.com/t3dotgg/status/1437195415439360003) than the same site built with the most popular React web framework. But don't take our word for it: watch Astro's performance leave Ryan Carniato (creator of Solid.js and Marko) [speechless](https://youtu.be/2ZEMb_H-LYE?t=8163).
-
 
 ## Easy to use
 
@@ -76,7 +74,6 @@ We also wanted to make sure that Astro had a great built-in component language a
 Astro was designed to be less complex than other UI frameworks and languages. One big reason for this is that Astro was designed to render on the server, not in the browser. That means that you don't need to worry about: hooks (React), stale closures (also React), refs (Vue), observables (Svelte), atoms, selectors, reactions, or derivations. There is no reactivity on the server, so all of that complexity melts away.
 
 One of our favorite sayings is: **opt-in to complexity.** We designed Astro to remove as much "required complexity" as possible from the developer experience, especially as you onboard for the first time. You can build a "Hello World" example website in Astro with just HTML and CSS. Then, when you need to build something more powerful, you can incrementally reach for new features and APIs as you go.
-
 
 ## Fully-featured, but flexible
 

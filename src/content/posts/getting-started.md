@@ -24,5 +24,3 @@ author: VV
 - **UI-agnostic:** Supports React, Preact, Svelte, Vue, Solid, Lit and more.
 
 Check out our detailed [Why Astro](/en/concepts/why-astro/) breakdown to learn more about what makes Astro special. ✨
-
-

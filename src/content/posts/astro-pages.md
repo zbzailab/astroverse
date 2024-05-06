@@ -18,9 +18,10 @@ import Since from '~/components/Since.astro'
 
 **Pages** are files that live in the `src/pages/` subdirectory of your Astro project. They are responsible for handling routing, data loading, and overall page layout for every page in your website.
 
-## Supported page files 
+## Supported page files
 
 Astro supports the following file types in the `src/pages/` directory:
+
 - [`.astro`](#astro-pages)
 - [`.md`](#markdownmdx-pages)
 - `.mdx` (with the [MDX Integration installed](/en/guides/integrations-guide/mdx/#installation))
@@ -89,9 +90,10 @@ Page layouts are especially useful for [Markdown files](#markdownmdx-pages). Mar
 ```md {3}
 ---
 # Example: src/pages/page.md
-layout: '../layouts/MySiteLayout.astro'
-title: 'My Markdown page'
+layout: "../layouts/MySiteLayout.astro"
+title: "My Markdown page"
 ---
+
 # Title
 
 This is my page, written in **Markdown.**
@@ -141,14 +143,14 @@ export const partial = true;
 
 The `export const partial` must be identifiable statically. It can have the value of:
 
-- The boolean __`true`__.
+- The boolean **`true`**.
 - An environment variable using import.meta.env such as `import.meta.env.USE_PARTIALS`.
 
 ### Using with a library
 
- Partials are used to dynamically update a section of a page using a library such as [htmx](https://htmx.org/).
+Partials are used to dynamically update a section of a page using a library such as [htmx](https://htmx.org/).
 
- The following example shows an `hx-post` attribute set to a partial's URL. The content from the partial page will be used to update the targeted HTML element on this page. 
+The following example shows an `hx-post` attribute set to a partial's URL. The content from the partial page will be used to update the targeted HTML element on this page.
 
 ```astro title="src/pages/index.astro" 'hx-post="/partials/clicked/"'
 <html>

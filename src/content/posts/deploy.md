@@ -38,15 +38,15 @@ These host platforms automatically detect pushes to your Astro project’s sourc
 
 1. Choose a host that supports **continuous deployment** (e.g. [Netlify](/en/guides/deploy/netlify/) or [Vercel](/en/guides/deploy/vercel/)) and import your Git repository as a new site/project.
 
-    Many common hosts will recognize your project as an Astro site, and should choose the appropriate configuration settings to build and deploy your site as shown below. (If not, these settings can be changed.)
+   Many common hosts will recognize your project as an Astro site, and should choose the appropriate configuration settings to build and deploy your site as shown below. (If not, these settings can be changed.)
 
-    :::note[Deploy settings]
-    - **Build Command:** `astro build` or `npm run build`
-    - **Publish directory:** `dist`
-    :::
+   :::note[Deploy settings]
+
+   - **Build Command:** `astro build` or `npm run build`
+   - **Publish directory:** `dist`
+     :::
 
 1. Click "Deploy" and your new website will be created at a unique URL for that host (e.g. `new-astro-site.netlify.app`).
-
 
 The host will be automatically configured to watch your Git provider's main branch for changes, and to rebuild and republish your site at each new commit. These settings can typically be configured in your host provider's dashboard UI.
 
@@ -56,37 +56,37 @@ Some hosts will have their own command line interface (CLI) you can install glob
 
 1. Install your host's CLI globally, for example:
 
-    <PackageManagerTabs>
-        <Fragment slot="npm">
-        ```shell
-        npm install --global netlify-cli
-        ```
-        </Fragment>
-        <Fragment slot="pnpm">
-        ```shell
-        pnpm add --global netlify-cli
-        ```
-        </Fragment>
-        <Fragment slot="yarn">
-        ```shell
-        yarn global add netlify-cli
-        ```
-        </Fragment>
-    </PackageManagerTabs>
+<PackageManagerTabs>
+    <Fragment slot="npm">
+    ```shell
+    npm install --global netlify-cli
+    ```
+    </Fragment>
+    <Fragment slot="pnpm">
+    ```shell
+    pnpm add --global netlify-cli
+    ```
+    </Fragment>
+    <Fragment slot="yarn">
+    ```shell
+    yarn global add netlify-cli
+    ```
+    </Fragment>
+</PackageManagerTabs>
 
 1. Run the CLI and follow any instructions for authorization, setup etc.
 
 1. Build your site and deploy to your host
 
-    Many common hosts will build and deploy your site for you. They will usually recognize your project as an Astro site, and should choose the appropriate configuration settings to build and deploy as shown below. (If not, these settings can be changed.)
+   Many common hosts will build and deploy your site for you. They will usually recognize your project as an Astro site, and should choose the appropriate configuration settings to build and deploy as shown below. (If not, these settings can be changed.)
 
-    :::note[Deploy settings]
-    - **Build Command:** `astro build` or `npm run build`
-    - **Publish directory:** `dist`
-    :::
+   :::note[Deploy settings]
 
+   - **Build Command:** `astro build` or `npm run build`
+   - **Publish directory:** `dist`
+     :::
 
-    Other hosts will require you to [build your site locally](#building-your-site-locally) and deploy using the command line.
+   Other hosts will require you to [build your site locally](#building-your-site-locally) and deploy using the command line.
 
 ## Building Your Site Locally
 
@@ -123,4 +123,4 @@ Before deploying your Astro site with [SSR (server-side rendering)](/en/guides/s
 
 - Installed the [appropriate adapter](/en/guides/server-side-rendering/) to your project dependencies (either manually, or using the adapter's `astro add` command, e.g. `npx astro add netlify`).
 - [Added the adapter](/en/reference/configuration-reference/#integrations) to your `astro.config.mjs` file's import and default export when installing manually. (The `astro add` command will take care of this step for you!)
-:::
+  :::

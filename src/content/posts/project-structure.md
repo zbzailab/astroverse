@@ -13,6 +13,7 @@ cover: https://images.unsplash.com/photo-1501471984908-815b996862f4?w=1400&auto=
 coverAlt: VisVrs-Aliases
 author: VV
 ---
+
 import FileTree from '~/components/FileTree.astro'
 
 Your new Astro project generated from the `create astro` CLI wizard already includes some files and folders. Others, you will create yourself and add to Astro's existing file structure.
@@ -68,7 +69,7 @@ The `src/` folder is where most of your project source code lives. This includes
 - [Styles (CSS, Sass)](/en/guides/styling/)
 - [Markdown](/en/guides/markdown-content/)
 
-Astro processes, optimizes, and bundles your `src/` files to create the final website that is shipped to the browser.  Unlike the static `public/` directory, your `src/` files are built and handled for you by Astro.
+Astro processes, optimizes, and bundles your `src/` files to create the final website that is shipped to the browser. Unlike the static `public/` directory, your `src/` files are built and handled for you by Astro.
 
 Some files (like Astro components) are not even sent to the browser as written but are instead rendered to static HTML. Other files (like CSS) are sent to the browser but may be optimized or bundled with other CSS files for performance.
 
@@ -78,7 +79,7 @@ While this guide describes some popular conventions used in the Astro community,
 
 ### `src/components`
 
-**Components** are reusable units of code for your HTML pages. These could be [Astro components](/en/core-concepts/astro-components/), or [UI framework components](/en/core-concepts/framework-components/) like React or Vue.  It is common to group and organize all of your project components together in this folder.
+**Components** are reusable units of code for your HTML pages. These could be [Astro components](/en/core-concepts/astro-components/), or [UI framework components](/en/core-concepts/framework-components/) like React or Vue. It is common to group and organize all of your project components together in this folder.
 
 This is a common convention in Astro projects, but it is not required. Feel free to organize your components however you like!
 
@@ -132,6 +133,6 @@ See the [Configuring Astro Guide](/en/guides/configuring-astro/) for details on 
 
 ### `tsconfig.json`
 
-This file is generated in every starter template and includes TypeScript configuration options for your Astro project. Some features (like npm package imports) aren’t fully supported in the editor without a `tsconfig.json` file. 
+This file is generated in every starter template and includes TypeScript configuration options for your Astro project. Some features (like npm package imports) aren’t fully supported in the editor without a `tsconfig.json` file.
 
 See the [TypeScript Guide](/en/guides/typescript/) for details on setting configurations.

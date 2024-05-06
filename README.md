@@ -1,4 +1,3 @@
-
 ## 🚀 VisVrs: An Astro Theme for Visual Storytelling
 
 VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelling photo-text blogging. It's perfect for content creators looking to make a significant impact with their stories.
@@ -11,12 +10,10 @@ VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelli
   <a>
 </p>
 
-
-
 ## 🎉 Features
 
-- ✅  Powered by Astro
-- ✅   Development with Tailwind CSS and Preline UI
+- ✅ Powered by Astro
+- ✅ Development with Tailwind CSS and Preline UI
 - ✅ Fully Responsive Design
 - ✅ Perfect 100/100 Lighthouse Performance Score
 - ✅ SEO Optimized
@@ -29,7 +26,7 @@ VisVrs, a blend of 'Visual' and 'Verse', is an Astro theme designed for compelli
 - ✅ Pagination for Easy Navigation
 - ✅ Google Analytics configured using Partytown without compromising speed
 - ✅ Code formatted with Prettier in one click
-- 
+-
 
 ## 🎡 Live demo
 
@@ -64,7 +61,7 @@ pnpm run dev
 
 ## 📄 Adding a post
 
-Adding a post is as simple as adding a .md or .mdx file to the blog folder at the path **src/content/posts**. 
+Adding a post is as simple as adding a .md or .mdx file to the blog folder at the path **src/content/posts**.
 
 ## 🧞 Commands
 
@@ -89,12 +86,12 @@ Basic configuration file: `./src/config.yaml`
 // Base Page Metadata, src/layouts/BaseLayout.astro
 export const BRAND_NAME = "VisVrs";
 export const SITE_TITLE = "VisVrs";
-export const SITE_DESCRIPTION =
-  "An Astro Theme for Visual Storytelling";
+export const SITE_DESCRIPTION = "An Astro Theme for Visual Storytelling";
 
 // Tags Page Metadata, src/pages/tags/index.astro
 export const Tags_TITLE = "VisVrs - All Tags";
-export const Tags_DESCRIPTION = "VisVrs - All tags and the count of articles related to each tag";
+export const Tags_DESCRIPTION =
+  "VisVrs - All tags and the count of articles related to each tag";
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
@@ -130,10 +127,8 @@ export const FooterLinks = [
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
 
-
 // Google Analytics, src/components/Analytics.astro
 export const GA_TRACKING_ID = "G-XXXXXXXXXX";
-
 ```
 
 ## Deployment

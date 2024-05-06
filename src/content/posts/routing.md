@@ -13,6 +13,7 @@ cover: https://images.unsplash.com/photo-1501791187590-9ef2612ba1eb?w=1400&auto=
 coverAlt: VisVrs-Aliases
 author: VV
 ---
+
 import FileTree from '~/components/FileTree.astro'
 import RecipeLinks from "~/components/RecipeLinks.astro"
 import Since from '~/components/Since.astro'
@@ -123,6 +124,7 @@ Rest parameters can be used with **other named parameters**. For example, GitHub
 ```
 /[org]/[repo]/tree/[branch]/[...file]
 ```
+
 In this example, a request for `/withastro/astro/tree/main/docs/public/favicon.svg` would be split into the following named parameters:
 
 ```js
@@ -180,6 +182,7 @@ const { title, text } = Astro.props;
 ```
 
 ### Server (SSR) Mode
+
 In [SSR mode](/en/guides/server-side-rendering/), dynamic routes are defined the same way: include `[param]` or `[...path]` brackets in your file names to match arbitrary strings or paths. But because the routes are no longer built ahead of time, the page will be served to any matching route. Since these are not "static" routes, `getStaticPaths` should not be used.
 
 ```astro title="src/pages/resources/[resource]/[id].astro"
@@ -188,6 +191,7 @@ const { resource, id } = Astro.params;
 ---
 <h1>{resource}: {id}</h1>
 ```
+
 This page will be served for any value of `resource` and `id`: `resources/users/1`, `resources/colors/blue`, etc.
 
 #### Modifying the `[...slug]` example for SSR
@@ -243,12 +247,12 @@ You can define rules to [redirect users to permanently-moved pages](#configured-
 You can specify a mapping of permanent redirects in your Astro config with the `redirects` value. For most redirects, this is a mapping of an old route to the new route:
 
 ```js title="astro.config.mjs" {4-6}
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
   redirects: {
-    '/old-page': '/new-page'
-  }
+    "/old-page": "/new-page",
+  },
 });
 ```
 
@@ -263,15 +267,15 @@ These redirects follow the same rules as file-based routes. Dynamic routes are a
 Using SSR or a static adapter, you can also provide an object as the value, allowing you to specify the `status` code in addition to the new `destination`:
 
 ```js title="astro.config.mjs" {5-8}
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
   redirects: {
-    '/old-page': {
+    "/old-page": {
       status: 302,
-      destination: '/new-page'
-    }
-  }
+      destination: "/new-page",
+    },
+  },
 });
 ```
 
@@ -326,7 +330,7 @@ Given the example above, here are a few examples of how the rules will match a r
 - `pages/posts/[pid].astro` - Will build `/posts/1`, `/posts/abc`, etc. But not `/posts/create`
 - `pages/posts/[...slug].astro` - Will build `/posts/1/2`, `/posts/a/b/c`, etc. But not `/posts/create`, `/posts/1`, `/posts/abc`
 
-Redirects also follow the same rules, but are prioritized *last*; if there is a file-based route and a redirect with the same route priority level, the file-based route is chosen.
+Redirects also follow the same rules, but are prioritized _last_; if there is a file-based route and a redirect with the same route priority level, the file-based route is chosen.
 
 ## Pagination
 
@@ -336,7 +340,7 @@ Paginated route names should use the same `[bracket]` syntax as a standard dynam
 
 You can use the `paginate()` function to generate these pages for an array of values like so:
 
-```astro /{ (paginate) }/ /paginate\\(.*\\)/ /(?<=const.*)(page)/ /page\\.[a-zA-Z]+/
+```astro /{ (paginate) }/ /paginate\(.*\)/ /(?<=const.*)(page)/ /page\.[a-zA-Z]+/
 ---
 // src/pages/astronauts/[page].astro
 export async function getStaticPaths({ paginate }) {
@@ -365,18 +369,19 @@ const { page } = Astro.props;
 ```
 
 This generates the following pages, with 2 items to a page:
+
 - `/astronauts/1` - Page 1: Displays "Neil Armstrong" and "Buzz Aldrin"
 - `/astronauts/2` - Page 2: Displays "Sally Ride" and "John Glenn"
-
 
 ### The `page` prop
 
 When you use the `paginate()` function, each page will be passed its data via a `page` prop. The `page` prop has many useful properties, but here are the highlights:
+
 - **page.data** - array containing the page’s slice of data that you passed to the `paginate()` function
 - **page.url.next** - link to the next page in the set
 - **page.url.prev** - link to the previous page in the set
 
-```astro /(?<=const.*)(page)/ /page\\.[a-zA-Z]+(?:\\.(?:prev|next))?/
+```astro /(?<=const.*)(page)/ /page\.[a-zA-Z]+(?:\.(?:prev|next))?/
 ---
 // src/pages/astronauts/[page].astro
 // Paginate same list of { astronaut } objects as the previous example
@@ -391,34 +396,33 @@ const { page } = Astro.props;
 {page.url.next ? <a href={page.url.next}>Next</a> : null}
 ```
 
-
 #### Complete API reference
 
 ```ts
 interface Page<T = any> {
-	/** result */
-	data: T[];
-	/** metadata */
-	/** the count of the first item on the page, starting from 0 */
-	start: number;
-	/** the count of the last item on the page, starting from 0 */
-	end: number;
-	/** total number of results */
-	total: number;
-	/** the current page number, starting from 1 */
-	currentPage: number;
-	/** number of items per page (default: 25) */
-	size: number;
-	/** number of last page */
-	lastPage: number;
-	url: {
-		/** url of the current page */
-		current: string;
-		/** url of the previous page (if there is one) */
-		prev: string | undefined;
-		/** url of the next page (if there is one) */
-		next: string | undefined;
-	};
+  /** result */
+  data: T[];
+  /** metadata */
+  /** the count of the first item on the page, starting from 0 */
+  start: number;
+  /** the count of the last item on the page, starting from 0 */
+  end: number;
+  /** total number of results */
+  total: number;
+  /** the current page number, starting from 1 */
+  currentPage: number;
+  /** number of items per page (default: 25) */
+  size: number;
+  /** number of last page */
+  lastPage: number;
+  url: {
+    /** url of the current page */
+    current: string;
+    /** url of the previous page (if there is one) */
+    prev: string | undefined;
+    /** url of the next page (if there is one) */
+    next: string | undefined;
+  };
 }
 ```
 
@@ -462,7 +466,7 @@ const params = Astro.params;
 
 You can exclude pages or directories from being built by prefixing their names with an underscore (`_`). Files with the `_` prefix won't be recognized by the router and won't be placed into the `dist/` directory.
 
-You can use this to temporarily disable pages, and also to put tests, utilities, and components in the same folder as their related pages. 
+You can use this to temporarily disable pages, and also to put tests, utilities, and components in the same folder as their related pages.
 
 In this example, only `src/pages/index.astro` and `src/pages/posts/post1.md` will be built as page routes and HTML files.
 

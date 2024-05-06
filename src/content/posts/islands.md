@@ -14,7 +14,6 @@ coverAlt: VisVrs-Astro Islands
 author: VV
 ---
 
-
 **Astro Islands** (aka Component Islands) are a pattern of web architecture pioneered by Astro. The idea of “islands architecture” was first coined by Etsy's frontend architect [Katie Sylor-Miller](https://twitter.com/ksylor) in 2019, and expanded on in [this post](https://jasonformat.com/islands-architecture/) by Preact creator Jason Miller.
 
 ## What is an Astro Island?
