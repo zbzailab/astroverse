@@ -9,7 +9,7 @@ tags:
   - Astro
   - Lorem
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxhY2t8ZW58MHwwfDB8fHwy
+cover: https://images.unsplash.com/photo-1516651000622-7f32fe80a57a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 coverAlt: VisVrs-Aliases
 author: VV
 ---
