@@ -77,7 +77,7 @@ All commands are run from the root of the project, from a terminal:
 
 ### 🔧Configuration
 
-Basic configuration file: `./src/config.yaml`
+Basic configuration file: `./src/consts.ts`
 
 ```ts
 // Place any global data in this file.
