@@ -92,7 +92,7 @@ A typical layout for Markdown or MDX pages includes:
 1. The `frontmatter` prop to access the Markdown or MDX page's frontmatter and other data.
 2. A default [`<slot />`](/en/core-concepts/astro-components/#slots) to indicate where the page's Markdown/MDX content should be rendered.
 
-```astro /(?<!//.*){?frontmatter(?:\.\w+)?}?/ "<slot />"
+```astro /(?<!//.*){?frontmatter(?:.\w+)?}?/ "<slot />"
 ---
 // src/layouts/BaseLayout.astro
 // 1. The frontmatter prop gives access to frontmatter and other data

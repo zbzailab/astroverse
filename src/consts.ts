@@ -44,10 +44,17 @@ export const FooterLinks = [
 // Social Links, src/components/Footer.astro
 export const SocialLinks = [
   { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
-  { href: "https://twitter.com/astrodotbuild", icon: "tabler:brand-twitter", label: "Twitter" },
-  { href: "https://github.com/isooosi", icon: "tabler:brand-github", label: "GitHub" },
+  {
+    href: "https://twitter.com/astrodotbuild",
+    icon: "tabler:brand-twitter",
+    label: "Twitter",
+  },
+  {
+    href: "https://github.com/isooosi",
+    icon: "tabler:brand-github",
+    label: "GitHub",
+  },
 ];
-
 
 // Search Page Metadata, src/pages/search.astro
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;

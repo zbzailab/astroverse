@@ -29,7 +29,7 @@ You can configure how your pages are rendered in your [`output` configuration](/
 
 ### Pre-rendered
 
-The **default rendering mode is **`output: 'static'`****, which creates the HTML for all your page routes at build time.
+The **default rendering mode is **`output: 'static'`\*\*\*\*, which creates the HTML for all your page routes at build time.
 
 In this mode, **your entire site will be pre-rendered** and the server will have all pages built ahead of time and ready to send to the browser. The same HTML document is sent to the browser for every visitor, and a full-site rebuild is required to update the contents of the page. This method is also known as **static site generation (SSG)**.
 

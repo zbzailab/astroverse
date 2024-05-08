@@ -340,7 +340,7 @@ Paginated route names should use the same `[bracket]` syntax as a standard dynam
 
 You can use the `paginate()` function to generate these pages for an array of values like so:
 
-```astro /{ (paginate) }/ /paginate\(.*\)/ /(?<=const.*)(page)/ /page\.[a-zA-Z]+/
+```astro /{ (paginate) }/ /paginate(.*)/ /(?<=const.*)(page)/ /page.[a-zA-Z]+/
 ---
 // src/pages/astronauts/[page].astro
 export async function getStaticPaths({ paginate }) {
@@ -381,7 +381,7 @@ When you use the `paginate()` function, each page will be passed its data via a 
 - **page.url.next** - link to the next page in the set
 - **page.url.prev** - link to the previous page in the set
 
-```astro /(?<=const.*)(page)/ /page\.[a-zA-Z]+(?:\.(?:prev|next))?/
+```astro /(?<=const.*)(page)/ /page.[a-zA-Z]+(?:.(?:prev|next))?/
 ---
 // src/pages/astronauts/[page].astro
 // Paginate same list of { astronaut } objects as the previous example

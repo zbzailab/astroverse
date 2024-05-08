@@ -518,6 +518,7 @@ addCartItem(hardcodedItemInfo);
 }
 
 return (
+
 <form onSubmit={addToCart}>
 {children}
 </form>
@@ -574,6 +575,7 @@ addCartItem(hardcodedItemInfo);
 }
 
 return (
+
 <form onSubmit={addToCart}>
 {children}
 </form>
@@ -689,6 +691,7 @@ const $cartItems = useStore(cartItems);
 return $isCartOpen ? (
     <aside>
       {Object.values($cartItems).length ? (
+
 <ul>
 {Object.values($cartItems).map(cartItem => (
 <li>
@@ -747,6 +750,7 @@ const $cartItems = useStore(cartItems);
 return $isCartOpen() ? (
     <aside>
       {Object.values($cartItems()).length ? (
+
 <ul>
 {Object.values($cartItems()).map(cartItem => (
 <li>
