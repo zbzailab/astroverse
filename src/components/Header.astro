@@ -3,45 +3,25 @@ import Link from "@components/Links.astro";
 import { Icon } from "astro-icon/components";
 import { SITE_TITLE, HeaderLinks } from "@consts";
 ---
-
-<header
-  class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-900"
->
-  <nav
-    class="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
-    aria-label="Global"
-  >
-    <a
-      class="sm:order-1 flex-none text-xl font-semibold dark:text-white"
-      href="/">{SITE_TITLE}</a
-    >
+<header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-900">
+  <nav class="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between" aria-label="Global">
+    <a class="sm:order-1 flex-none text-xl font-semibold dark:text-white" href="/">{SITE_TITLE}</a>
 
     <div class="sm:order-3 flex items-center gap-x-2">
       <button
         type="button"
         class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-900 relative"
-      >
-        <a href="/search/" class="absolute inset-0 z-10" aria-label="Search"
-        ></a>
-        <Icon name="tabler:search" class="icon-base" />
-      </button>
-      <button
-        type="button"
-        class="sm:hidden hs-collapse-toggle p-2.5 inline-flex justify-center items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:text-white dark:hover:bg-white/10"
-        data-hs-collapse="#navbar-alignment"
+        aria-expanded="false"
         aria-controls="navbar-alignment"
         aria-label="Toggle navigation"
         id="menu-toggle"
       >
+        <a href="/search/" class="absolute inset-0 z-10" aria-label="Search"></a>
         <Icon name="tabler:menu-2" class="icon-base" />
       </button>
     </div>
 
-    <div
-      id="navbar-alignment"
-      class="internal-links hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2"
-      aria-expanded="false"
-    >
+    <div id="navbar-alignment" class="internal-links hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2">
       <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0">
         {
           HeaderLinks.map((link) => (
@@ -57,3 +37,4 @@ import { SITE_TITLE, HeaderLinks } from "@consts";
     </div>
   </nav>
 </header>
+
