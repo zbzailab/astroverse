@@ -12,7 +12,7 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 
 <p align="center">
   <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fvisvrs.inote.xyz%2F">
-    <img width="510" alt="Visvrs Lighthouse Score" src="public/visvrs-lighthouse-score.svg">
+    <img width="510" alt="Visvrs Lighthouse Score" src="public/astroverse-lighthouse-score.svg">
   <a>
 </p>
 
@@ -36,7 +36,7 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 
 ## 🎡 Live demo
 
-Experience [**VisVrs**](https://visvrs.inote.xyz) in action.
+Experience [**VisVrs**](https://astroverse.inote.xyz) in action.
 
 ## 🌆 Showcase
 
@@ -51,7 +51,7 @@ Share your project built with VisVrs! Open an issue titled "Showcase Submission"
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
-1. Fork or use this [template](https://github.com/isooosi/VisVrs)
+1. Fork or use this [template](https://github.com/isooosi/AstroVerse)
 
 2. Install dependencies:
 
@@ -141,7 +141,7 @@ export const GA_TRACKING_ID = "G-XXXXXXXXXX";
 
 Click the button below to start deploying your project on Vercel:
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/isooosi/visvrs)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/isooosi/astroverse)
 
 ## ✨ Join and Contribute
 
