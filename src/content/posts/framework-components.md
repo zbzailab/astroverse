@@ -14,8 +14,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import IntegrationsNav from '~/components/IntegrationsNav.astro'
-
 Build your Astro website without sacrificing your favorite component framework. Create Astro [islands](/en/concepts/islands/) with the UI frameworks of your choice.
 
 ## Official UI Framework Integrations

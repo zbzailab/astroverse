@@ -14,8 +14,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import RecipeLinks from "~/components/RecipeLinks.astro";
-
 Astro lets you create custom endpoints to serve any kind of data. You can use this to generate images, expose an RSS document, or use them as API Routes to build a full API for your site.
 
 In statically-generated sites, your custom endpoints are called at build time to produce static files. If you opt in to [SSR](/en/guides/server-side-rendering/) mode, custom endpoints turn into live server endpoints that are called on request. Static and SSR endpoints are defined similarly, but SSR endpoints support additional features.

@@ -15,9 +15,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import DeployGuidesNav from '~/components/DeployGuidesNav.astro';
-import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro';
-
 **Ready to build and deploy your Astro site?** Follow one of our guides to different deployment services or scroll down for general guidance about deploying an Astro site.
 
 ## Deployment Guides

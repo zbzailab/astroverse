@@ -14,8 +14,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import Since from '~/components/Since.astro'
-
 **Pages** are files that live in the `src/pages/` subdirectory of your Astro project. They are responsible for handling routing, data loading, and overall page layout for every page in your website.
 
 ## Supported page files

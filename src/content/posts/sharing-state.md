@@ -14,11 +14,6 @@ coverAlt: AstroVerse-Astro Islands
 author: VV
 ---
 
-import UIFrameworkTabs from '~/components/tabs/UIFrameworkTabs.astro'
-import LoopingVideo from '~/components/LoopingVideo.astro'
-import JavascriptFlavorTabs from '~/components/tabs/JavascriptFlavorTabs.astro'
-import RecipeLinks from "~/components/RecipeLinks.astro"
-
 When building an Astro website with [islands architecture / partial hydration](/en/concepts/islands/), you may have run into this problem: **I want to share state between my components.**
 
 UI frameworks like React or Vue may encourage ["context" providers](https://react.dev/learn/passing-data-deeply-with-context) for other components to consume. But when [partially hydrating components](/en/core-concepts/framework-components/#hydrating-interactive-components) within Astro or Markdown, you can't use these context wrappers.

@@ -14,10 +14,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import FileTree from '~/components/FileTree.astro'
-import RecipeLinks from "~/components/RecipeLinks.astro"
-import Since from '~/components/Since.astro'
-
 Astro uses **file-based routing** to generate your build URLs based on the file layout of your project `src/pages/` directory.
 
 ## Navigating between pages

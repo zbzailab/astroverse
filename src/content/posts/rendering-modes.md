@@ -14,9 +14,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro';
-import RecipeLinks from '~/components/RecipeLinks.astro';
-
 Your Astro project code must be **rendered** to HTML in order to be displayed on the web.
 
 Astro pages, routes, and API endpoints can be either [pre-rendered at build time](#pre-rendered) or [rendered on demand by a server](#on-demand-rendered) when a route is requested. With [Astro islands](/en/concepts/islands/), you can also include some client-side rendering when necessary.

@@ -14,8 +14,6 @@ coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
-import CMSGuidesNav from '~/components/CMSGuidesNav.astro';
-
 **Ready to connect a Headless CMS to your Astro project?** Follow one of our guides to integrate a CMS.
 
 :::tip
