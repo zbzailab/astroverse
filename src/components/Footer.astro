@@ -16,7 +16,7 @@ const today = new Date();
             FooterLinks.map((link) => (
               <Link
                 href={link.href}
-                class="font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+                class="font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500 px-4 py-3"
               >
                 {link.title}
               </Link>
@@ -28,36 +28,16 @@ const today = new Date();
       <div class="sm:order-3 flex flex-wrap gap-2 mt-2 sm:gap-0 sm:mb-0">
         <button
           type="button"
-          class="py-3 px-4 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative"
+          class="py-3 px-4 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative w-12 h-12"
         >
           <a href="/rss.xml/" class="absolute inset-0 z-10" aria-label="RSS"
           ></a>
           <Icon name="tabler:rss" class="icon-base" />
         </button>
-        <button
-          type="button"
-          class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative"
-        >
-          <a
-            href="https://twitter.com/astrodotbuild"
-            class="absolute inset-0 z-10"
-            aria-label="X"></a>
-          <Icon name="tabler:brand-x" class="icon-base" />
-        </button>
-        <button
-          type="button"
-          class="py-2 px-3 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative"
-        >
-          <a
-            href="https://twitter.com/astrodotbuild"
-            class="absolute inset-0 z-10"
-            aria-label="Github"></a>
-          <Icon name="tabler:brand-github" class="icon-base" />
-        </button>
       </div>
 
       <div class="sm:order-1 mt-2 sm:mb-0">
-        <a class="flex-none dark:text-neutral-400" href="/"
+        <a class="flex-none dark:text-neutral-400 px-4 py-3" href="/"
           >{BRAND_NAME} &copy; {today.getFullYear()}</a
         >
       </div>
