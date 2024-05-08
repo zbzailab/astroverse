@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   );
 
   const firstPagePosts = allPosts.slice(0, 15);
-  const remainingPosts = allPosts.slice(12);
+  const remainingPosts = allPosts.slice(15);
   const totalPages = Math.ceil(remainingPosts.length / 12);
 
   const paths = [
@@ -30,7 +30,7 @@ export async function getStaticPaths() {
     },
   ];
 
-  for (let i = 2; i <= totalPages + 1; i++) {
+  for (let i = 2; i <= totalPages; i++) {
     const pagePosts = remainingPosts.slice((i - 2) * 12, (i - 1) * 12);
     paths.push({
       params: { page: i.toString() },
