@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.4",
-    "astro": "^4.7.0",
+    "astro": "^4.7.1",
     "astro-pagefind": "^1.5.0",
     "pagefind": "^1.1.0"
   },
