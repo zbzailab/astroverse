@@ -3,12 +3,11 @@ import { GA_TRACKING_ID } from "@consts";
 ---
 
 <script
-  is:inline
   type="text/partytown"
   async
   src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
 ></script>
-<script is:inline type="text/partytown">
+<script type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
@@ -17,3 +16,5 @@ import { GA_TRACKING_ID } from "@consts";
 
   gtag("config", GA_TRACKING_ID);
 </script>
+
+
