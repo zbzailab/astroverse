@@ -1,6 +1,6 @@
 ---
-title:  Integer quis auctor elit sed
-slug: first-post0
+title: Vitae ultricies
+slug: first-post0265
 description: Lorem ipsum dolor sit amet
 category:
   - One

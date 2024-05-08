@@ -1,6 +1,6 @@
 ---
-title:  Integer quis auctor elit sed
-slug: first-post0
+title: Morbi tristique senectus
+slug: first-post2
 description: Lorem ipsum dolor sit amet
 category:
   - One
@@ -9,7 +9,7 @@ tags:
   - Integer
   - Markdown
 pubDate: 2023-09-01
-cover: https://images.unsplash.com/photo-1498805983167-a523078d762c?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: https://images.unsplash.com/photo-1532024802178-20dbc87a312a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 coverAlt: AstroVerse-Lorem ipsum dolor sit amet
 author: VV
 ---
@@ -23,4 +23,3 @@ Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam s
 Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
 
 Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-

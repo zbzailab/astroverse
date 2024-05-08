@@ -1,6 +1,6 @@
 ---
-title:  Integer quis auctor elit sed
-slug: first-post0
+title: Fringilla urna
+slug: first-post057
 description: Lorem ipsum dolor sit amet
 category:
   - One
