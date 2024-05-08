@@ -50,7 +50,7 @@ Share your project built with AstroVerse! Open an issue titled "Showcase Submiss
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
-1. Fork or use this [template](https://github.com/isooosi/AstroVerse)
+1. Fork or use this [template](https://github.com/isooosi/astroverse)
 
 2. Install dependencies:
 
