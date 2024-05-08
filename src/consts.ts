@@ -2,19 +2,19 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Base Page Metadata, src/layouts/BaseLayout.astro
-export const BRAND_NAME = "VisVrs";
-export const SITE_TITLE = "VisVrs";
+export const BRAND_NAME = "AstroVerse";
+export const SITE_TITLE = "AstroVerse";
 export const SITE_DESCRIPTION = "An Astro Theme for Visual Storytelling";
 
 // Tags Page Metadata, src/pages/tags/index.astro
-export const Tags_TITLE = "VisVrs - All Tags";
+export const Tags_TITLE = "AstroVerse - All Tags";
 export const Tags_DESCRIPTION =
-  "VisVrs - All tags and the count of articles related to each tag";
+  "AstroVerse - All tags and the count of articles related to each tag";
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
   return {
-    title: `All articles on '${tag}' tag in VisVrs`,
+    title: `All articles on '${tag}' tag in AstroVerse`,
     description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
   };
 }
@@ -22,8 +22,8 @@ export function getTagMetadata(tag: string) {
 // Category Page Metadata, src/pages/category/[category]/[page].astro
 export function getCategoryMetadata(category: string) {
   return {
-    title: `All articles in '${category}' category in VisVrs`,
-    description: `Browse all articles under the ${category} category in VisVrs`,
+    title: `All articles in '${category}' category in AstroVerse`,
+    description: `Browse all articles under the ${category} category in AstroVerse`,
   };
 }
 

@@ -1,18 +1,18 @@
 ## 🚀 **AstroVerse**: An Astro Theme for Visual Storytelling
 
-AstroVerse, a blend of "Astro" and "Verse," is an Astro theme tailored for captivating photo-text storytelling. 
+AstroVerse, a blend of "Astro" and "Verse", is an Astro theme tailored for captivating photo-text storytelling. 
 
 It seamlessly merges visuals and written content, empowering creators to deliver compelling narratives with high-impact imagery. 
 
 Ideal for bloggers and content creators seeking to make their stories stand out through the fusion of striking visuals and engaging prose, AstroVerse provides a platform to create immersive and influential digital experiences.
 
-<img src="public/screenshot.webp" alt="VisVrs Screenshot" />
+<img src="public/screenshot.webp" alt="AstroVerse Screenshot" />
 
 ## 💯Lighthouse Score
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fvisvrs.inote.xyz%2F">
-    <img width="510" alt="Visvrs Lighthouse Score" src="public/astroverse-lighthouse-score.svg">
+  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fastroverse.inote.xyz%2F">
+    <img width="510" alt="AstroVerse Lighthouse Score" src="public/astroverse-lighthouse-score.svg">
   <a>
 </p>
 
@@ -32,15 +32,14 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 - ✅ Pagination for Easy Navigation
 - ✅ Google Analytics configured using Partytown without compromising speed
 - ✅ Code formatted with Prettier in one click
--
 
 ## 🎡 Live demo
 
-Experience [**VisVrs**](https://astroverse.inote.xyz) in action.
+Experience [**AstroVerse**](https://astroverse.inote.xyz) in action.
 
 ## 🌆 Showcase
 
-Share your project built with VisVrs! Open an issue titled "Showcase Submission" with your project's details to be featured in our Showcase.
+Share your project built with AstroVerse! Open an issue titled "Showcase Submission" with your project's details to be featured in our Showcase.
 
 - [**iNote**](https://inote.xyz)
 
@@ -90,19 +89,19 @@ Basic configuration file: `./src/consts.ts`
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Base Page Metadata, src/layouts/BaseLayout.astro
-export const BRAND_NAME = "VisVrs";
-export const SITE_TITLE = "VisVrs";
+export const BRAND_NAME = "AstroVerse";
+export const SITE_TITLE = "AstroVerse";
 export const SITE_DESCRIPTION = "An Astro Theme for Visual Storytelling";
 
 // Tags Page Metadata, src/pages/tags/index.astro
-export const Tags_TITLE = "VisVrs - All Tags";
+export const Tags_TITLE = "AstroVerse - All Tags";
 export const Tags_DESCRIPTION =
-  "VisVrs - All tags and the count of articles related to each tag";
+  "AstroVerse - All tags and the count of articles related to each tag";
 
 // Tags Page Metadata, src/pages/tags/[tag]/[page].astro
 export function getTagMetadata(tag: string) {
   return {
-    title: `All articles on '${tag}' tag in VisVrs`,
+    title: `All articles on '${tag}' tag in AstroVerse`,
     description: `Explore articles about ${tag} for different perspectives and in-depth analysis.`,
   };
 }
@@ -110,8 +109,8 @@ export function getTagMetadata(tag: string) {
 // Category Page Metadata, src/pages/category/[category]/[page].astro
 export function getCategoryMetadata(category: string) {
   return {
-    title: `All articles in '${category}' category in VisVrs`,
-    description: `Browse all articles under the ${category} category in VisVrs`,
+    title: `All articles in '${category}' category in AstroVerse`,
+    description: `Browse all articles under the ${category} category in AstroVerse`,
   };
 }
 
@@ -145,4 +144,4 @@ Click the button below to start deploying your project on Vercel:
 
 ## ✨ Join and Contribute
 
-Your contributions make VisVrs better! Whether it's through code, design, bug reports, or feature ideas, we value your input. Check our Issues or submit a Pull Request to get started. Together, let's enhance VisVrs!
+Your contributions make AstroVerse better! Whether it's through code, design, bug reports, or feature ideas, we value your input. Check our Issues or submit a Pull Request to get started. Together, let's enhance AstroVerse!

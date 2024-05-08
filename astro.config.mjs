@@ -10,7 +10,7 @@ import playformCompress from "@playform/compress";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://visvrs.inote.xyz/",
+  site: "https://astroverse.inote.xyz/",
   trailingSlash: "always",
   output: "static",
   prefetch: {

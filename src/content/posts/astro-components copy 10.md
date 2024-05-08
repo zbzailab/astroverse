@@ -10,7 +10,7 @@ tags:
   - Jamstack
 pubDate: 2023-09-01
 cover: https://images.unsplash.com/photo-1533134486753-c833f0ed4866?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
-coverAlt: VisVrs-Aliases
+coverAlt: AstroVerse-Aliases
 author: VV
 ---
 
