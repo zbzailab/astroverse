@@ -10,7 +10,7 @@ tags:
   - Lorem
 pubDate: 2023-09-01
 cover: https://images.unsplash.com/photo-1516651000622-7f32fe80a57a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-coverAlt: Astro Verse-Aliases
+coverAlt: AstroVerse-Aliases
 author: VV
 ---
 

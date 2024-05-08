@@ -10,7 +10,7 @@ tags:
   - Jamstack
 pubDate: 2023-09-06
 cover: https://images.unsplash.com/photo-1475257026007-0753d5429e10?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
-coverAlt: Astro Verse-Astro Islands
+coverAlt: AstroVerse-Astro Islands
 author: VV
 ---
 
