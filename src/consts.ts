@@ -60,5 +60,3 @@ export const SocialLinks = [
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
 
-// Google Analytics, src/components/Analytics.astro
-export const GA_TRACKING_ID = "G-B2LGWKB4FJ";
