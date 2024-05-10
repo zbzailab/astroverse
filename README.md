@@ -30,7 +30,6 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 - ✅ Optimized Image Handling
 - ✅ Automatic Dark Mode Switching
 - ✅ Pagination for Easy Navigation
-- ✅ Google Analytics configured using Partytown without compromising speed
 - ✅ Code formatted with Prettier in one click
 
 ## 🎡 Live demo
