@@ -1,6 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-
 interface Props {
   title: string;
   description: string;
@@ -47,6 +45,3 @@ const { title, description, image = "/blog-placeholder-1.avif" } = Astro.props;
 <script>
   import "preline/dist/preline.js";
 </script>
-
-<!-- View Transitions -->
-<ViewTransitions />
