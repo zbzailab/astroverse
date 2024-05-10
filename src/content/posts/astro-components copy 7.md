@@ -30,6 +30,7 @@ An Astro component is made up of two main parts: the **Component Script** and th
 ---
 // Component Script (JavaScript)
 ---
+
 <!-- Component Template (HTML + JS Expressions) -->
 ```
 
@@ -47,15 +48,16 @@ You can use the component script to write any JavaScript code that you need to r
 
 ```astro title="src/components/MyComponent.astro"
 ---
-import SomeAstroComponent from '../components/SomeAstroComponent.astro';
-import SomeReactComponent from '../components/SomeReactComponent.jsx';
-import someData from '../data/pokemon.json';
+import SomeAstroComponent from "../components/SomeAstroComponent.astro";
+import SomeReactComponent from "../components/SomeReactComponent.jsx";
+import someData from "../data/pokemon.json";
 
 // Access passed-in component props, like `<X title="Hello, World" />`
 const { title } = Astro.props;
 // Fetch external data, even from a private API or database
-const data = await fetch('SOME_SECRET_API_URL/users').then(r => r.json());
+const data = await fetch("SOME_SECRET_API_URL/users").then((r) => r.json());
 ---
+
 <!-- Your template here! -->
 ```
 
@@ -76,13 +78,15 @@ However, [Astro's component template syntax](/en/core-concepts/astro-syntax/) al
 ```astro title="src/components/MyFavoritePokemon.astro"
 ---
 // Your component script here!
-import Banner from '../components/Banner.astro';
-import ReactPokemonComponent from '../components/ReactPokemonComponent.jsx';
-const myFavoritePokemon = [/* ... */];
+import Banner from "../components/Banner.astro";
+import ReactPokemonComponent from "../components/ReactPokemonComponent.jsx";
+const myFavoritePokemon = [
+  /* ... */
+];
 const { title } = Astro.props;
 ---
-<!-- HTML comments supported! -->
-{/* JS comment syntax is also valid! */}
+
+<!-- HTML comments supported! -->{/* JS comment syntax is also valid! */}
 
 <Banner />
 <h1>Hello, world!</h1>
@@ -99,7 +103,7 @@ const { title } = Astro.props;
 </ul>
 
 <!-- Use a template directive to build class names from multiple strings or even objects! -->
-<p class:list={["add", "dynamic", {classNames: true}]} />
+<p class:list={["add", "dynamic", { classNames: true }]}></p>
 ```
 
 ## Component-based design
@@ -108,8 +112,9 @@ Components are designed to be **reusable** and **composable**. You can use compo
 
 ```astro title="src/components/ButtonGroup.astro"
 ---
-import Button from './Button.astro';
+import Button from "./Button.astro";
 ---
+
 <div>
   <Button title="Button 1" />
   <Button title="Button 2" />
@@ -129,6 +134,7 @@ Here is an example of a component that receives a `greeting` prop and a `name` p
 // Usage: <GreetingHeadline greeting="Howdy" name="Partner" />
 const { greeting, name } = Astro.props;
 ---
+
 <h2>{greeting}, {name}!</h2>
 ```
 
@@ -137,9 +143,10 @@ This component, when imported and rendered in other Astro components, layouts or
 ```astro /(\w+)=\S+/
 ---
 // src/components/GreetingCard.astro
-import GreetingHeadline from './GreetingHeadline.astro';
-const name = 'Astro';
+import GreetingHeadline from "./GreetingHeadline.astro";
+const name = "Astro";
 ---
+
 <h1>Greeting Card</h1>
 <GreetingHeadline greeting="Hi" name={name} />
 <p>I hope you have a wonderful day!</p>
@@ -157,6 +164,7 @@ interface Props {
 
 const { greeting = "Hello", name } = Astro.props;
 ---
+
 <h2>{greeting}, {name}!</h2>
 ```
 
@@ -167,6 +175,7 @@ Component props can be given default values to use when none are provided.
 // src/components/GreetingHeadline.astro
 const { greeting = "Hello", name = "Astronaut" } = Astro.props;
 ---
+
 <h2>{greeting}, {name}!</h2>
 ```
 
@@ -183,17 +192,19 @@ Unlike _props_, which are attributes passed to an Astro component available for 
 ```astro "<slot />"
 ---
 // src/components/Wrapper.astro
-import Header from './Header.astro';
-import Logo from './Logo.astro';
-import Footer from './Footer.astro';
+import Header from "./Header.astro";
+import Logo from "./Logo.astro";
+import Footer from "./Footer.astro";
 
 const { title } = Astro.props;
 ---
+
 <div id="content-wrapper">
   <Header />
   <Logo />
   <h1>{title}</h1>
-  <slot />  <!-- children will go here -->
+  <slot />
+  <!-- children will go here -->
   <Footer />
 </div>
 ```
@@ -201,8 +212,9 @@ const { title } = Astro.props;
 ```astro {6-7}
 ---
 // src/pages/fred.astro
-import Wrapper from '../components/Wrapper.astro';
+import Wrapper from "../components/Wrapper.astro";
 ---
+
 <Wrapper title="Fred's Page">
   <h2>All about Fred</h2>
   <p>Here is some stuff about Fred.</p>
@@ -220,20 +232,24 @@ Slots are named using the `name` attribute:
 ```astro /<slot .*?/>/
 ---
 // src/components/Wrapper.astro
-import Header from './Header.astro';
-import Logo from './Logo.astro';
-import Footer from './Footer.astro';
+import Header from "./Header.astro";
+import Logo from "./Logo.astro";
+import Footer from "./Footer.astro";
 
 const { title } = Astro.props;
 ---
+
 <div id="content-wrapper">
   <Header />
-  <slot name="after-header"/>  <!--  children with the `slot="after-header"` attribute will go here -->
+  <slot name="after-header" />
+  <!--  children with the `slot="after-header"` attribute will go here -->
   <Logo />
   <h1>{title}</h1>
-  <slot />  <!--  children without a `slot`, or with `slot="default"` attribute will go here -->
+  <slot />
+  <!--  children without a `slot`, or with `slot="default"` attribute will go here -->
   <Footer />
-  <slot name="after-footer"/>  <!--  children with the `slot="after-footer"` attribute will go here -->
+  <slot name="after-footer" />
+  <!--  children with the `slot="after-footer"` attribute will go here -->
 </div>
 ```
 
@@ -242,10 +258,11 @@ To inject HTML content into a particular slot, use the `slot` attribute on any c
 ```astro /slot=".*?"/
 ---
 // src/pages/fred.astro
-import Wrapper from '../components/Wrapper.astro';
+import Wrapper from "../components/Wrapper.astro";
 ---
+
 <Wrapper title="Fred's Page">
-  <img src="https://my.photo/fred.jpg" slot="after-header">
+  <img src="https://my.photo/fred.jpg" slot="after-header" />
   <h2>All about Fred</h2>
   <p>Here is some stuff about Fred.</p>
   <p slot="after-footer">Copyright 2022</p>
@@ -271,12 +288,13 @@ Slots can also render **fallback content**. When there are no matching children 
 ```astro {14}
 ---
 // src/components/Wrapper.astro
-import Header from './Header.astro';
-import Logo from './Logo.astro';
-import Footer from './Footer.astro';
+import Header from "./Header.astro";
+import Logo from "./Logo.astro";
+import Footer from "./Footer.astro";
 
 const { title } = Astro.props;
 ---
+
 <div id="content-wrapper">
   <Header />
   <Logo />
@@ -294,28 +312,29 @@ Slots can be transferred to other components. For example, when creating nested 
 
 ```astro title="src/layouts/BaseLayout.astro" {9,12}
 ---
+
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-    <slot name="head"/>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 ```
 
 ```astro {6,7}
 // src/layouts/HomeLayout.astro
----
+
 import BaseLayout from './BaseLayout.astro';
----
 <BaseLayout>
-  <slot name="head" slot="head"/>
+  <slot name="head" slot="head" />
   <slot />
 </BaseLayout>
 ```
@@ -328,12 +347,11 @@ Now, the default and `head` slots passed to `HomeLayout` will be transferred to 
 
 ```astro
 // src/pages/index.astro
----
+
 import HomeLayout from '../layouts/HomeLayout.astro';
----
 <HomeLayout>
-	<title slot="head">Astro</title>
-	<h1>Astro</h1>
+  <title slot="head">Astro</title>
+  <h1>Astro</h1>
 </HomeLayout>
 ```
 

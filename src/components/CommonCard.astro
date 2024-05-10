@@ -11,13 +11,13 @@ const { post } = Astro.props;
 ---
 
 <div
-  class="relative bg-white rounded-xl dark:bg-neutral-900 transition-transform duration-500 hover:scale-105 hover:-translate-y-1 overflow-hidden"
+  class="relative overflow-hidden rounded-xl bg-white transition-transform duration-500 hover:-translate-y-1 hover:scale-105 dark:bg-neutral-900"
 >
   <a href={`/posts/${post.slug}/`} class="block">
     <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
-    <div class="absolute bottom-0 start-0 end-0 p-4 md:p-5 bg-gradient-to-t">
+    <div class="absolute bottom-0 end-0 start-0 bg-gradient-to-t p-4 md:p-5">
       <h3 class="mt-8 text-lg font-bold text-white">{post.data.title}</h3>
-      <div class="flex justify-between items-center mt-3 text-xs text-white">
+      <div class="mt-3 flex items-center justify-between text-xs text-white">
         <span>{post.data.tags.join(" ")}</span>
         <FormattedDate date={post.data.pubDate} />
       </div>

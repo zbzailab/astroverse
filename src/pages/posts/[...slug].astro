@@ -19,7 +19,7 @@ const { Content } = await post.render();
 
 <BaseLayout title={post.data.title} description={post.data.description}>
   <main>
-    <article class="prose dark:prose-invert mx-auto">
+    <article class="prose mx-auto dark:prose-invert">
       <div>
         <div class="prose-h1 text-center">
           <h1>{post.data.title}</h1>
@@ -37,21 +37,26 @@ const { Content } = await post.render();
         <div class="prose-a:no-underline">
           {
             post.data.tags.map((tag) => (
-              <span class="inline-block bg-neutral-200 dark:bg-neutral-600 hover:bg-neutral-500 rounded-full px-3 py-1 text-sm mr-2 mb-2">
+              <span class="mb-2 mr-2 inline-block rounded-full bg-neutral-200 px-3 py-1 text-sm hover:bg-neutral-500 dark:bg-neutral-600">
                 <a href={`/tags/${tag}/1/`}>{tag}</a>
               </span>
             ))
           }
         </div>
         <div class="flex justify-between">
-          <small>Publish on <FormattedDate date={post.data.pubDate} />，Update on <FormattedDate date={new Date().toISOString()} /></small>
-        </div>        
+          <small
+            >Publish on <FormattedDate date={post.data.pubDate} />，Update on <FormattedDate
+              date={new Date().toISOString()}
+            /></small
+          >
+        </div>
+      </div>
+      <div class="mt-4">
+        <RelatedPostsCard
+          currentCategory={post.data.category[0]}
+          currentSlug={post.slug}
+        />
+      </div>
     </article>
-    <div class="mt-4">
-      <RelatedPostsCard
-        currentCategory={post.data.category[0]}
-        currentSlug={post.slug}
-      />
-    </div>
   </main>
 </BaseLayout>

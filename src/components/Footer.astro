@@ -5,36 +5,46 @@ import { BRAND_NAME, FooterLinks, SocialLinks } from "@consts";
 const today = new Date();
 ---
 
-<footer class="w-full bg-white text-sm py-4 dark:bg-neutral-900">
-  <nav class="max-w-[85rem] w-full mx-auto px-4" aria-label="Global">
-    <div class="flex flex-col sm:flex-row sm:justify-between items-center">
+<footer class="w-full bg-white py-4 text-sm dark:bg-neutral-900">
+  <nav class="mx-auto w-full max-w-[85rem] px-4" aria-label="Global">
+    <div class="flex flex-col items-center sm:flex-row sm:justify-between">
       <div id="navbar-alignment" class="internal-links sm:order-2">
-        <div class="flex flex-row sm:flex-row gap-5 mt-2 sm:items-center sm:mt-0 sm:ps-5">
-          {FooterLinks.map((link) => (
-            <Link
-              href={link.href}
-              class="font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500 px-4 py-3"
-            >
-              {link.title}
-            </Link>
-          ))}
+        <div
+          class="mt-2 flex flex-row gap-5 sm:mt-0 sm:flex-row sm:items-center sm:ps-5"
+        >
+          {
+            FooterLinks.map((link) => (
+              <Link
+                href={link.href}
+                class="px-4 py-3 font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+              >
+                {link.title}
+              </Link>
+            ))
+          }
         </div>
       </div>
 
-      <div class="sm:order-3 flex flex-wrap gap-2 mt-2 sm:gap-0 sm:mb-0">
-        {SocialLinks.map((link) => (
-          <button
-            type="button"
-            class="py-3 px-4 inline-flex items-center gap-x-2 bg-white text-neutral-800 hover:bg-neutral-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 relative w-12 h-12"
-          >
-            <a href={link.href} class="absolute inset-0 z-10" aria-label={link.label}></a>
-            <Icon name={link.icon} class="icon-base" />
-          </button>
-        ))}
+      <div class="mt-2 flex flex-wrap gap-2 sm:order-3 sm:mb-0 sm:gap-0">
+        {
+          SocialLinks.map((link) => (
+            <button
+              type="button"
+              class="relative inline-flex h-12 w-12 items-center gap-x-2 bg-white px-4 py-3 text-neutral-800 hover:bg-neutral-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900"
+            >
+              <a
+                href={link.href}
+                class="absolute inset-0 z-10"
+                aria-label={link.label}
+              />
+              <Icon name={link.icon} class="icon-base" />
+            </button>
+          ))
+        }
       </div>
 
-      <div class="sm:order-1 mt-2 sm:mb-0">
-        <a class="flex-none dark:text-neutral-400 px-4 py-3" href="/"
+      <div class="mt-2 sm:order-1 sm:mb-0">
+        <a class="flex-none px-4 py-3 dark:text-neutral-400" href="/"
           >{BRAND_NAME} &copy; {today.getFullYear()}</a
         >
       </div>

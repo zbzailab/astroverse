@@ -21,12 +21,12 @@ const tags = Object.keys(tagCounts);
 
 <BaseLayout title={Tags_TITLE} description={Tags_DESCRIPTION}>
   <div class="prose prose-lg mx-auto p-6">
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
       {
         tags.map((tag) => (
           <a
             href={`/tags/${tag}/1/`}
-            class="bg-neutral-200 hover:bg-neutral-300 rounded-full text-center px-3 py-2 text-sm font-semibold no-underline"
+            class="rounded-full bg-neutral-200 px-3 py-2 text-center text-sm font-semibold no-underline hover:bg-neutral-300"
           >
             {tag} <span>({tagCounts[tag]})</span>
           </a>

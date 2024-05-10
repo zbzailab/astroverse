@@ -136,28 +136,28 @@ Your base Astro file may look like this:
 ```astro
 ---
 // src/pages/index.astro
-import CartFlyoutToggle from '../components/CartFlyoutToggle';
-import CartFlyout from '../components/CartFlyout';
-import AddToCartForm from '../components/AddToCartForm';
+import CartFlyoutToggle from "../components/CartFlyoutToggle";
+import CartFlyout from "../components/CartFlyout";
+import AddToCartForm from "../components/AddToCartForm";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>...</head>
-<body>
-  <header>
-    <nav>
-      <a href="/">Astro storefront</a>
-      <CartFlyoutToggle client:load />
-    </nav>
-  </header>
-  <main>
-    <AddToCartForm client:load>
-    <!-- ... -->
-    </AddToCartForm>
-  </main>
-  <CartFlyout client:load />
-</body>
+  <head></head>...
+  <body>
+    <header>
+      <nav>
+        <a href="/">Astro storefront</a>
+        <CartFlyoutToggle client:load />
+      </nav>
+    </header>
+    <main>
+      <AddToCartForm client:load>
+        <!-- ... -->
+      </AddToCartForm>
+    </main>
+    <CartFlyout client:load />
+  </body>
 </html>
 ```
 

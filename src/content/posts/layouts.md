@@ -30,15 +30,16 @@ Layout components are commonly placed in a `src/layouts` directory in your proje
 ```astro "<slot />"
 ---
 // src/layouts/MySiteLayout.astro
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
+
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <BaseHead title={title}/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <BaseHead title={title} />
   </head>
   <body>
     <nav>
@@ -48,7 +49,8 @@ const { title } = Astro.props;
     </nav>
     <h1>{title}</h1>
     <article>
-      <slot /> <!-- your content is injected here -->
+      <slot />
+      <!-- your content is injected here -->
     </article>
     <Footer />
   </body>
@@ -57,8 +59,9 @@ const { title } = Astro.props;
 
 ```astro title="src/pages/index.astro"
 ---
-import MySiteLayout from '../layouts/MySiteLayout.astro';
+import MySiteLayout from "../layouts/MySiteLayout.astro";
 ---
+
 <MySiteLayout title="Home Page">
   <p>My page content, wrapped in a layout!</p>
 </MySiteLayout>
@@ -98,6 +101,7 @@ A typical layout for Markdown or MDX pages includes:
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props;
 ---
+
 <html>
   <head>
     <!-- Add other Head elements here, like styles and meta tags. -->
@@ -117,7 +121,7 @@ You can set a layout’s [`Props` type](/en/guides/typescript/#component-props) 
 
 ```astro title="src/layouts/BaseLayout.astro" ins={2,4-9}
 ---
-import type { MarkdownLayoutProps } from 'astro';
+import type { MarkdownLayoutProps } from "astro";
 
 type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
@@ -130,9 +134,10 @@ type Props = MarkdownLayoutProps<{
 // are accessible with type safety
 const { frontmatter, url } = Astro.props;
 ---
+
 <html>
   <head>
-    <link rel="canonical" href={new URL(url, Astro.site).pathname}>
+    <link rel="canonical" href={new URL(url, Astro.site).pathname} />
     <title>{frontmatter.title}</title>
   </head>
   <body>
@@ -233,9 +238,11 @@ Then, your values are available to you through `Astro.props` in your layout, and
 // src/layouts/BaseLayout.astro
 const { title, fancyJsHelper } = Astro.props;
 ---
+
 <!-- -->
 <h1>{title}</h1>
-<slot /> <!-- your content is injected here -->
+<slot />
+<!-- your content is injected here -->
 <p>{fancyJsHelper()}</p>
 <!-- -->
 ```
@@ -253,6 +260,7 @@ In the example below, the layout will display the page title either from a front
 // src/components/MyLayout.astro
 const { title } = Astro.props.frontmatter || Astro.props;
 ---
+
 <html>
   <head></head>
   <body>
@@ -271,9 +279,10 @@ For example, a `BlogPostLayout.astro` layout component could style a post's titl
 ```astro {3} /</?BaseLayout>/ /</?BaseLayout url={frontmatter.url}>/
 ---
 // src/layouts/BlogPostLayout.astro
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
+
 <BaseLayout url={frontmatter.url}>
   <h1>{frontmatter.title}</h1>
   <h2>Post author: {frontmatter.author}</h2>

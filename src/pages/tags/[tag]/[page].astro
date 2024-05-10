@@ -42,7 +42,7 @@ const { title, description } = getTagMetadata(params.tag);
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
     {page.data.map((post) => <PostCard post={post} />)}
   </div>
 

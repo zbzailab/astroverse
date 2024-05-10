@@ -36,8 +36,10 @@ Local variables can be added into the HTML using the curly braces syntax:
 ---
 const name = "Astro";
 ---
+
 <div>
-  <h1>Hello {name}!</h1>  <!-- Outputs <h1>Hello Astro!</h1> -->
+  <h1>Hello {name}!</h1>
+  <!-- Outputs <h1>Hello Astro!</h1> -->
 </div>
 ```
 
@@ -49,6 +51,7 @@ Local variables can be used in curly braces to pass attribute values to both HTM
 ---
 const name = "Astro";
 ---
+
 <h1 class={name}>Attribute expressions are supported</h1>
 
 <MyComponent templateLiteralNameAttribute={`MyNameIs${name}`} />
@@ -60,10 +63,11 @@ For example, you can't assign an event handler to an HTML element in an Astro co
 
 ```astro title="dont-do-this.astro"
 ---
-function handleClick () {
-    console.log("button clicked!");
+function handleClick() {
+  console.log("button clicked!");
 }
 ---
+
 <!-- ❌ This doesn't work! ❌ -->
 <button onClick={handleClick}>Nothing will happen when you click me!</button>
 ```
@@ -72,10 +76,12 @@ Instead, use a client-side script to add the event handler, like you would in va
 
 ```astro title="do-this-instead.astro"
 ---
+
 ---
+
 <button id="button">Click Me</button>
 <script>
-  function handleClick () {
+  function handleClick() {
     console.log("button clicked!");
   }
   document.getElementById("button").addEventListener("click", handleClick);
@@ -92,10 +98,9 @@ Local variables can be used in JSX-like functions to produce dynamically-generat
 ---
 const items = ["Dog", "Cat", "Platypus"];
 ---
+
 <ul>
-  {items.map((item) => (
-    <li>{item}</li>
-  ))}
+  {items.map((item) => <li>{item}</li>)}
 </ul>
 ```
 
@@ -105,6 +110,7 @@ Astro can conditionally display HTML using JSX logical operators and ternary exp
 ---
 const visible = true;
 ---
+
 {visible && <p>Show me!</p>}
 
 {visible ? <p>Show me!</p> : <p>Else show me!</p>}
@@ -117,11 +123,14 @@ You can also use dynamic tags by setting a variable to an HTML tag name or a com
 ```astro title="src/components/DynamicTags.astro" /Element|(?<!My)Component/
 ---
 import MyComponent from "./MyComponent.astro";
-const Element = 'div'
+const Element = "div";
 const Component = MyComponent;
 ---
-<Element>Hello!</Element> <!-- renders as <div>Hello!</div> -->
-<Component /> <!-- renders as <MyComponent /> -->
+
+<Element>Hello!</Element>
+<!-- renders as <div>Hello!</div> -->
+<Component />
+<!-- renders as <MyComponent /> -->
 ```
 
 When using dynamic tags:
@@ -138,8 +147,9 @@ Fragments can be useful to avoid wrapper elements when adding [`set:*` directive
 
 ```astro title="src/components/SetHtml.astro" "Fragment"
 ---
-const htmlString = '<p>Raw HTML content</p>';
+const htmlString = "<p>Raw HTML content</p>";
 ---
+
 <Fragment set:html={htmlString} />
 ```
 
@@ -164,6 +174,7 @@ An Astro component template can render multiple elements with no need to wrap ev
 ---
 // Template with multiple elements
 ---
+
 <p>No need to wrap elements in a single containing element.</p>
 <p>Astro supports multiple root elements in a template.</p>
 ```
@@ -174,9 +185,12 @@ In Astro, you can use standard HTML comments or JavaScript-style comments.
 
 ```astro title="example.astro"
 ---
+
 ---
-<!-- HTML comment syntax is valid in .astro files -->
-{/* JS comment syntax is also valid */}
+
+<!-- HTML comment syntax is valid in .astro files -->{
+  /* JS comment syntax is also valid */
+}
 ```
 
 :::caution

@@ -50,7 +50,9 @@ Astro pages use the `.astro` file extension and support the same features as [As
 
 ```astro title="src/pages/index.astro"
 ---
+
 ---
+
 <html lang="en">
   <head>
     <title>My Homepage</title>
@@ -68,8 +70,9 @@ To avoid repeating the same HTML elements on every page, you can move common `<h
 ```astro {3} /</?MySiteLayout>/
 ---
 // src/pages/index.astro
-import MySiteLayout from '../layouts/MySiteLayout.astro';
+import MySiteLayout from "../layouts/MySiteLayout.astro";
 ---
+
 <MySiteLayout>
   <p>My page content, wrapped in a layout!</p>
 </MySiteLayout>
@@ -154,7 +157,8 @@ The following example shows an `hx-post` attribute set to a partial's URL. The c
 <html>
   <head>
     <title>My page</title>
-    <script src="https://unpkg.com/htmx.org@1.9.6"
+    <script
+      src="https://unpkg.com/htmx.org@1.9.6"
       integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
       crossorigin="anonymous"></script>
   </head>
@@ -162,12 +166,13 @@ The following example shows an `hx-post` attribute set to a partial's URL. The c
 <section>
   <div id="parent-div">Target here</div>
 
-  <button hx-post="/partials/clicked/"
+  <button
+    hx-post="/partials/clicked/"
     hx-trigger="click"
     hx-target="#parent-div"
     hx-swap="innerHTML"
   >
-      Click Me!
+    Click Me!
   </button>
 </section>
 ```
@@ -178,6 +183,7 @@ The `.astro` partial must exist at the corresponding file path, and include an e
 ---
 export const partial = true;
 ---
+
 <div>I was clicked!</div>
 ```
 

@@ -72,13 +72,13 @@ Adding a post is as simple as adding a .md or .mdx file to the blog folder at th
 
 All commands are run from the root of the project, from a terminal:
 
-| Command            | Action                                       |
-| :----------------- | :------------------------------------------- |
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
 | `npm install`     | Installs dependencies                        |
 | `npm run dev`     | Starts local dev server at `localhost:4321`  |
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
-| `npm run format`   | Code formatter using prettier                |
+| `npm run format`  | Code formatter using prettier                |
 
 ### 🔧Configuration
 
@@ -158,3 +158,4 @@ Click the button below to start deploying your project on Vercel:
 ## ✨ Join and Contribute
 
 Your contributions make AstroVerse better! Whether it's through code, design, bug reports, or feature ideas, we value your input. Check our Issues or submit a Pull Request to get started. Together, let's enhance AstroVerse!
+```

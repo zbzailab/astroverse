@@ -36,7 +36,7 @@ const computedBasePath = basePath ? ensureTrailingSlash(basePath) : "/page/";
 ---
 
 <nav
-  class="mt-8 flex justify-center items-center gap-x-1"
+  class="mt-8 flex items-center justify-center gap-x-1"
   aria-label="Pagination"
 >
   {
@@ -44,7 +44,7 @@ const computedBasePath = basePath ? ensureTrailingSlash(basePath) : "/page/";
       <a
         href={ensureTrailingSlash(urlPrev)}
         aria-label="Previous page"
-        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+        class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
       >
         <Icon name="tabler:chevron-left" class="icon-base" />
       </a>
@@ -77,7 +77,7 @@ const computedBasePath = basePath ? ensureTrailingSlash(basePath) : "/page/";
       <a
         href={ensureTrailingSlash(urlNext)}
         aria-label="Next page"
-        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+        class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
       >
         <Icon name="tabler:chevron-right" class="icon-base" />
       </a>
