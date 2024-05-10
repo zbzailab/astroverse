@@ -7,13 +7,17 @@ import Pagefind from "astro-pagefind/components/Search";
 <BaseLayout title={SEARCH_PAGE_TITLE} description={SEARCH_PAGE_DESCRIPTION}>
   <main>
     <section class="mx-auto w-full max-w-screen-2xl px-4 md:px-6">
-      <div class="min-h-[700px]">
-        <Pagefind
-          id="search"
-          className="pagefind-ui"
-          uiOptions={{ showImages: false }}
-        />
+      <div class="min-h-[500px] flex flex-col items-center justify-start pt-6 mt-32">
+        <img src="/favicon.svg" alt="Logo" class="mb-4 w-[100px]" />
+        <div class="w-[500px] h-[34px]">
+          <Pagefind
+            id="search"
+            className="pagefind-ui w-full h-full"
+            uiOptions={{ showImages: false }}
+          />
+        </div>
       </div>
     </section>
   </main>
 </BaseLayout>
+
