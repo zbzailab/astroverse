@@ -1,6 +1,6 @@
 ## 🚀 **AstroVerse**: An Astro Theme for Visual Storytelling
 
-AstroVerse, a blend of "Astro" and "Verse", is an Astro theme tailored for captivating photo-text storytelling.
+AstroVerse is an Astro theme tailored for captivating photo-text storytelling.
 
 It seamlessly merges visuals and written content, empowering creators to deliver compelling narratives with high-impact imagery.
 
