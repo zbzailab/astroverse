@@ -146,7 +146,7 @@ export const SocialLinks = [
 // Search Page Metadata, src/pages/search.astro
 export const SEARCH_PAGE_TITLE = `${SITE_TITLE} - Site Search`;
 export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
-
+```
 
 
 ## Deployment
@@ -158,4 +158,3 @@ Click the button below to start deploying your project on Vercel:
 ## ✨ Join and Contribute
 
 Your contributions make AstroVerse better! Whether it's through code, design, bug reports, or feature ideas, we value your input. Check our Issues or submit a Pull Request to get started. Together, let's enhance AstroVerse!
-```
