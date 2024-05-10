@@ -11,10 +11,8 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://astroverse.inote.xyz/",
   trailingSlash: "always",
-  output: "static",
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: "viewport",
   },
   experimental: {
     contentCollectionCache: true,
