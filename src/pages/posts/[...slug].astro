@@ -51,12 +51,12 @@ const { Content } = await post.render();
           >
         </div>
       </div>
-      <div class="mt-4">
-        <RelatedPostsCard
-          currentCategory={post.data.category[0]}
-          currentSlug={post.slug}
-        />
-      </div>
     </article>
+    <div class="mt-4">
+      <RelatedPostsCard
+        currentCategory={post.data.category[0]}
+        currentSlug={post.slug}
+      />
+    </div>
   </main>
 </BaseLayout>
