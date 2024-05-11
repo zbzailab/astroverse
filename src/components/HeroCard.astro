@@ -40,20 +40,16 @@ const truncatedDescription = truncateUTF8String(post.data.description, 150);
     <div
       class="absolute bottom-0 end-0 start-0 bg-gradient-to-t from-black p-4 md:relative md:flex md:w-1/3 md:flex-col md:justify-start md:bg-transparent md:p-5"
     >
-      <h3
-        class="text-lg font-bold text-white md:text-neutral-900 dark:text-white"
-      >
+    <div class="mt-8 flex items-center gap-4 text-xs text-white md:text-neutral-900 dark:text-white">
+        <span>{post.data.tags.join(" ")}</span>
+        <FormattedDate date={post.data.pubDate} />
+      </div>
+      <h3 class="mt-3 text-lg font-bold text-white md:text-neutral-900 dark:text-white">
         {post.data.title}
       </h3>
       <p class="mt-3 text-white md:text-neutral-900 dark:text-white">
         {truncatedDescription}
       </p>
-      <div
-        class="mt-3 flex items-center justify-between text-xs text-white md:text-neutral-900 dark:text-white"
-      >
-        <span>{post.data.tags.join(" ")}</span>
-        <FormattedDate date={post.data.pubDate} />
-      </div>
     </div>
   </a>
 </div>
