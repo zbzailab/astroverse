@@ -11,12 +11,16 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://astroverse.inote.xyz/",
   trailingSlash: "always",
+
   prefetch: {
     prefetchAll: true,
+    defaultStrategy: 'viewport',
   },
+
   experimental: {
     contentCollectionCache: true,
   },
+
   image: {
     remotePatterns: [
       {
@@ -25,24 +29,29 @@ export default defineConfig({
       },
     ],
   },
+
   markdown: {
     remarkPlugins: [remarkModifiedTime],
   },
+
   integrations: [
     mdx(),
     sitemap(),
     pagefind(),
+    tailwind(),
+
     partytown({
       config: {
         forward: ["dataLayer.push"],
         debug: false,
       },
     }),
+
     icon({
       include: {
         tabler: ["*"],
       },
     }),
-    tailwind(),
+    
   ],
 });
