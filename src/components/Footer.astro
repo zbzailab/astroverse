@@ -4,9 +4,8 @@ import Link from "@components/Links.astro";
 import { BRAND_NAME, FooterLinks, SocialLinks } from "@consts";
 const today = new Date();
 ---
-
-<footer class="w-full bg-white py-4 text-sm dark:bg-neutral-900">
-  <nav class="mx-auto w-full max-w-[85rem] px-4" aria-label="Global">
+<footer class="mt-auto w-full max-w-[85rem] py-10 mx-auto">
+  <nav class="mx-auto w-full max-w-[85rem] px-4" aria-label="Footer">
     <div class="flex flex-col items-center sm:flex-row sm:justify-between">
       <div id="navbar-alignment" class="internal-links sm:order-2">
         <div
@@ -16,7 +15,7 @@ const today = new Date();
             FooterLinks.map((link) => (
               <Link
                 href={link.href}
-                class="px-4 py-3 font-medium text-neutral-600 hover:text-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+                class="inline-flex gap-x-2 text-sm text-neutral-500 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-200"
               >
                 {link.title}
               </Link>
@@ -30,7 +29,7 @@ const today = new Date();
           SocialLinks.map((link) => (
             <button
               type="button"
-              class="relative inline-flex h-12 w-12 items-center gap-x-2 bg-white px-4 py-3 text-neutral-800 hover:bg-neutral-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900"
+              class="relative inline-flex h-12 w-12 items-center gap-x-2 bg-white px-4 py-3 text-neutral-500 hover:text-neutral-800 disabled:pointer-events-none disabled:opacity-50  dark:text-neutral-500 dark:hover:text-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-900"
             >
               <a
                 href={link.href}
@@ -44,7 +43,7 @@ const today = new Date();
       </div>
 
       <div class="mt-2 sm:order-1 sm:mb-0">
-        <a class="flex-none px-4 py-3 dark:text-neutral-400" href="/"
+        <a class="flex-none text-sm text-neutral-500 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-200" href="/" aria-label="Brand"
           >{BRAND_NAME} &copy; {today.getFullYear()}</a
         >
       </div>
