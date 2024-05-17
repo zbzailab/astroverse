@@ -1,3 +1,8 @@
+## Language Versions / 语言版本
+
+- [English](README.md)
+- [中文](README_CN.md)
+
 ## 🚀 **AstroVerse**: An Astro Theme for Visual Storytelling
 
 AstroVerse is an Astro theme tailored for captivating photo-text storytelling.
