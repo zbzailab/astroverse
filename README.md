@@ -1,4 +1,4 @@
-## Language Versions / 语言版本
+## 🌍Language Versions / 语言版本
 
 🇺🇸[English](README.md) 🇨🇳[中文](README_CN.md)
 
