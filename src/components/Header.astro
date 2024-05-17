@@ -17,6 +17,12 @@ import { SITE_TITLE, HeaderLinks } from "@consts";
         <Icon name="tabler:search" class="icon-base" />
       </button>
 
+      <button type="button" class="hs-dark-mode hs-dark-mode-active:hidden inline-flex items-center gap-x-2 py-2 px-3 rounded-full text-sm text-black hover:bg-white/20" data-hs-theme-click-value="dark">
+        <Icon name="tabler:sun-filled" class="icon-base" />
+      </button>
+      <button type="button" class="hs-dark-mode hs-dark-mode-active:inline-flex hidden items-center gap-x-2 py-2 px-3 rounded-full text-sm text-white hover:bg-white/20" data-hs-theme-click-value="light">
+        <Icon name="tabler:moon-filled" class="icon-base" />
+      </button>
 
       <div class="md:hidden">
         <button type="button" class="hs-collapse-toggle size-[38px] flex justify-center items-center text-sm font-semibold rounded-xl text-black hover:bg-neutral-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
