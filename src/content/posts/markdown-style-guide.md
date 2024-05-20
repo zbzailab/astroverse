@@ -9,7 +9,7 @@ tags:
   - Astro
   - Jamstack
 pubDate: 2023-09-06
-cover: https://images.unsplash.com/photo-1526415302530-ad8c7d818689?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
+cover: https://images.unsplash.com/photo-1526415302530-ad8c7d818689?w=1960&h=1102&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGJsYWNrfGVufDB8MHwwfHx8Mg%3D%3D
 coverAlt: AstroVerse-Markdown Style Guide
 author: VV
 ---
@@ -48,7 +48,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 #### Output
 
-![blog placeholder](https://images.unsplash.com/photo-1581438973482-a95e50a1000c?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![blog placeholder](https://images.unsplash.com/photo-1581438973482-a95e50a1000c?q=80&w=2874&h=1102&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ## Blockquotes
 
