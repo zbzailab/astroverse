@@ -20,7 +20,6 @@ const { Content } = await post.render();
 <BaseLayout title={post.data.title} description={post.data.description}>
   <main>
     <article class="prose mx-auto dark:prose-invert">
-      <div>
         <div class="prose-h1 text-center">
           <h1>{post.data.title}</h1>
         </div>
@@ -50,7 +49,6 @@ const { Content } = await post.render();
             /></small
           >
         </div>
-      </div>
     </article>
     <div class="mt-4">
       <RelatedPostsCard
