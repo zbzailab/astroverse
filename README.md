@@ -15,7 +15,7 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 ## 💯Lighthouse Score
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fastroverse.inote.xyz%2F">
+  <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fverse-astro.vercel.app%2F">
     <img width="510" alt="AstroVerse Lighthouse Score" src="public/astroverse-lighthouse-score.svg">
   <a>
 </p>
@@ -38,13 +38,12 @@ Ideal for bloggers and content creators seeking to make their stories stand out 
 
 ## 🎡 Live demo
 
-Experience [**AstroVerse**](https://astroverse.inote.xyz) in action.
+Experience [**AstroVerse**](https://verse-astro.vercel.app) in action.
 
 ## 🌆 Showcase
 
 Share your project built with AstroVerse! Open an issue titled "Showcase Submission" with your project's details to be featured in our Showcase.
 
-- [**iNote**](https://inote.xyz)
 
 ## 💻 Running Locally
 
