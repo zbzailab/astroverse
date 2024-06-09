@@ -15,7 +15,7 @@
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/partytown": "^2.1.0",
     "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "@iconify-json/tabler": "^1.1.111",
     "astro": "^4.9.2",
