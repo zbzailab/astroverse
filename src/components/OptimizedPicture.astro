@@ -8,18 +8,20 @@ interface Props {
   sizes?: string;
   formats?: string[];
   fallbackFormat?: string;
+  class?: string;
 }
 
 const {
   src,
   alt,
   widths = [392, 700, 980, 1960],
-  sizes = `(max-width: 360px) 392x, 
+  sizes = `(max-width: 360px) 392px, 
            (max-width: 720px) 700px, 
            (max-width: 1600px) 980px, 
            1960px`,
   formats = ["avif"],
   fallbackFormat = "avif",
+  class: className = "mx-auto w-full max-w-full rounded-lg"
 } = Astro.props;
 ---
 
@@ -30,5 +32,8 @@ const {
   sizes={sizes}
   formats={formats}
   fallbackFormat={fallbackFormat}
+  class={className}
   inferSize
+  loading="lazy"
+  decoding="async"
 />

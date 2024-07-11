@@ -23,7 +23,7 @@ const { Content } = await post.render();
         <div class="prose-h1 text-center">
           <h1>{post.data.title}</h1>
         </div>
-        <div class="prose-img:rounded-lg">
+        <div>
           {
             post.data.cover && (
               <OptimizedCover src={post.data.cover} alt={post.data.coverAlt} />
