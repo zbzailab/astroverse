@@ -11,7 +11,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://verse-astro.vercel.app/",
   trailingSlash: "always",
-
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport',
