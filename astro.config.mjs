@@ -24,7 +24,7 @@ export default defineConfig({
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "*.unsplash.com",
+        hostname: "**.unsplash.com",
       },
     ],
   },
