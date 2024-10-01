@@ -25,7 +25,7 @@
     "pagefind": "^1.1.0",
     "preline": "^2.3.0",
     "sharp": "^0.33.4",
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.13"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
