@@ -45,12 +45,12 @@ export const FooterLinks = [
 export const SocialLinks = [
   { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
-    href: "https://twitter.com/astrodotbuild",
+    href: "https://twitter.com/inotelab",
     icon: "tabler:brand-twitter",
     label: "Twitter",
   },
   {
-    href: "https://github.com/isooosi",
+    href: "https://github.com/inotelab",
     icon: "tabler:brand-github",
     label: "GitHub",
   },

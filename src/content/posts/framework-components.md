@@ -164,7 +164,7 @@ import MySidebar from "../components/MySidebar.jsx";
   <h2 slot="title">Menu</h2>
   <p>Here is a sidebar with some text and a button.</p>
   <ul slot="social-links">
-    <li><a href="https://twitter.com/astrodotbuild">Twitter</a></li>
+    <li><a href="https://twitter.com/inotelab">Twitter</a></li>
     <li><a href="https://github.com/withastro">GitHub</a></li>
   </ul>
 </MySidebar>

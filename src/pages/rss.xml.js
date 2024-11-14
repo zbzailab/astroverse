@@ -13,7 +13,7 @@ export async function GET(context) {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    customData: `<language>zh-CN</language>`,
+    customData: `<language>en-US</language>`,
     trailingSlash: true,
     items: posts.map((post) => ({
       title: post.data.title,

@@ -52,7 +52,7 @@ Share your project built with AstroVerse! Open an issue titled "Showcase Submiss
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
-1. Fork or use this [template](https://github.com/isooosi/astroverse)
+1. Fork or use this [template](https://github.com/inotelab/astroverse)
 
 2. Install dependencies:
 
@@ -135,12 +135,12 @@ export const FooterLinks = [
 export const SocialLinks = [
   { href: "/rss.xml", icon: "tabler:rss", label: "RSS" },
   {
-    href: "https://twitter.com/astrodotbuild",
+    href: "https://twitter.com/inotelab",
     icon: "tabler:brand-twitter",
     label: "Twitter",
   },
   {
-    href: "https://github.com/isooosi",
+    href: "https://github.com/inotelab",
     icon: "tabler:brand-github",
     label: "GitHub",
   },
@@ -156,7 +156,7 @@ export const SEARCH_PAGE_DESCRIPTION = `Search all content on ${SITE_TITLE}`;
 
 Click the button below to start deploying your project on Vercel:
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/isooosi/astroverse)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/inotelab/astroverse)
 
 ## ✨ Join and Contribute
 
