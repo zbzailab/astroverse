@@ -1,4 +1,4 @@
-version: 2
+version: 5
 updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
