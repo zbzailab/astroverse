@@ -1,0 +1,14 @@
+{
+    "extends": ["config:base"],
+    "automerge": true,
+    "rangeStrategy": "pin",
+    "dependencyDashboard": false,
+    "labels": ["dependencies"],
+    "packageRules": [
+      {
+        "groupName": "All Updates",
+        "matchPackagePatterns": ["*"],
+        "automerge": true
+      }
+    ]
+  }
