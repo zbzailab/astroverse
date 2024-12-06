@@ -1,14 +1,14 @@
 {
-    "extends": ["config:base"],
-    "automerge": true,
-    "rangeStrategy": "pin",
-    "dependencyDashboard": false,
-    "labels": ["dependencies"],
-    "packageRules": [
-      {
-        "groupName": "All Updates",
-        "matchPackagePatterns": ["*"],
-        "automerge": true
-      }
-    ]
-  }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboard": false,
+  "packageRules": [
+    {
+      "groupName": "All Updates",
+      "matchPackagePatterns": ["*"],
+      "automerge": true
+    }
+  ]
+}
