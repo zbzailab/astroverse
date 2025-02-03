@@ -1,7 +1,7 @@
 {
   "name": "astroverse",
   "type": "module",
-  "version": "5.0.0",
+  "version": "5.2.3",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -17,7 +17,6 @@
     "dayjs": "^1.11.11",
     "pagefind": "^1.1.1",
     "preline": "^2.3.0",
-    "sharp": "^0.33.4",
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
@@ -36,7 +35,5 @@
     "sanitize-html": "^2.13.1",
     "typescript": "^5.5.2"
   },
-  "resolutions": {
-    "cheerio": "1.0.0"
-  }
+  "resolutions": {}
 }
