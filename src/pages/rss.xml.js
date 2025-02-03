@@ -11,7 +11,6 @@ export async function GET(context) {
     .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
     .slice(0, 3);
 
-  // Initialize MarkdownIt
   const markdown = new MarkdownIt();
 
   return rss({
